@@ -1,52 +1,54 @@
-import Image from "next/image";
+import Image from 'next/image';
 
 interface ProjectCardProps {
-  title?: string;
-  description?: string;
-  year?: string;
-  imageSrc?: string;
-  imageAlt?: string;
-  className?: string;
+    title?: string;
+    description?: string;
+    year?: string;
+    imageSrc?: string;
+    imageAlt?: string;
+    className?: string;
 }
 
 export default function ProjectCard({
-  title = "Okari",
-  description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-  year = "2025",
-  imageSrc = "/assets/project-bg.png",
-  imageAlt = "Project image",
-  className = ""
+    title = 'Okari',
+    description = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+    year = '2025',
+    imageSrc = '/assets/project-bg.png',
+    imageAlt = 'Project image',
+    className = '',
 }: ProjectCardProps) {
-  return (
-    <div className={`relative flex flex-col w-full h-full bg-[#F7F7F7] rounded-[1.875rem] overflow-hidden ${className}`}>
-      {/* Background Image */}
-      <div className=" w-full h-[85%] p-2 rounded-[1.875rem] overflow-hidden">
-        <img
-          src={imageSrc}
-          alt={imageAlt} 
-          className="object-cover w-full h-full overflow-hidden rounded-[1.475rem]"
-        />
-      </div>
-      
-      {/* Content Overlay */}
-      <div className=" w-full  bg-white flex justify-between items-start gap-[1rem] z-10 px-7 py-2 mb-4">
-        {/* Title */}
-        <div>
-        <h3 className="text-black text-[1.825rem] font-medium leading-[1.21] w-full">
-          {title}
-        </h3>
-      
-        {/* Description and Year */}
-        <div className="flex justify-between items-start lg:items-end xl:items-end gap-[ .9375rem] w-full">
-          <p className="text-black text-[1rem] font-light leading-[1.21] max-w-[23.25rem] flex-1">
-            {description}
-          </p>
+    return (
+        <div
+            className={`relative flex h-full w-full flex-col overflow-hidden rounded-[1.875rem] bg-[#F7F7F7] ${className}`}
+        >
+            {/* Background Image */}
+            <div className="h-[85%] w-full overflow-hidden rounded-[1.875rem] p-2">
+                <img
+                    src={imageSrc}
+                    alt={imageAlt}
+                    className="h-full w-full overflow-hidden rounded-[1.475rem] object-cover"
+                />
+            </div>
+
+            {/* Content Overlay */}
+            <div className="z-10 mb-4 flex w-full items-start justify-between gap-[1rem] bg-white px-7 py-2">
+                {/* Title */}
+                <div>
+                    <h3 className="w-full text-[1.825rem] leading-[1.21] font-medium text-black">
+                        {title}
+                    </h3>
+
+                    {/* Description and Year */}
+                    <div className="gap-[ .9375rem] flex w-full items-start justify-between lg:items-end xl:items-end">
+                        <p className="max-w-[23.25rem] flex-1 text-[1rem] leading-[1.21] font-light text-black">
+                            {description}
+                        </p>
+                    </div>
+                </div>
+                <span className="text-[1rem] leading-[1.21] font-light whitespace-nowrap text-black">
+                    {year}
+                </span>
+            </div>
         </div>
-        </div>
-          <span className="text-black text-[1rem] font-light leading-[1.21] whitespace-nowrap">
-            {year}
-          </span>
-      </div>
-    </div>
-  );
+    );
 }

@@ -40,7 +40,7 @@ const ProjectCard = ({
             {/* Background Image */}
             <div className="absolute inset-0">
                 <Image
-                    src="/assets/project-bg.png"
+                    src={project?.image || '/assets/project-bg.png'}
                     alt="Project background"
                     fill
                     className="object-cover"
@@ -48,31 +48,30 @@ const ProjectCard = ({
             </div>
 
             {/* Content */}
-            <div className="absolute bottom-4 left-4 sm:bottom-8 sm:left-8 md:bottom-12 md:left-12 lg:bottom-16 lg:left-16 text-black">
-                <h3 className="mb-1 sm:mb-2 text-[18px] sm:text-[22px] md:text-[26px] lg:text-[29px] font-medium leading-[1.21]">
+            <div className="absolute bottom-4 left-4 text-black sm:bottom-8 sm:left-8 md:bottom-12 md:left-12 lg:bottom-16 lg:left-16">
+                <h3 className="mb-1 text-[18px] leading-[1.21] font-medium sm:mb-2 sm:text-[22px] md:text-[26px] lg:text-[29px]">
                     {project?.title || 'ELEMENTO'}
                 </h3>
-                <p className="max-w-[200px] sm:max-w-[240px] md:max-w-[270px] lg:max-w-[294px] text-[12px] sm:text-[13px] md:text-[14px] lg:text-[14.6px] font-normal leading-[1.21]">
-                    {project?.description || 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'}
+                <p className="max-w-[200px] text-[12px] leading-[1.21] font-normal sm:max-w-[240px] sm:text-[13px] md:max-w-[270px] md:text-[14px] lg:max-w-[294px] lg:text-[14.6px]">
+                    {project?.description ||
+                        'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'}
                 </p>
 
-                <div className="relative flex items-center mt-3 sm:mt-4 md:mt-5">
-                  <button>
-
-                    <Image
-                        src="/assets/arrow-icon.svg"
-                        alt="Arrow icon"
-                        width={100}
-                        height={42}
-                        className="transition-transform group-hover:scale-105 sm:w-[118px] sm:h-[50px] md:w-[135px] md:h-[57px] lg:w-[148.5px] lg:h-[62.5px]"
-                    />
-                    <span className="absolute left-[18px] top-[12px] sm:left-[22px] sm:top-[15px] md:left-[25px] md:top-[17px] lg:left-[27px] lg:top-[19px] text-white text-[12px] sm:text-[14px] md:text-[15px] lg:text-base font-medium">
-                        View project
-                    </span>
-                   </button>
+                <div className="relative mt-3 flex items-center sm:mt-4 md:mt-5">
+                    <button>
+                        <Image
+                            src="/assets/arrow-icon.svg"
+                            alt="Arrow icon"
+                            width={100}
+                            height={42}
+                            className="transition-transform group-hover:scale-105 sm:h-[50px] sm:w-[118px] md:h-[57px] md:w-[135px] lg:h-[62.5px] lg:w-[148.5px]"
+                        />
+                        <span className="absolute top-[12px] left-[18px] text-[10px] font-medium text-white sm:top-[15px] sm:left-[22px] sm:text-[14px] md:top-[17px] md:left-[25px] md:text-[15px] lg:top-[19px] lg:left-[27px] lg:text-base">
+                            View project
+                        </span>
+                    </button>
                 </div>
             </div>
- 
         </div>
     );
 };
@@ -193,7 +192,7 @@ export default function FeaturedProjectsSection() {
 
     return (
         <section className="w-full bg-black py-8 md:py-12 lg:py-16">
-            <div className="mx-auto w-full max-w-[1580px] px-4 md:px-8 lg:px-16">
+            <div className="mx-auto w-full max-w-[2680px] px-4 md:px-8 lg:px-16">
                 {/* Header Section */}
                 <div className="mb-12 flex flex-col items-center md:mb-16 lg:mb-20">
                     {/* What We Do Scroller */}
@@ -221,7 +220,7 @@ export default function FeaturedProjectsSection() {
                     {/* Navigation Arrows */}
                     <button
                         onClick={goToPrev}
-                        className="absolute left-4 top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-gray-800 border border-gray-600 shadow-lg transition-all hover:bg-gray-700 hover:scale-105 md:h-14 md:w-14 lg:left-8"
+                        className="absolute top-1/2 left-4 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-gray-600 bg-gray-800 shadow-lg transition-all hover:scale-105 hover:bg-gray-700 md:h-14 md:w-14 lg:left-8"
                     >
                         <svg
                             className="h-5 w-5 text-white md:h-6 md:w-6"
@@ -237,10 +236,10 @@ export default function FeaturedProjectsSection() {
                             />
                         </svg>
                     </button>
-                    
+
                     <button
                         onClick={goToNext}
-                        className="absolute right-4 top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-gray-800 border border-gray-600 shadow-lg transition-all hover:bg-gray-700 hover:scale-105 md:h-14 md:w-14 lg:right-8"
+                        className="absolute top-1/2 right-4 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-gray-600 bg-gray-800 shadow-lg transition-all hover:scale-105 hover:bg-gray-700 md:h-14 md:w-14 lg:right-8"
                     >
                         <svg
                             className="h-5 w-5 text-white md:h-6 md:w-6"
@@ -258,7 +257,7 @@ export default function FeaturedProjectsSection() {
                     </button>
 
                     {/* Sliding Carousel Container */}
-                    <div className="h-[400px] w-full md:h-[500px] lg:h-[600px] overflow-hidden">
+                    <div className="h-[400px] w-full overflow-hidden md:h-[500px] lg:h-[600px]">
                         <Slider
                             ref={sliderRef}
                             {...settings}
@@ -267,10 +266,10 @@ export default function FeaturedProjectsSection() {
                             {projects.map((project) => (
                                 <div
                                     key={project.id}
-                                    className="relative lg:-ml-12 transition-all duration-300 outline-none w-[450px] sm:w-[600px] md:w-[730px]  lg:w-[830px] xl:w-[830px]" 
+                                    className="relative w-[450px] transition-all duration-300 outline-none sm:w-[600px] md:w-[730px] lg:-ml-12 lg:w-[830px] xl:w-[830px]"
                                 >
                                     <motion.div
-                                        className={`relative flex h-[350px] flex-col rounded-xl transition-all duration-300 md:h-[450px] lg:h-[550px] w-full ${
+                                        className={`relative flex h-[350px] w-full flex-col rounded-xl transition-all duration-300 md:h-[450px] lg:h-[550px] ${
                                             selectedImg &&
                                             selectedImg.id === project.id
                                                 ? 'scale-100'
@@ -287,10 +286,9 @@ export default function FeaturedProjectsSection() {
                                     >
                                         <div className="relative h-full w-full">
                                             <ProjectCard
-                                             
                                                 project={project}
-                                                className="h-full w-[250px] xs:w-[300px] sm:w-[500px] md:w-[600px] lg:w-[900px] xl:w-[900px]"
-                                            /> 
+                                                className="xs:w-[300px] h-full w-[250px] sm:w-[500px] md:w-[600px] lg:w-[900px] xl:w-[900px]"
+                                            />
                                         </div>
                                     </motion.div>
                                 </div>
@@ -339,7 +337,7 @@ export default function FeaturedProjectsSection() {
 
                 {/* View All Button */}
                 <div className="flex justify-center">
-                    <button className="min-w-[200px] rounded-full bg-white border border-gray-300 px-8 py-3 text-sm font-medium text-black transition-colors hover:bg-gray-100 hover:border-gray-400 md:min-w-[271px] md:px-12 md:py-4 md:text-base lg:text-lg">
+                    <button className="min-w-[200px] rounded-full border border-gray-300 bg-white px-8 py-3 text-sm font-medium text-black transition-colors hover:border-gray-400 hover:bg-gray-100 md:min-w-[271px] md:px-12 md:py-4 md:text-base lg:text-lg">
                         View all
                     </button>
                 </div>
