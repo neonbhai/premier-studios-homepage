@@ -63,16 +63,16 @@ const projects = [
 
 export default function Projects() {
     return (
-        <div className="bg-black">
+        <div className="bg-[#050505]">
             {/* Projects Header */}
-            <NavBar />
+            <NavBar project />
             <ProjectsHeader />
 
             {/* Project Filter */}
             <ProjectFilter />
 
             {/* Projects Grid */}
-            <section className="w-full bg-black py-[3.125rem]">
+            <section className="w-full bg-[#050505] py-[3.125rem]">
                 <div className="mx-auto px-[1rem] md:px-[2rem] lg:px-[5rem]">
                     <div className="grid grid-cols-1 gap-[2.5rem] md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
                         {projects.map((project) => (

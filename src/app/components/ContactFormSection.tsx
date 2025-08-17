@@ -65,7 +65,7 @@ export default function ContactFormSection({
     };
 
     return (
-        <section className="w-full bg-black py-[2rem] md:py-[3.125rem]">
+        <section className="w-full bg-[#050505] py-[2rem] md:py-[3.125rem]">
             <div className="container mx-auto px-[1rem] md:px-[2rem] lg:px-[5rem]">
                 <div className="flex flex-col items-start gap-[2rem] md:gap-[3.125rem] xl:flex-row">
                     {/* Left Content */}
@@ -99,12 +99,18 @@ export default function ContactFormSection({
                         {/* Contact Info */}
                         <div className="flex w-full max-w-[20.25rem] flex-col gap-[1.5rem] md:gap-[2.1875rem]">
                             <div className="flex flex-col gap-[1.5rem] md:gap-[2.1875rem]">
-                                <div className="text-[1.5rem] leading-[1.21] font-medium text-white md:text-[2.25rem]">
+                                <a 
+                                    href={`mailto:${email}`}
+                                    className="text-[1.5rem] leading-[1.21] font-medium text-white md:text-[2.25rem] hover:text-[#029BE6] transition-colors cursor-pointer"
+                                >
                                     {email}
-                                </div>
-                                <div className="w-full text-[0.875rem] leading-[1.21] font-medium text-white/52 md:text-[1rem]">
+                                </a>
+                                <a 
+                                    href={`tel:${phone}`}
+                                    className="w-full text-[0.875rem] leading-[1.21] font-medium text-white/52 md:text-[1rem] hover:text-[#029BE6] transition-colors cursor-pointer"
+                                >
                                     {phone}
-                                </div>
+                                </a>
                             </div>
 
                             {/* Divider */}
@@ -149,7 +155,7 @@ export default function ContactFormSection({
                                                 selectedInterests.includes(
                                                     interest
                                                 )
-                                                    ? 'bg-[#029BE6] text-white'
+                                                    ? 'bg-[#029BE6] border-[1.5px] border-[#029BE6] text-white'
                                                     : 'border-[1.5px] border-black/52 text-black/52'
                                             }`}
                                         >

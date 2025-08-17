@@ -4,9 +4,9 @@ import NavBar from '../components/NavBar';
 
 export default function ContactUs() {
     return (
-        <div className="">
+        <div className=" bg-[#050505] ">
             {/* Hero Section */}
-            <NavBar />
+            <NavBar project/>
 
             {/* Contact Form Section */}
             <ContactFormSection />

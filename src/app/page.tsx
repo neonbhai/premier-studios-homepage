@@ -3,6 +3,7 @@ import AboutSection from "./components/AboutSection";
 import MarqueeSection from "./components/MarqueeSection";
 import ContentSection from "./components/ContentSection";
 import FeaturedProjectsSection from "./components/FeaturedProjectsSection";
+import MinecraftServicesSection from "./components/MinecraftServicesSection";
 import ServicesSection from "./components/ServicesSection";
 import TestimonialsSection from "./components/TestimonialsSection";
 import ProjectCategoriesSection from "./components/ProjectCategoriesSection";
@@ -11,7 +12,7 @@ import FooterSection from "./components/FooterSection";
 
 export default function Home() {
   return (
-    <div className="">
+    <div className=" bg-[#050505]">
     {/* Hero Section */}
     <HeroSection showNavBar={true} />
     
@@ -26,6 +27,9 @@ export default function Home() {
     
     {/* Featured Projects Section */}
     <FeaturedProjectsSection />
+    
+    {/* Minecraft Services Section */}
+    <MinecraftServicesSection />
     
     {/* Services Section */}
     <ServicesSection />
