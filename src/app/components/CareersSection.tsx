@@ -31,8 +31,6 @@ export default function CareersSection() {
         },
     ];
 
-    const scrollingText = Array(5).fill('Careers');
-
     return (
         <section className="w-full bg-black py-8 md:py-12 lg:py-16">
             <div className="w-full px-4 md:px-8 lg:px-16">

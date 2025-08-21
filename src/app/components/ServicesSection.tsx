@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import Tags from './commons/Tags';
 import HeaderSide from './commons/HeaderSide';
 
@@ -71,7 +70,7 @@ export default function ServicesSection() {
 
     return (
         <section className="w-full bg-black py-8 md:py-12 lg:py-16">
-            <div className=" w-full  px-4 md:px-8 lg:px-16">
+            <div className="w-full px-4 md:px-8 lg:px-16">
                 {/* Header Section */}
                 <div className="mb-12 flex flex-col gap-8 md:mb-16 lg:mb-20 lg:flex-row lg:items-end lg:justify-between lg:gap-12">
                     {/* Left Side - Title and Scroller */}

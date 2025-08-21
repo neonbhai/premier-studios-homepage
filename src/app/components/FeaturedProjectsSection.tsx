@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import Tags from './commons/Tags';
 import HeaderCenter from './commons/HeaderCenter';
 import Slider from 'react-slick';

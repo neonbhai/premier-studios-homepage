@@ -23,10 +23,11 @@ export default function ProjectCard({
         >
             {/* Background Image */}
             <div className="h-[85%] w-full overflow-hidden rounded-[1.875rem] p-2">
-                <img
+                <Image
                     src={imageSrc}
                     alt={imageAlt}
-                    className="h-full w-full overflow-hidden rounded-[1.475rem] object-cover"
+                    fill
+                    className="overflow-hidden rounded-[1.475rem] object-cover"
                 />
             </div>
 

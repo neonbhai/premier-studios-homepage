@@ -9,14 +9,12 @@ interface Service {
 
 interface OfferSectionProps {
     tagText?: string;
-    title?: string;
     ctaText?: string;
     services?: Service[];
 }
 
 export default function OfferSection({
     tagText = 'Our services',
-    title = 'What we Offer',
     ctaText = 'Collaborate with us',
     services = [
         {

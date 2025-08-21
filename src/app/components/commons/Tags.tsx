@@ -3,7 +3,6 @@ interface TagsProps {
     maxWidth?: string;
     className?: string;
     variant?: 'light' | 'dark';
-    center?: boolean;
     showDot?: boolean;
 }
 
@@ -12,7 +11,6 @@ export default function Tags({
     maxWidth = '7.4375rem',
     className = '',
     variant = 'dark',
-    center = false,
     showDot = true,
 }: TagsProps) {
     const variantClasses = {
@@ -49,7 +47,7 @@ export default function Tags({
             style={{ maxWidth }}
         >
             <div
-                className="flex items-center gap-[0.5625rem] animate-marquee"
+                className="animate-marquee flex items-center gap-[0.5625rem]"
                 style={{ width: 'fit-content' }}
             >
                 {Array.from({ length: 25 }, (_, i) => (

@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 interface ArrowButtonProps {
     text?: string;
     onClick?: () => void;
@@ -63,7 +61,7 @@ export default function ArrowButton({
 
                 {/* Button Text */}
                 <span
-                    className={`absolute ${currentSize.textPosition} ${currentSize.text} -ml-1 z-10 font-medium transition-all duration-300 ${
+                    className={`absolute ${currentSize.textPosition} ${currentSize.text} z-10 -ml-1 font-medium transition-all duration-300 ${
                         variant === 'light'
                             ? 'text-black group-hover:text-white'
                             : 'text-white group-hover:text-black'

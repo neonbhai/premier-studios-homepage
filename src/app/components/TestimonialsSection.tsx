@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import HeaderCenter from './commons/HeaderCenter';
 import Tags from './commons/Tags';
 import ArrowButton from './commons/ArrowButton';
@@ -111,6 +111,7 @@ export default function TestimonialsSection() {
     const carouselRef = useRef<HTMLDivElement>(null);
     const [currentSlide, setCurrentSlide] = useState(0);
     const [scrollPosition, setScrollPosition] = useState(0);
+    const [isTransitioning, setIsTransitioning] = useState(false);
 
     const testimonials = [
         { id: 1, featured: false },
@@ -146,47 +147,80 @@ export default function TestimonialsSection() {
         }
     }, []);
 
-    const scrollToSlide = (slideIndex: number) => {
-        if (carouselRef.current && typeof window !== 'undefined') {
-            const cardWidth =
-                window.innerWidth >= 1280
-                    ? 620
-                    : window.innerWidth >= 1024
-                      ? 520
-                      : window.innerWidth >= 768
-                        ? 420
-                        : 340;
-            const gap = window.innerWidth >= 1024 ? 32 : 4;
-            const slideWidth = cardWidth + gap;
+    const scrollToSlide = useCallback(
+        (slideIndex: number) => {
+            if (
+                carouselRef.current &&
+                typeof window !== 'undefined' &&
+                !isTransitioning
+            ) {
+                setIsTransitioning(true);
+                const cardWidth =
+                    window.innerWidth >= 1280
+                        ? 620
+                        : window.innerWidth >= 1024
+                          ? 520
+                          : window.innerWidth >= 768
+                            ? 420
+                            : 340;
+                const gap = window.innerWidth >= 1024 ? 32 : 4;
+                const slideWidth = cardWidth + gap;
 
-            carouselRef.current.scrollTo({
-                left: slideIndex * (window.innerWidth < 400 ? 350 : slideWidth),
-                behavior: 'smooth',
-            });
-            setCurrentSlide(slideIndex);
-        }
-    };
+                const targetScrollLeft =
+                    slideIndex * (window.innerWidth < 400 ? 350 : slideWidth);
 
-    const nextSlide = () => {
+                // Animate scroll with precise 0.3s linear timing to match image transition
+                const startScrollLeft = carouselRef.current.scrollLeft;
+                const distance = targetScrollLeft - startScrollLeft;
+                const duration = 300; // 0.3s in milliseconds
+                const startTime = performance.now();
+
+                const animateScroll = (currentTime: number) => {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+
+                    if (carouselRef.current) {
+                        // Linear interpolation to match the image transition timing
+                        carouselRef.current.scrollLeft =
+                            startScrollLeft + distance * progress;
+                    }
+
+                    if (progress < 1) {
+                        requestAnimationFrame(animateScroll);
+                    } else {
+                        setIsTransitioning(false);
+                    }
+                };
+
+                requestAnimationFrame(animateScroll);
+                setCurrentSlide(slideIndex);
+            }
+        },
+        [isTransitioning]
+    );
+
+    const nextSlide = useCallback(() => {
         const nextIndex =
             currentSlide < testimonials.length - 1 ? currentSlide + 1 : 0;
         scrollToSlide(nextIndex);
-    };
+    }, [currentSlide, testimonials.length, scrollToSlide]);
 
-    const prevSlide = () => {
+    const prevSlide = useCallback(() => {
         const prevIndex =
             currentSlide > 0 ? currentSlide - 1 : testimonials.length - 1;
         scrollToSlide(prevIndex);
-    };
+    }, [currentSlide, testimonials.length, scrollToSlide]);
 
     // Auto-scroll functionality
     useEffect(() => {
         const interval = setInterval(() => {
-            nextSlide();
+            if (!isTransitioning) {
+                nextSlide();
+            }
         }, 5000); // Auto-scroll every 5 seconds
 
         return () => clearInterval(interval);
-    }, [currentSlide]);
+    }, [currentSlide, isTransitioning, nextSlide]);
 
     return (
         <section className="w-full bg-black py-8 md:py-12 lg:py-16">

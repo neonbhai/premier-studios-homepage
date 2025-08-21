@@ -6,7 +6,6 @@ import HeaderSide from './commons/HeaderSide';
 
 interface ContactFormSectionProps {
     tagText?: string;
-    title?: string;
     description?: string;
     email?: string;
     phone?: string;
@@ -15,7 +14,6 @@ interface ContactFormSectionProps {
 
 export default function ContactFormSection({
     tagText = 'Contact us',
-    title = "Let's Create Something Extraordinary",
     description = "Whether you're looking for a custom solution, need support, or just want to explore possibilities — we'd love to hear from you.",
     email = 'hello@premier.com',
     phone = '+44 20 7946 0958',
@@ -99,15 +97,15 @@ export default function ContactFormSection({
                         {/* Contact Info */}
                         <div className="flex w-full max-w-[20.25rem] flex-col gap-[1.5rem] md:gap-[2.1875rem]">
                             <div className="flex flex-col gap-[1.5rem] md:gap-[2.1875rem]">
-                                <a 
+                                <a
                                     href={`mailto:${email}`}
-                                    className="text-[1.5rem] leading-[1.21] font-medium text-white md:text-[2.25rem] hover:text-[#029BE6] transition-colors cursor-pointer"
+                                    className="cursor-pointer text-[1.5rem] leading-[1.21] font-medium text-white transition-colors hover:text-[#029BE6] md:text-[2.25rem]"
                                 >
                                     {email}
                                 </a>
-                                <a 
+                                <a
                                     href={`tel:${phone}`}
-                                    className="w-full text-[0.875rem] leading-[1.21] font-medium text-white/52 md:text-[1rem] hover:text-[#029BE6] transition-colors cursor-pointer"
+                                    className="w-full cursor-pointer text-[0.875rem] leading-[1.21] font-medium text-white/52 transition-colors hover:text-[#029BE6] md:text-[1rem]"
                                 >
                                     {phone}
                                 </a>
@@ -155,7 +153,7 @@ export default function ContactFormSection({
                                                 selectedInterests.includes(
                                                     interest
                                                 )
-                                                    ? 'bg-[#029BE6] border-[1.5px] border-[#029BE6] text-white'
+                                                    ? 'border-[1.5px] border-[#029BE6] bg-[#029BE6] text-white'
                                                     : 'border-[1.5px] border-black/52 text-black/52'
                                             }`}
                                         >
