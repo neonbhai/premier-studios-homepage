@@ -4,11 +4,12 @@ import OfferSection from '../components/OfferSection';
 import ContentSection from '../components/ContentSection';
 import TestimonialsSection from '../components/TestimonialsSection';
 import CareersSection from '../components/CareersSection';
+import ScrollAnimatedSection from '../components/scroll-animated-section';
 
 export default function AboutUs() {
     return (
         <div className="">
-            {/* Hero Section */}
+            {/* Hero Section - No animation (first section) */}
             <HeroSection
                 showYearBadge={false}
                 showContentSection={false}
@@ -19,19 +20,29 @@ export default function AboutUs() {
             />
 
             {/* About Section */}
-            <AboutSection />
+            <ScrollAnimatedSection>
+                <AboutSection />
+            </ScrollAnimatedSection>
 
             {/* Offer Section */}
-            <OfferSection />
+            <ScrollAnimatedSection>
+                <OfferSection />
+            </ScrollAnimatedSection>
 
             {/* Content Section */}
-            <ContentSection reverse />
+            <ScrollAnimatedSection>
+                <ContentSection reverse />
+            </ScrollAnimatedSection>
 
-            {/* Testimoniala */}
-            <TestimonialsSection />
+            {/* Testimonials */}
+            <ScrollAnimatedSection>
+                <TestimonialsSection />
+            </ScrollAnimatedSection>
 
             {/* Careers Section */}
-            <CareersSection />
+            <ScrollAnimatedSection>
+                <CareersSection />
+            </ScrollAnimatedSection>
         </div>
     );
 }

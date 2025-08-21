@@ -19,36 +19,36 @@ export default function ProjectCard({
 }: ProjectCardProps) {
     return (
         <div
-            className={`relative flex h-full w-full flex-col overflow-hidden rounded-[1.875rem] bg-[#F7F7F7] ${className}`}
+            className={`w-full overflow-hidden rounded-[1.875rem] bg-[#F7F7F7] ${className}`}
         >
-            {/* Background Image */}
-            <div className="h-[85%] w-full overflow-hidden rounded-[1.875rem] p-2">
+            {/* Image Section - Top portion */}
+            <div className="relative m-[7px] h-[300px] overflow-hidden rounded-[1.5rem] sm:h-[350px] md:h-[400px] lg:h-[477px]">
                 <Image
                     src={imageSrc}
                     alt={imageAlt}
                     fill
-                    className="overflow-hidden rounded-[1.475rem] object-cover"
+                    className="object-cover"
                 />
             </div>
 
-            {/* Content Overlay */}
-            <div className="z-10 mb-4 flex w-full items-start justify-between gap-[1rem] bg-white px-7 py-2">
-                {/* Title */}
-                <div>
-                    <h3 className="w-full text-[1.825rem] leading-[1.21] font-medium text-black">
+            {/* Text Content Section - Bottom portion */}
+            <div className="p-[1.875rem] pt-4">
+                <div className="flex flex-col gap-4">
+                    {/* Title */}
+                    <h3 className="text-[1.5rem] leading-[1.21] font-medium text-black sm:text-[1.75rem] md:text-[1.825rem] lg:text-[1.825rem]">
                         {title}
                     </h3>
 
-                    {/* Description and Year */}
-                    <div className="gap-[ .9375rem] flex w-full items-start justify-between lg:items-end xl:items-end">
-                        <p className="max-w-[23.25rem] flex-1 text-[1rem] leading-[1.21] font-light text-black">
+                    {/* Description and Year Row */}
+                    <div className="flex items-start justify-between gap-4 lg:gap-[159px]">
+                        <p className="max-w-[280px] flex-1 text-[0.875rem] leading-[1.21] font-light text-black sm:max-w-[320px] sm:text-[0.9375rem] md:max-w-[350px] md:text-[1rem] lg:max-w-[372px] lg:text-[1rem]">
                             {description}
                         </p>
+                        <span className="flex-shrink-0 text-[0.875rem] leading-[1.21] font-light whitespace-nowrap text-black sm:text-[0.9375rem] md:text-[1rem] lg:text-[1rem]">
+                            {year}
+                        </span>
                     </div>
                 </div>
-                <span className="text-[1rem] leading-[1.21] font-light whitespace-nowrap text-black">
-                    {year}
-                </span>
             </div>
         </div>
     );
