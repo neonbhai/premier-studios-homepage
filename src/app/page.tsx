@@ -6,34 +6,49 @@ import FeaturedProjectsSection from './components/FeaturedProjectsSection';
 import MinecraftServicesSection from './components/MinecraftServicesSection';
 import ServicesSection from './components/ServicesSection';
 import TestimonialsSection from './components/TestimonialsSection';
+import ScrollAnimatedSection from './components/scroll-animated-section';
 
 export default function Home() {
     return (
         <div className="bg-[#050505]">
-            {/* Hero Section */}
+            {/* Hero Section - No animation (first section) */}
             <HeroSection showNavBar={true} />
 
             {/* About Section */}
-            <AboutSection />
+            <ScrollAnimatedSection>
+                <AboutSection />
+            </ScrollAnimatedSection>
 
             {/* Marquee Section */}
-            <MarqueeSection />
+            <ScrollAnimatedSection>
+                <MarqueeSection />
+            </ScrollAnimatedSection>
 
             {/* Content Section */}
-            <ContentSection reverse={false} />
+            <ScrollAnimatedSection>
+                <ContentSection reverse={false} />
+            </ScrollAnimatedSection>
 
             {/* Featured Projects Section */}
-            <FeaturedProjectsSection />
+            <ScrollAnimatedSection>
+                <FeaturedProjectsSection />
+            </ScrollAnimatedSection>
 
             {/* Minecraft Services Section */}
-            <MinecraftServicesSection />
+            <ScrollAnimatedSection>
+                <MinecraftServicesSection />
+            </ScrollAnimatedSection>
 
             {/* Services Section */}
-            <ServicesSection />
+            <ScrollAnimatedSection>
+                <ServicesSection />
+            </ScrollAnimatedSection>
 
             {/* Testimonials Section */}
-            <TestimonialsSection />
-            {/* Footer Section */}
+            <ScrollAnimatedSection>
+                <TestimonialsSection />
+            </ScrollAnimatedSection>
+            {/* Footer Section - No animation (footer) */}
             {/* <FooterSection /> */}
         </div>
     );

@@ -1,14 +1,17 @@
 import ContactFormSection from '../components/ContactFormSection';
 import NavBar from '../components/NavBar';
+import ScrollAnimatedSection from '../components/scroll-animated-section';
 
 export default function ContactUs() {
     return (
         <div className="bg-[#050505]">
-            {/* Hero Section */}
+            {/* NavBar - No animation (first section) */}
             <NavBar project />
 
             {/* Contact Form Section */}
-            <ContactFormSection />
+            <ScrollAnimatedSection>
+                <ContactFormSection />
+            </ScrollAnimatedSection>
         </div>
     );
 }

@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 // import NavBar from "./components/NavBar";
 import { Footer } from './components/Footer';
+import '@/lib/gsap-config'; // Initialize GSAP configuration
 
 const inter = Inter({
     variable: '--font-inter',
