@@ -41,10 +41,11 @@ export default function HeroSection({
         <div className="relative h-screen min-h-[600px] w-full overflow-hidden">
             {/* Background Image */}
             <div className="absolute inset-0 m-[17px] rounded-2xl">
-                <img
+                <Image
                     src={backgroundImage}
                     alt="Hero background"
-                    className="h-full w-full rounded-2xl object-center grayscale"
+                    fill
+                    className="rounded-2xl object-cover grayscale"
                 />
                 {/* Dark overlay */}
                 <div className="absolute inset-0 rounded-2xl bg-black/30"></div>
@@ -70,7 +71,7 @@ export default function HeroSection({
 
             {/* Content Section */}
             {showContentSection && (
-                <div className="absolute top-[30vh] left-7 flex  flex-col gap-6 sm:top-[32vh] sm:left-8  w-[calc(90%-4rem)]  sm:w-[calc(70%-4rem)]  md:w-[calc(40%-4rem)] sm:gap-8 xl:top-[32.4vh] xl:left-[4.3vw] xl:w-[29.5vw] xl:gap-[3.9vh]">
+                <div className="absolute top-[30vh] left-7 flex w-[calc(90%-4rem)] flex-col gap-6 sm:top-[32vh] sm:left-8 sm:w-[calc(70%-4rem)] sm:gap-8 md:w-[calc(40%-4rem)] xl:top-[32.4vh] xl:left-[4.3vw] xl:w-[29.5vw] xl:gap-[3.9vh]">
                     <div className="flex flex-col gap-4 sm:gap-5 xl:gap-[2.6vh]">
                         {/* Heading */}
                         <h2 className="font-bricolage max-w-[90%] text-xl leading-[1.2] font-medium text-[#F7F7F7] sm:text-2xl xl:max-w-[27.1vw] xl:text-[2.3vw]">
@@ -117,7 +118,7 @@ export default function HeroSection({
             )}
             {!showYearBadge && (
                 <div className="absolute right-6 bottom-6 sm:right-8 sm:bottom-0 xl:right-[4.3vw]">
-                    <h1 className="text-6xl leading-[1.199] font-medium text-white sm:text-6xl md:text-8xl xl:text-[15.1vw] pointer-events-none">
+                    <h1 className="pointer-events-none text-6xl leading-[1.199] font-medium text-white sm:text-6xl md:text-8xl xl:text-[15.1vw]">
                         {brandText.slice(0)}{' '}
                         <span className="text-[#029BE6]">
                             {brandHighlightLetter}
