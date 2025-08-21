@@ -192,7 +192,7 @@ export default function FeaturedProjectsSection() {
 
     return (
         <section className="w-full bg-black py-8 md:py-12 lg:py-16">
-            <div className="mx-auto w-full max-w-[2680px] px-4 md:px-8 lg:px-16">
+            <div className="mx-auto w-full max-w-[2680px]">
                 {/* Header Section */}
                 <div className="mb-12 flex flex-col items-center md:mb-16 lg:mb-20">
                     {/* What We Do Scroller */}
