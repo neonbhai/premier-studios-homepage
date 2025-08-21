@@ -101,7 +101,7 @@ export default function ContentSection({ reverse }: { reverse: boolean }) {
                     <div className="flex flex-col gap-8 md:gap-12">
                         {/* Why Us Scroller - Mobile */}
                         <div className="flex w-full justify-center md:justify-start lg:justify-start">
-                            <Tags text="Why Us" variant="dark" center />
+                            <Tags text="Why Us" variant="dark" />
                         </div>
 
                         {/* Image - Mobile */}

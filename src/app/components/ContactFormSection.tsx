@@ -56,10 +56,10 @@ export default function ContactFormSection({
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        console.log('Form submitted:', {
-            ...formData,
-            interests: selectedInterests,
-        });
+        // console.log('Form submitted:', {
+        //     ...formData,
+        //     interests: selectedInterests,
+        // });
     };
 
     return (

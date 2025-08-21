@@ -196,7 +196,7 @@ export default function FeaturedProjectsSection() {
                 {/* Header Section */}
                 <div className="mb-12 flex flex-col items-center md:mb-16 lg:mb-20">
                     {/* What We Do Scroller */}
-                    <Tags text="What do we do" variant="dark" center />
+                    <Tags text="What do we do" variant="dark" />
 
                     {/* Title and Description */}
                     <div className="flex max-w-2xl flex-col items-center gap-6 text-center md:gap-8">

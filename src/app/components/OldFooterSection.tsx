@@ -9,7 +9,7 @@ export default function FooterSection() {
     const handleSubscribe = (e: React.FormEvent) => {
         e.preventDefault();
         // Handle subscription logic here
-        console.log('Subscribe email:', email);
+        // console.log('Subscribe email:', email);
         setEmail('');
     };
 

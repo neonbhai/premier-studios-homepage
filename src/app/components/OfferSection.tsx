@@ -45,7 +45,7 @@ export default function OfferSection({
                     <div className="flex flex-col gap-[1.875rem]">
                         {/* Infinite Scroller */}
                         <div className="flex w-full justify-center md:justify-start lg:justify-start">
-                            <Tags text={tagText} variant="dark" center />
+                            <Tags text={tagText} variant="dark" />
                         </div>
 
                         {/* Title and CTA */}

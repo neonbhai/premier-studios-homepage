@@ -84,14 +84,6 @@ export const ButtonWithCutoff: React.FC<ButtonWithCutoffProps> = ({
 
     const sizeConfig = getSizeConfig(size);
 
-    // Debug logging
-    console.log('ButtonWithCutoff render:', {
-        size,
-        sizeConfig,
-        flipped,
-        text,
-    });
-
     const content = (
         <div
             className="button-cutoff-container relative flex-shrink-0"
