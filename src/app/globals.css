@@ -84,6 +84,29 @@ body {
   font-family: 'Sherika', serif;
 }
 
+.font-mono {
+  font-family: 'Inter', 'Courier New', monospace;
+}
+
+.font-body {
+  font-family: 'Inter', sans-serif;
+}
+
+.font-heading {
+  font-family: 'Bricolage Grotesque', sans-serif;
+}
+
+.button-cutoff-container {
+  position: relative;
+  width: fit-content;
+}
+
+.button-cutoff-text {
+  position: relative;
+  z-index: 1;
+  font-weight: 500;
+}
+
 @keyframes scroll-x {
   0% {
     transform: translateX(0);
