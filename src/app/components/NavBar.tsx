@@ -30,11 +30,11 @@ export default function NavBar({
 
     return (
         <header
-            className={`${transparent ? 'relative z-10' : 'bg-transparent '} flex items-center justify-between px-6 pt-8 sm:px-9 sm:pt-9 xl:px-[4.3vw] xl:pt-[3vh] ${!transparent ? 'pb-4 sm:pb-6 xl:pb-[3vh]' : ''} `}
+            className={`${transparent ? 'relative z-10' : 'bg-transparent'} flex items-center justify-between px-6 pt-8 sm:px-9 sm:pt-9 xl:px-[4.3vw] xl:pt-[3vh] ${!transparent ? 'pb-4 sm:pb-6 xl:pb-[3vh]' : ''} `}
         >
             {/* Logo */}
             <Link href={'/'}>
-                <div className=" relative h-8 w-32 sm:h-10 sm:w-44 xl:h-[4.8vh] xl:w-[14.9vw]">
+                <div className="relative h-8 w-32 sm:h-10 sm:w-44 xl:h-[4.8vh] xl:w-[14.9vw]">
                     <Image
                         src={logoSrc}
                         alt={logoAlt}
@@ -55,12 +55,14 @@ export default function NavBar({
             {/* Navigation - Hidden on mobile */}
             <nav className="hidden items-center gap-[12.4vw] xl:flex">
                 {/* Nav Links */}
-                <div className={`flex h-[7.4vh] w-[40.6vw] items-center justify-center gap-[4.3vw] rounded-[76px] ${project?"":"bg-white/16"} px-6 py-4 backdrop-blur-[6px]`}>
+                <div
+                    className={`flex h-[7.4vh] w-[40.6vw] items-center justify-center gap-[4.3vw] rounded-[76px] ${project ? '' : 'bg-white/16'} px-6 py-4 backdrop-blur-[6px]`}
+                >
                     {navLinks.map((link, index) => (
                         <Link
                             key={index}
                             href={link?.href}
-                            className={` text-[1.1vw] leading-[1.21] font-normal whitespace-nowrap capitalize transition-opacity hover:opacity-80`}
+                            className={`text-[1.1vw] leading-[1.21] font-normal whitespace-nowrap capitalize transition-opacity hover:opacity-80`}
                         >
                             {link.label}
                         </Link>

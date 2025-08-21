@@ -4,11 +4,11 @@ import Tags from './commons/Tags';
 
 export default function ContentSection({ reverse }: { reverse: boolean }) {
     return (
-        <section className="container mx-auto  py-8 md:py-12 lg:py-16">
-            <div className="relative w-full px-[1rem] ">
+        <section className="container mx-auto py-8 md:py-12 lg:py-16">
+            <div className="relative w-full px-[1rem]">
                 {/* Desktop Layout */}
                 <div
-                     className={`hidden ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} justify-center relative min-h-[766px] w-full flex-col items-end gap-16 md:gap-20 lg:gap-32 lg:flex`}
+                    className={`hidden ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} relative min-h-[766px] w-full flex-col items-end justify-center gap-16 md:gap-20 lg:flex lg:gap-32`}
                 >
                     {/* Left Image - Desktop Position */}
                     <div className="relative">

@@ -56,8 +56,9 @@ const getInitialDimensions = (): WindowDimensions => ({ width: 0, height: 0 });
  */
 export const useResponsiveLayout = (): ResponsiveLayoutState => {
     // Important: initialize to a stable SSR value so server and first client render match
-    const [dimensions, setDimensions] =
-        useState<WindowDimensions>(getInitialDimensions());
+    const [dimensions, setDimensions] = useState<WindowDimensions>(
+        getInitialDimensions()
+    );
 
     const handleResize = useCallback(() => {
         if (typeof window !== 'undefined') {
