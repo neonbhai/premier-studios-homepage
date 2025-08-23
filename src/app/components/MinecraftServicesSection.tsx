@@ -5,7 +5,7 @@ import HeaderCenter from './commons/HeaderCenter';
 export default function MinecraftServicesSection() {
     return (
         <section className="mt-60 w-full px-2 py-8 md:py-12 lg:py-16">
-            <div className="mx-auto w-full max-w-[1420px] rounded-[30px] bg-white px-4 py-8 md:px-8 lg:px-16">
+            <div className="mx-auto w-full max-w-[1560px] rounded-[30px] bg-white px-4 py-8 md:px-8 lg:px-16">
                 <div className="relative flex flex-col items-center gap-8 lg:flex-row lg:gap-12">
                     {/* Image Section */}
                     <div className="animate-float relative z-10 -mt-60 w-full max-w-[623px] lg:w-1/2">
