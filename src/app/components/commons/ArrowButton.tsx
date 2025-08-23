@@ -39,7 +39,7 @@ export default function ArrowButton({
 
     return (
         <button
-            className={`group relative w-fit transition-all duration-300 hover:scale-105 ${className}`}
+            className={`group relative w-fit transition-all duration-300 ${className}`}
             onClick={onClick}
         >
             <div className={`${currentSize.container} relative`}>

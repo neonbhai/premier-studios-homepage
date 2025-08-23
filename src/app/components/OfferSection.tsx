@@ -1,41 +1,17 @@
 import HeaderSide from './commons/HeaderSide';
 import Tags from './commons/Tags';
-
-interface Service {
-    number: string;
-    title: string;
-    description: string;
-}
+import { offerServicesData, OfferService } from '../data/offerServicesData';
 
 interface OfferSectionProps {
     tagText?: string;
     ctaText?: string;
-    services?: Service[];
+    services?: OfferService[];
 }
 
 export default function OfferSection({
     tagText = 'Our services',
     ctaText = 'Collaborate with us',
-    services = [
-        {
-            number: '01',
-            title: 'Creative Services',
-            description:
-                'It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
-        },
-        {
-            number: '02',
-            title: 'Technical Services',
-            description:
-                'It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
-        },
-        {
-            number: '03',
-            title: 'Writing Services',
-            description:
-                'It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
-        },
-    ],
+    services = offerServicesData,
 }: OfferSectionProps) {
     return (
         <section className="w-full bg-black py-[3.125rem]">

@@ -17,12 +17,13 @@ export default function AboutUs() {
                 brandText="About"
                 brandHighlightLetter="us"
                 backgroundImage="/assets/about.png"
+                halfheight
             />
 
             {/* About Section */}
-            <ScrollAnimatedSection>
+            {/* <ScrollAnimatedSection> */}
                 <AboutSection />
-            </ScrollAnimatedSection>
+            {/* </ScrollAnimatedSection> */}
 
             {/* Offer Section */}
             <ScrollAnimatedSection>

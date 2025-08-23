@@ -7,18 +7,20 @@
 :root {
     --background: #ffffff;
     --foreground: #171717;
+    --primary: #60a5fa;
 }
 
 @theme inline {
     --color-background: var(--background);
     --color-foreground: var(--foreground);
-
+    --color-primary: var(--primary);
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
         --background: #0a0a0a;
         --foreground: #ededed;
+        --primary: #60a5fa;
     }
 }
 
@@ -115,7 +117,7 @@ body {
 }
 
 .animate-marquee {
-    animation: marquee 98s linear infinite;
+    animation: marquee 40s linear infinite;
 }
 
 .animate-marquee-1 {
@@ -186,8 +188,52 @@ body {
 
 .testimonials-slider .slick-slide {
     height: auto;
+    transition: all 0.3s ease-in-out;
 }
 
 .testimonials-slider .slick-slide > div {
     height: 100%;
 }
+
+/* Center mode styles for testimonials */
+.testimonials-slider .slick-center .testimonial-card {
+    transform: scale(1);
+    opacity: 1;
+    z-index: 2;
+}
+
+.testimonials-slider .slick-slide:not(.slick-center) .testimonial-card {
+    transform: scale(0.8);
+    opacity: 0.7;
+    z-index: 1;
+}
+
+/* Height animation for testimonial cards */
+.testimonials-slider .slick-center .testimonial-card-wrapper {
+    height: 100%;
+    transition: height 0.4s ease-in-out;
+}
+
+.testimonials-slider .slick-slide:not(.slick-center) .testimonial-card-wrapper {
+    height: 50%;
+    transition: height 0.4s ease-in-out;
+}
+
+/* Ensure the testimonial card content adjusts to wrapper height */
+.testimonial-card-wrapper .testimonial-card-content {
+    height: 100%;
+    transition: height 0.4s ease-in-out;
+}
+
+/* Animation for the image section specifically */
+.testimonials-slider .slick-center .testimonial-image-section {
+    height: 100%;
+    transition: height 0.4s ease-in-out;
+}
+
+.testimonials-slider .slick-slide:not(.slick-center) .testimonial-image-section {
+    height: 50%;
+    transition: height 0.4s ease-in-out;
+}
+
+/* Legal Pages Styles - Using inline utilities instead of @apply for Tailwind v4 compatibility */

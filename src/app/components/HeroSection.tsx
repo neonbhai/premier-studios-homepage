@@ -18,6 +18,7 @@ interface HeroSectionProps {
     showYearBadge?: boolean;
     showContentSection?: boolean;
     showNavBar?: boolean;
+    halfheight?: boolean;
 }
 
 export default function HeroSection({
@@ -36,16 +37,17 @@ export default function HeroSection({
     showYearBadge = true,
     showContentSection = true,
     showNavBar = true,
+    halfheight,
 }: HeroSectionProps) {
     return (
-        <div className="relative h-screen min-h-[600px] w-full overflow-hidden">
+        <div className={` relative ${halfheight?" md:h-screen lg:h-screen":" h-screen"} min-h-[500px] w-full overflow-hidden`}>
             {/* Background Image */}
             <div className="absolute inset-0 m-[17px] rounded-2xl">
                 <Image
                     src={backgroundImage}
                     alt="Hero background"
                     fill
-                    className="rounded-2xl object-cover grayscale"
+                    className="rounded-2xl object-cover md:object-center lg:object-center grayscale"
                 />
                 {/* Dark overlay */}
                 <div className="absolute inset-0 rounded-2xl bg-black/30"></div>
@@ -107,7 +109,7 @@ export default function HeroSection({
 
             {/* Large Premier Text */}
             {showYearBadge && (
-                <div className="absolute right-6 bottom-6 sm:right-8 sm:bottom-0 xl:right-[4.3vw]">
+                <div className="absolute right-6 bottom-6 sm:right-8 sm:bottom-4 xl:right-[4.3vw]">
                     <h1 className="text-6xl leading-[1.199] font-medium text-white sm:text-6xl md:text-8xl xl:text-[15.1vw]">
                         <span className="text-[#029BE6]">
                             {brandHighlightLetter}
@@ -117,8 +119,8 @@ export default function HeroSection({
                 </div>
             )}
             {!showYearBadge && (
-                <div className="absolute right-6 bottom-6 sm:right-8 sm:bottom-0 xl:right-[4.3vw]">
-                    <h1 className="pointer-events-none text-6xl leading-[1.199] font-medium text-white sm:text-6xl md:text-8xl xl:text-[15.1vw]">
+                <div className="absolute right-6 bottom-6 sm:right-8 sm:bottom-4 xl:right-[4.3vw]">
+                    <h1 className="pointer-events-none text-7xl leading-[1.199] font-medium text-white sm:text-7xl md:text-8xl xl:text-[15.1vw]">
                         {brandText.slice(0)}{' '}
                         <span className="text-[#029BE6]">
                             {brandHighlightLetter}

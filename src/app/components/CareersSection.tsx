@@ -35,7 +35,7 @@ export default function CareersSection() {
         <section className="w-full bg-black py-8 md:py-12 lg:py-16">
             <div className="w-full px-4 md:px-8 lg:px-16">
                 {/* Scrolling Marquee */}
-                <div className="flex w-full justify-center md:justify-start lg:justify-start">
+                <div className="flex w-full justify-start">
                     <Tags text="Career" />
                 </div>
 
@@ -58,7 +58,7 @@ export default function CareersSection() {
                         <div key={job.id}>
                             <div className="flex flex-col gap-5">
                                 {/* Job Type */}
-                                <p className="text-base font-normal text-white/52">
+                                <p className=" text-sm  md:text-base lg:text-base font-normal text-white/52">
                                     <span className="text-[#029BE6]">
                                         {' '}
                                         {job.number}
@@ -67,16 +67,16 @@ export default function CareersSection() {
                                 </p>
 
                                 {/* Job Title and Apply Button */}
-                                <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
-                                    <h3 className="w-full text-3xl leading-tight font-normal text-white md:text-4xl lg:text-[48px]">
+                                <div className="flex item s-start justify-between gap-6 flex-row items-center">
+                                    <h3 className="w-full text-lg sm:text-2xl leading-tight font-normal text-white md:text-4xl lg:text-[48px]">
                                         {job.title}
                                     </h3>
 
                                     <div className="flex items-center gap-5">
-                                        <span className="text-base font-medium text-white">
+                                        <span className="  text-sm  md:text-base lg:text-base font-medium text-white">
                                             Apply
                                         </span>
-                                        <div className="rounded-md border border-white p-2.5">
+                                        <div className="rounded-md scale-80 md:scale-100 lg:scale-100 border border-white p-2.5">
                                             <svg
                                                 width="11"
                                                 height="11"

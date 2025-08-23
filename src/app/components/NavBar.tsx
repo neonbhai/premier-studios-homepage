@@ -30,7 +30,7 @@ export default function NavBar({
 
     return (
         <header
-            className={`${transparent ? 'relative z-10' : 'bg-transparent'} flex items-center justify-between px-6 pt-8 sm:px-9 sm:pt-9 xl:px-[4.3vw] xl:pt-[3vh] ${!transparent ? 'pb-4 sm:pb-6 xl:pb-[3vh]' : ''} `}
+            className={`${transparent ? 'relative z-10' : 'bg-transparent'} flex items-start justify-between px-8 pt-8 sm:px-9 sm:pt-9 xl:px-[4.3vw] xl:pt-[3vh] ${!transparent ? 'pb-4 sm:pb-6 xl:pb-[3vh]' : ''} `}
         >
             {/* Logo */}
             <Link href={'/'}>
@@ -70,9 +70,11 @@ export default function NavBar({
                 </div>
 
                 {/* Contact Button */}
-                <button className="h-[7.1vh] w-[11.2vw] rounded-[48px] bg-[#007AFF] px-[1.1vw] py-[0.8vh] text-[1.1vw] leading-[1.21] font-normal whitespace-nowrap text-white transition-colors hover:bg-[#0056CC]">
-                    {contactButtonText}
-                </button>
+                <Link href={'/contact-us'}>
+                    <button className=" cursor-pointer h-[7.1vh] w-[11.2vw] rounded-[48px] bg-[#007AFF] px-[1.1vw] py-[0.8vh] text-[1.1vw] leading-[1.21] font-normal whitespace-nowrap text-white transition-colors hover:bg-[#0056CC]">
+                        {contactButtonText}
+                    </button>
+                </Link>
             </nav>
 
             {/* Mobile menu button */}
@@ -118,12 +120,14 @@ export default function NavBar({
                                 {link.label}
                             </Link>
                         ))}
+                        <Link href={'/contact-us'}>
                         <button
                             className="mt-4 rounded-full bg-[#007AFF] px-6 py-3 text-lg leading-[1.21] font-normal text-white transition-colors hover:bg-[#0056CC]"
                             onClick={() => setIsMenuOpen(false)}
                         >
                             {contactButtonText}
                         </button>
+                            </Link>
                     </nav>
                 </div>
             )}
