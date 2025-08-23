@@ -30,7 +30,7 @@ export default function NavBar({
 
     return (
         <header
-            className={`${transparent ? 'relative z-10' : 'bg-transparent'} flex items-start justify-between px-8 pt-8 sm:px-9 sm:pt-9 xl:px-[4.3vw] xl:pt-[3vh] ${!transparent ? 'pb-4 sm:pb-6 xl:pb-[3vh]' : ''} `}
+            className={`${transparent ? 'relative z-10' : 'bg-transparent'} flex items-start justify-between px-8 pt-8 sm:px-9 sm:pt-9 xl:px-[4.3vw] xl:pt-[6vh] ${!transparent ? 'pb-4 sm:pb-6 xl:pb-[3vh]' : ''} `}
         >
             {/* Logo */}
             <Link href={'/'}>
