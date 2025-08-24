@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { OfferService } from '../data/offerServicesData';
 import ExternalArrowIcon from './commons/ExternalArrowIcon';
 
@@ -6,8 +7,13 @@ interface ServiceCardProps {
 }
 
 export default function ServiceCard({ service }: ServiceCardProps) {
+    const linkTo = service.link || '/contact-us';
+
     return (
-        <div className="flex w-full flex-col gap-[0.625rem] rounded-[1.875rem] border-2 border-white/52 p-[1.875rem_2.5rem] xl:w-auto">
+        <Link
+            href={linkTo}
+            className="flex w-full flex-col gap-[0.625rem] rounded-[1.875rem] border-2 border-white/52 p-[1.875rem_2.5rem] transition-colors hover:bg-white/5 xl:w-auto"
+        >
             <div className="flex flex-col items-end gap-[2.5rem]">
                 <div className="flex flex-col gap-[2.5rem] self-stretch">
                     <div className="flex flex-col items-start gap-[2.5rem]">
@@ -38,6 +44,6 @@ export default function ServiceCard({ service }: ServiceCardProps) {
                     <ExternalArrowIcon />
                 </div>
             </div>
-        </div>
+        </Link>
     );
 }

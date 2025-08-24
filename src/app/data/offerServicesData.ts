@@ -2,6 +2,7 @@ export interface OfferService {
     number: string;
     title: string;
     description: string;
+    link?: string;
 }
 
 export const offerServicesData: OfferService[] = [
