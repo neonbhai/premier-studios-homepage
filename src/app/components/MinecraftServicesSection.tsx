@@ -45,13 +45,13 @@ export default function MinecraftServicesSection() {
                         </div>
 
                         {/* Button */}
-                        <div className="flex">
+                        <div className="">
                             <ArrowButton
                                 text="View Projects"
                                 variant="dark"
                                 size="medium"
                                 fill="#000000"
-                                className2="text-white -ml-5 mt-1"
+                                className2="text-white -ml-5"
                             />
                         </div>
                     </div>
