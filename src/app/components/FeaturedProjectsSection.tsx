@@ -1,149 +1,15 @@
 'use client';
 
-import Image from 'next/image';
 import { useState, useRef } from 'react';
 import Tags from './commons/Tags';
 import HeaderCenter from './commons/HeaderCenter';
 import Slider from 'react-slick';
 import { motion } from 'framer-motion';
-
-type Project = {
-    id: number;
-    title: string;
-    description: string;
-    image: string;
-    color: string;
-};
-
-const ProjectCard = ({
-    className = '',
-    position = 'center',
-    project,
-}: {
-    className?: string;
-    position?: string;
-    project?: Project;
-}) => {
-    // Calculate styles based on position
-    const getStyles = () => {
-        if (position === 'center') {
-            return 'w  opacity-100 scale-100';
-        } else {
-            return ' opacity-50 scale-90 hover:opacity-70';
-        }
-    };
-
-    return (
-        <div
-            className={`relative overflow-hidden rounded-[30px] transition-all duration-500 ease-in-out ${className} ${getStyles()}`}
-        >
-            {/* Background Image */}
-            <div className="absolute inset-0">
-                <Image
-                    src={project?.image || '/assets/project-bg.png'}
-                    alt="Project background"
-                    fill
-                    className="object-cover"
-                />
-            </div>
-
-            {/* Content */}
-            <div className="absolute bottom-4 left-4 text-black sm:bottom-8 sm:left-8 md:bottom-12 md:left-12 lg:bottom-16 lg:left-16">
-                <h3 className="mb-1 text-[18px] leading-[1.21] font-medium sm:mb-2 sm:text-[22px] md:text-[26px] lg:text-[29px]">
-                    {project?.title || 'ELEMENTO'}
-                </h3>
-                <p className="max-w-[200px] text-[12px] leading-[1.21] font-normal sm:max-w-[240px] sm:text-[13px] md:max-w-[270px] md:text-[14px] lg:max-w-[294px] lg:text-[14.6px]">
-                    {project?.description ||
-                        'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'}
-                </p>
-
-                <div className="relative mt-3 flex items-center sm:mt-4 md:mt-5">
-                    <button>
-                        <Image
-                            src="/assets/arrow-icon.svg"
-                            alt="Arrow icon"
-                            width={100}
-                            height={42}
-                            className="transition-transform group-hover:scale-105 sm:h-[50px] sm:w-[118px] md:h-[57px] md:w-[135px] lg:h-[62.5px] lg:w-[148.5px]"
-                        />
-                        <span className="absolute top-[12px] left-[18px] text-[10px] font-medium text-white sm:top-[15px] sm:left-[22px] sm:text-[14px] md:top-[17px] md:left-[25px] md:text-[15px] lg:top-[19px] lg:left-[27px] lg:text-base">
-                            View project
-                        </span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    );
-};
-
-const projects = [
-    {
-        id: 1,
-        title: 'ELEMENTO',
-        description:
-            'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-        image: '/assets/projects/project-card-bg.png',
-        color: 'bg-red-500',
-    },
-    {
-        id: 2,
-        title: 'PROJECT TWO',
-        description:
-            'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-        image: '/assets/projects/project-card-bg.png',
-        color: 'bg-blue-500',
-    },
-    {
-        id: 3,
-        title: 'PROJECT THREE',
-        description:
-            'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-        image: '/assets/projects/project-card-bg.png',
-        color: 'bg-green-500',
-    },
-    {
-        id: 4,
-        title: 'PROJECT FOUR',
-        description:
-            'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-        image: '/assets/projects/project-card-bg.png',
-        color: 'bg-yellow-500',
-    },
-    {
-        id: 5,
-        title: 'PROJECT FIVE',
-        description:
-            'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-        image: '/assets/projects/project-card-bg.png',
-        color: 'bg-purple-500',
-    },
-    {
-        id: 6,
-        title: 'PROJECT SIX',
-        description:
-            'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-        image: '/assets/projects/project-card-bg.png',
-        color: 'bg-pink-500',
-    },
-    {
-        id: 7,
-        title: 'PROJECT SEVEN',
-        description:
-            'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-        image: '/assets/projects/project-card-bg.png',
-        color: 'bg-indigo-500',
-    },
-    {
-        id: 8,
-        title: 'PROJECT EIGHT',
-        description:
-            'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-        image: '/assets/projects/project-card-bg.png',
-        color: 'bg-teal-500',
-    },
-];
+import Link from 'next/link';
+import FeaturedProjectCard from './cards/FeaturedProjectCard';
+import { projectsData, Project } from '../data/projectsData';
 export default function FeaturedProjectsSection() {
-    const [selectedImg, setSelectedImg] = useState<Project>(projects[0]);
+    const [selectedImg, setSelectedImg] = useState<Project>(projectsData[0]);
     const sliderRef = useRef<Slider>(null);
 
     const handleHelperSelect = (item: Project) => {
@@ -167,16 +33,16 @@ export default function FeaturedProjectsSection() {
         variableWidth: true,
         slidesToShow: 3,
         slidesToScroll: 1,
-        speed: 500,
+        speed: 1200,
         focusOnSelect: true,
         dotsClass: 'custom-dots',
         customPaging: (i: number) => (
             <div
-                className={`dot mx-[2px] mt-2 h-2 w-2 rounded-full bg-gray-400 transition-all duration-300 ${selectedImg && selectedImg.id === projects[i].id ? 'bg-primary w-5' : ''}`}
+                className={`dot mx-[2px] mt-2 h-2 w-2 rounded-full bg-gray-400 transition-all duration-300 ${selectedImg && selectedImg.id === projectsData[i].id ? 'bg-primary w-5' : ''}`}
             ></div>
         ),
         beforeChange: (current: number, next: number) =>
-            handleHelperSelect(projects[next]),
+            handleHelperSelect(projectsData[next]),
         responsive: [
             {
                 breakpoint: 768,
@@ -196,7 +62,7 @@ export default function FeaturedProjectsSection() {
                 {/* Header Section */}
                 <div className="mb-12 flex flex-col items-center md:mb-16 lg:mb-20">
                     {/* What We Do Scroller */}
-                    <Tags text="What do we do" variant="dark" />
+                    <Tags text="What we do" variant="dark" />
 
                     {/* Title and Description */}
                     <div className="flex max-w-2xl flex-col items-center gap-6 text-center md:gap-8">
@@ -206,7 +72,7 @@ export default function FeaturedProjectsSection() {
                             variant="dark"
                             className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl"
                         />
-                        <p className="text-sm leading-[1.4] font-normal text-white/70 md:text-base lg:text-lg">
+                        <p className="text-sm leading-[1.4] px-4 font-normal text-white/70 md:text-base lg:text-lg">
                             It was popularised in the 1960s with the release of
                             Letraset sheets containing Lorem Ipsum passages, and
                             more recently with desktop publishing software like
@@ -257,37 +123,37 @@ export default function FeaturedProjectsSection() {
                     </button>
 
                     {/* Sliding Carousel Container */}
-                    <div className="h-[400px] w-full overflow-hidden md:h-[500px] lg:h-[600px]">
+                    <div className="h-[600px] w-full overflow-hidden md:h-[600px] lg:h-[700px]">
                         <Slider
                             ref={sliderRef}
                             {...settings}
                             className="featured-projects-slider"
                         >
-                            {projects.map((project) => (
+                            {projectsData.map((project) => (
                                 <div
                                     key={project.id}
-                                    className="relative w-[450px] transition-all duration-300 outline-none sm:w-[600px] md:w-[730px] lg:-ml-12 lg:w-[830px] xl:w-[830px]"
+                                    // className="relative w-[450px] transition-all duration-300 outline-none sm:w-[600px] md:w-[730px] lg:-ml-12 lg:w-[830px] xl:w-[80px] scroll-smooth"
                                 >
                                     <motion.div
-                                        className={`relative flex h-[350px] w-full flex-col rounded-xl transition-all duration-300 md:h-[450px] lg:h-[550px] ${
+                                        className={`relative flex w-full flex-col rounded-xl transition-all duration-300 ${
                                             selectedImg &&
                                             selectedImg.id === project.id
-                                                ? 'scale-100'
-                                                : 'scale-90'
+                                                ? 'scale-100  h-[350px] md:h-[450px] lg:h-[550px]'
+                                                : 'scale-90 mt-[60%] sm:mt-[35%] md:mt-[35%] lg:mt-[24.5%] h-[250px] md:h-[350px] lg:h-[450px] '
                                         }`}
                                         initial={{ scale: 0.9 }}
                                         animate={
                                             selectedImg &&
                                             selectedImg.id === project.id
-                                                ? { scale: 1 }
+                                                ? { scale: 1.1  }
                                                 : { scale: 0.9 }
                                         }
                                         transition={{ duration: 0.3 }}
                                     >
                                         <div className="relative h-full w-full">
-                                            <ProjectCard
+                                            <FeaturedProjectCard
                                                 project={project}
-                                                className="xs:w-[300px] h-full w-[250px] sm:w-[500px] md:w-[600px] lg:w-[900px] xl:w-[900px]"
+                                                className="xs:w-[300px] h-full w-[300px] sm:w-[500px] md:w-[600px] lg:w-[900px] xl:w-[900px]"
                                             />
                                         </div>
                                     </motion.div>
@@ -336,11 +202,13 @@ export default function FeaturedProjectsSection() {
                 </div>
 
                 {/* View All Button */}
-                <div className="flex justify-center">
-                    <button className="min-w-[200px] rounded-full border border-gray-300 bg-white px-8 py-3 text-sm font-medium text-black transition-colors hover:border-gray-400 hover:bg-gray-100 md:min-w-[271px] md:px-12 md:py-4 md:text-base lg:text-lg">
-                        View all
-                    </button>
-                </div>
+                <Link href="/projects">
+                    <div className="flex justify-center">
+                        <button className="min-w-[200px] rounded-full border border-gray-300 bg-white px-8 py-3 text-sm font-medium text-black transition-colors hover:border-gray-400 hover:bg-gray-100 md:min-w-[271px] md:px-12 md:py-4 md:text-base lg:text-lg">
+                            View all
+                        </button>
+                    </div>
+                </Link>
             </div>
         </section>
     );

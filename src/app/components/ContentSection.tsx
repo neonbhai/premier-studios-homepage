@@ -38,9 +38,9 @@ export default function ContentSection({ reverse }: { reverse: boolean }) {
                                     top: '689px',
                                 }}
                             >
-                                <div className="h-[9px] w-[9px] rounded-full bg-white"></div>
+                                {/* <div className="h-[9px] w-[9px] rounded-full bg-white"></div>
                                 <div className="h-[9px] w-[9px] rounded-full bg-white/30"></div>
-                                <div className="h-[9px] w-[9px] rounded-full bg-white/30"></div>
+                                <div className="h-[9px] w-[9px] rounded-full bg-white/30"></div> */}
                             </div>
                         </div>
                     </div>
@@ -139,9 +139,9 @@ export default function ContentSection({ reverse }: { reverse: boolean }) {
                         <div className="flex flex-col items-center gap-6">
                             {/* Pagination Dots */}
                             <div className="flex items-center gap-[12px]">
-                                <div className="h-[9px] w-[9px] rounded-full bg-white"></div>
+                                {/* <div className="h-[9px] w-[9px] rounded-full bg-white"></div>
                                 <div className="h-[9px] w-[9px] rounded-full bg-white/30"></div>
-                                <div className="h-[9px] w-[9px] rounded-full bg-white/30"></div>
+                                <div className="h-[9px] w-[9px] rounded-full bg-white/30"></div> */}
                             </div>
 
                             {/* Join Now Button */}

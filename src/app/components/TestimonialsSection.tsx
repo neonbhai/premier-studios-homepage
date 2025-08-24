@@ -1,226 +1,68 @@
 'use client';
 
-import Image from 'next/image';
 import { useState, useRef, useEffect, useCallback } from 'react';
+import Slider from 'react-slick';
+import { motion } from 'framer-motion';
 import HeaderCenter from './commons/HeaderCenter';
 import Tags from './commons/Tags';
-import ArrowButton from './commons/ArrowButton';
-import { motion } from 'framer-motion';
-
-interface TestimonialCardProps {
-    index: number;
-    currentPosition: number;
-    totalWidth: number;
-}
-
-const TestimonialCard: React.FC<TestimonialCardProps> = ({
-    index,
-    currentPosition,
-    totalWidth,
-}) => {
-    const calculateImageHeight = () => {
-        const cardWidth = totalWidth;
-        const cardCenter = index * cardWidth;
-
-        const distance = Math.abs(currentPosition - cardCenter);
-
-        const normalizedDistance = Math.min(distance / cardWidth, 1);
-
-        return `${100 - normalizedDistance * 50}%`;
-    };
-
-    return (
-        <div className="w-[320px] flex-shrink-0 md:w-[550px] lg:w-[650px] xl:w-[750px]">
-            <div className="flex h-auto flex-col gap-3 overflow-hidden rounded-[20px] bg-black lg:h-[300px] lg:flex-row lg:rounded-[30px] xl:h-[350px]">
-                {/* User Info Section */}
-                <div className="relative overflow-hidden rounded-[20px] lg:w-[35%] lg:rounded-[30px]">
-                    <motion.div
-                        className="relative w-full"
-                        style={{
-                            height: calculateImageHeight(),
-                            transition: 'height 0.3s linear',
-                        }}
-                    >
-                        <Image
-                            src="/assets/testimonials/testimonial-bg.jpg"
-                            alt="User background"
-                            fill
-                            className="rounded-[20px] object-cover lg:rounded-[30px]"
-                        />
-                        {/* Gradient Overlay */}
-                        <div className="absolute inset-0 rounded-[20px] bg-gradient-to-b from-transparent to-black/50 lg:rounded-[30px]"></div>
-
-                        {/* User Info */}
-                        <div className="absolute bottom-0 left-0 p-4 lg:p-6">
-                            <h4 className="text-lg leading-[1.4] font-medium text-white lg:text-xl xl:text-2xl">
-                                Alex Carter
-                            </h4>
-                            <p className="mt-1 text-sm leading-[1.5] font-normal text-white/90 lg:text-base xl:text-lg">
-                                Marketing Director at NovaTech
-                            </p>
-                        </div>
-                    </motion.div>
-                </div>
-
-                {/* Testimonial Content */}
-                <div className="flex flex-col justify-between rounded-[20px] bg-white p-4 lg:w-[65%] lg:rounded-[30px] lg:p-6 xl:p-8">
-                    {/* Location */}
-                    <div className="mb-4 lg:mb-6">
-                        <h5 className="text-base font-medium text-black lg:text-lg xl:text-xl">
-                            TX | USA
-                        </h5>
-                    </div>
-
-                    {/* Quote and Text */}
-                    <div className="flex flex-1 flex-col justify-center">
-                        {/* Quote Icons */}
-                        <div className="mb-4 flex items-center">
-                            <svg
-                                className="h-4 w-4 text-blue-400 lg:h-5 lg:w-5"
-                                fill="currentColor"
-                                viewBox="0 0 24 24"
-                            >
-                                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z" />
-                            </svg>
-                        </div>
-
-                        {/* Testimonial Text */}
-                        <p className="mb-6 text-sm leading-[1.4] font-normal text-black lg:text-base xl:text-lg">
-                            {
-                                'Working with Premier Studio was a game-changer for our brand. Their attention to detail, creativity, and professionalism exceeded all expectations. The final product was beyond what we imagined.'
-                            }
-                        </p>
-                    </div>
-
-                    {/* View Live Project Button */}
-                    <ArrowButton
-                        text="View Now"
-                        size="medium"
-                        variant="dark"
-                        fill="black"
-                        className2="  "
-                        className=""
-                    />
-                </div>
-            </div>
-        </div>
-    );
-};
+import TestimonialCard from './cards/TestimonialCard';
+import { testimonialsData } from '../data/testimonialsData';
 
 export default function TestimonialsSection() {
-    const carouselRef = useRef<HTMLDivElement>(null);
     const [currentSlide, setCurrentSlide] = useState(0);
-    const [scrollPosition, setScrollPosition] = useState(0);
-    const [isTransitioning, setIsTransitioning] = useState(false);
+    const sliderRef = useRef<Slider>(null);
 
-    const testimonials = [
-        { id: 1, featured: false },
-        { id: 2, featured: false },
-        { id: 3, featured: true },
-        { id: 4, featured: false },
-        { id: 5, featured: false },
-        { id: 6, featured: false },
-    ];
-
-    const handleScroll = () => {
-        if (carouselRef.current) {
-            setScrollPosition(carouselRef.current.scrollLeft);
-        }
+    const sliderSettings = {
+        dots: false,
+        infinite: true,
+        speed: 1500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        centerMode: true,
+        centerPadding: '20%',
+        autoplay: true,
+        autoplaySpeed: 5000,
+        pauseOnHover: true,
+        arrows: false,
+        beforeChange: (current: number, next: number) => setCurrentSlide(next),
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    centerPadding: '15%',
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    centerPadding: '10%',
+                }
+            }
+        ]
     };
 
     const getCardWidth = () => {
-        if (typeof window === 'undefined') return 620; // Default for SSR
-        return window.innerWidth >= 1280
-            ? 620
-            : window.innerWidth >= 1024
-              ? 520
-              : window.innerWidth >= 768
-                ? 420
-                : 340;
+        if (typeof window === 'undefined') return 620;
+        
+        const width = window.innerWidth;
+        
+        if (width >= 1280) return 620;
+        if (width >= 1024) return 520;
+        if (width >= 768) return 420;
+        return 340;
     };
 
-    useEffect(() => {
-        const carousel = carouselRef.current;
-        if (carousel) {
-            carousel.addEventListener('scroll', handleScroll);
-            return () => carousel.removeEventListener('scroll', handleScroll);
-        }
-    }, []);
+    const nextSlide = () => {
+        sliderRef.current?.slickNext();
+    };
 
-    const scrollToSlide = useCallback(
-        (slideIndex: number) => {
-            if (
-                carouselRef.current &&
-                typeof window !== 'undefined' &&
-                !isTransitioning
-            ) {
-                setIsTransitioning(true);
-                const cardWidth =
-                    window.innerWidth >= 1280
-                        ? 620
-                        : window.innerWidth >= 1024
-                          ? 520
-                          : window.innerWidth >= 768
-                            ? 420
-                            : 340;
-                const gap = window.innerWidth >= 1024 ? 32 : 4;
-                const slideWidth = cardWidth + gap;
+    const prevSlide = () => {
+        sliderRef.current?.slickPrev();
+    };
 
-                const targetScrollLeft =
-                    slideIndex * (window.innerWidth < 400 ? 350 : slideWidth);
-
-                // Animate scroll with precise 0.3s linear timing to match image transition
-                const startScrollLeft = carouselRef.current.scrollLeft;
-                const distance = targetScrollLeft - startScrollLeft;
-                const duration = 300; // 0.3s in milliseconds
-                const startTime = performance.now();
-
-                const animateScroll = (currentTime: number) => {
-                    const elapsed = currentTime - startTime;
-                    const progress = Math.min(elapsed / duration, 1);
-
-                    if (carouselRef.current) {
-                        // Linear interpolation to match the image transition timing
-                        carouselRef.current.scrollLeft =
-                            startScrollLeft + distance * progress;
-                    }
-
-                    if (progress < 1) {
-                        requestAnimationFrame(animateScroll);
-                    } else {
-                        setIsTransitioning(false);
-                    }
-                };
-
-                requestAnimationFrame(animateScroll);
-                setCurrentSlide(slideIndex);
-            }
-        },
-        [isTransitioning]
-    );
-
-    const nextSlide = useCallback(() => {
-        const nextIndex =
-            currentSlide < testimonials.length - 1 ? currentSlide + 1 : 0;
-        scrollToSlide(nextIndex);
-    }, [currentSlide, testimonials.length, scrollToSlide]);
-
-    const prevSlide = useCallback(() => {
-        const prevIndex =
-            currentSlide > 0 ? currentSlide - 1 : testimonials.length - 1;
-        scrollToSlide(prevIndex);
-    }, [currentSlide, testimonials.length, scrollToSlide]);
-
-    // Auto-scroll functionality
-    useEffect(() => {
-        const interval = setInterval(() => {
-            if (!isTransitioning) {
-                nextSlide();
-            }
-        }, 5000); // Auto-scroll every 5 seconds
-
-        return () => clearInterval(interval);
-    }, [currentSlide, isTransitioning, nextSlide]);
+    const goToSlide = (slideIndex: number) => {
+        sliderRef.current?.slickGoTo(slideIndex);
+    };
 
     return (
         <section className="w-full bg-black py-8 md:py-12 lg:py-16">
@@ -248,10 +90,12 @@ export default function TestimonialsSection() {
 
                 {/* Testimonials Carousel */}
                 <div className="relative mb-12 md:mb-16 lg:mb-20">
-                    {/* Navigation Arrows - Hidden on mobile */}
-                    <button
+                    {/* Navigation Arrows */}
+                    <motion.button
                         onClick={prevSlide}
-                        className="hover:bg-white/ absolute top-1/2 left-4 z-10 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/50 bg-black text-white transition-colors md:flex"
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="absolute top-1/2 left-4 z-10 hidden h-12 w-12 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-white/50 bg-black text-white transition-colors  md:flex"
                     >
                         <svg
                             width="20"
@@ -263,11 +107,13 @@ export default function TestimonialsSection() {
                         >
                             <path d="M15 18l-6-6 6-6" />
                         </svg>
-                    </button>
+                    </motion.button>
 
-                    <button
+                    <motion.button
                         onClick={nextSlide}
-                        className="hover:bg-whit /30 absolute top-1/2 right-4 z-10 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/30 bg-black text-white transition-colors md:flex"
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="absolute top-1/2 right-4 z-10 hidden h-12 w-12 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-white/30 bg-black text-white transition-colors  md:flex"
                     >
                         <svg
                             width="20"
@@ -279,43 +125,39 @@ export default function TestimonialsSection() {
                         >
                             <path d="M9 18l6-6-6-6" />
                         </svg>
-                    </button>
+                    </motion.button>
 
                     {/* Carousel Container */}
-                    <div
-                        ref={carouselRef}
-                        className="scrollbar-hide overflow-x-auto scroll-smooth"
-                        style={{
-                            scrollbarWidth: 'none',
-                            msOverflowStyle: 'auto',
-                        }}
-                    >
-                        <div
-                            className="flex justify-center gap-6 scroll-smooth px-4 pb-4 md:gap-8 md:px-0"
-                            style={{ width: 'max-content' }}
-                        >
-                            {testimonials.map((testimonial, index) => (
-                                <TestimonialCard
-                                    key={testimonial.id}
-                                    index={index}
-                                    currentPosition={scrollPosition}
-                                    totalWidth={
-                                        getCardWidth() +
-                                        (typeof window !== 'undefined' &&
-                                        window.innerWidth >= 1024
-                                            ? 32
-                                            : 24)
-                                    } // card width + gap
-                                />
+                    <div className="testimonials-slider overflow-hidden">
+                        <Slider ref={sliderRef} {...sliderSettings} className="overflow-hidden">
+                            {testimonialsData.map((testimonial, index) => (
+                                <div key={testimonial.id} className="px-2">
+                                    <div className="testimonial-card-wrapper h-96 md:h-[400px] lg:h-[450px] xl:h-[500px]">
+                                        <motion.div
+                                            initial={{ opacity: 0, y: 20 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                                            className="flex h-full justify-center transition-all duration-300 ease-in-out"
+                                        >
+                                            <TestimonialCard
+                                                index={index}
+                                                currentPosition={0}
+                                                totalWidth={getCardWidth()}
+                                            />
+                                        </motion.div>
+                                    </div>
+                                </div>
                             ))}
-                        </div>
+                        </Slider>
                     </div>
 
                     {/* Mobile Navigation Buttons */}
                     <div className="mt-6 flex justify-center gap-4 md:hidden">
-                        <button
+                        <motion.button
                             onClick={prevSlide}
-                            className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-black"
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.95 }}
+                            className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20"
                         >
                             <svg
                                 width="16"
@@ -327,10 +169,12 @@ export default function TestimonialsSection() {
                             >
                                 <path d="M15 18l-6-6 6-6" />
                             </svg>
-                        </button>
-                        <button
+                        </motion.button>
+                        <motion.button
                             onClick={nextSlide}
-                            className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-black"
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.95 }}
+                            className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20"
                         >
                             <svg
                                 width="16"
@@ -342,23 +186,25 @@ export default function TestimonialsSection() {
                             >
                                 <path d="M9 18l6-6-6-6" />
                             </svg>
-                        </button>
+                        </motion.button>
                     </div>
 
                     {/* Carousel Indicators */}
-                    <div className="mt-8 flex items-center justify-center gap-2">
-                        {testimonials.map((_, index) => (
-                            <button
+                    {/* <div className="mt-8 flex items-center justify-center gap-2">
+                        {testimonialsData.map((_, index) => (
+                            <motion.button
                                 key={index}
-                                onClick={() => scrollToSlide(index)}
+                                onClick={() => goToSlide(index)}
+                                whileHover={{ scale: 1.2 }}
+                                whileTap={{ scale: 0.9 }}
                                 className={`h-2 w-2 rounded-full transition-colors md:h-3 md:w-3 ${
                                     currentSlide === index
-                                        ? 'bg-black'
-                                        : 'bg-black/30'
+                                        ? 'bg-white'
+                                        : 'bg-white/30'
                                 }`}
                             />
                         ))}
-                    </div>
+                    </div> */}
                 </div>
 
                 {/* Progress Bar */}
@@ -367,7 +213,10 @@ export default function TestimonialsSection() {
                         <div
                             className="absolute top-0 left-0 h-1.5 w-12 rounded-full bg-black transition-all duration-300 ease-out md:h-[6px] md:w-[51px]"
                             style={{
-                                transform: `translateX(${(currentSlide / Math.max(testimonials.length - 1, 1)) * (typeof window !== 'undefined' && window?.innerWidth >= 768 ? 134 - 51 : 128 - 48)}px)`,
+                                transform: `translateX(${
+                                    (currentSlide / Math.max(testimonialsData.length - 1, 1)) * 
+                                    (typeof window !== 'undefined' && window.innerWidth >= 768 ? 83 : 80)
+                                }px)`,
                             }}
                         />
                     </div>

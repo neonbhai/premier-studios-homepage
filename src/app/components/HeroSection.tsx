@@ -18,6 +18,7 @@ interface HeroSectionProps {
     showYearBadge?: boolean;
     showContentSection?: boolean;
     showNavBar?: boolean;
+    halfheight?: boolean;
 }
 
 export default function HeroSection({
@@ -36,19 +37,20 @@ export default function HeroSection({
     showYearBadge = true,
     showContentSection = true,
     showNavBar = true,
+    halfheight,
 }: HeroSectionProps) {
     return (
-        <div className="relative h-screen min-h-[600px] w-full overflow-hidden">
+        <div className={` relative ${halfheight?" md:h-screen lg:h-screen":" h-screen"} min-h-[500px] w-full overflow-hidden`}>
             {/* Background Image */}
             <div className="absolute inset-0 m-[17px] rounded-2xl">
                 <Image
                     src={backgroundImage}
                     alt="Hero background"
                     fill
-                    className="rounded-2xl object-cover grayscale"
+                    className="rounded-2xl object-cover object-center grayscale"
                 />
                 {/* Dark overlay */}
-                <div className="absolute inset-0 rounded-2xl bg-black/30"></div>
+                <div className="absolute inset-0 rounded-2xl bg-black/45 md:bg-black/30 lg:bg-black/30"></div>
             </div>
 
             {/* Header */}
@@ -64,7 +66,7 @@ export default function HeroSection({
 
             {/* Year Badge */}
             {showYearBadge && (
-                <div className="absolute bottom-8 left-4 text-sm leading-[1.5] font-bold text-white/83 sm:bottom-12 sm:left-8 sm:text-base xl:bottom-[9.7vh] xl:left-[4.3vw] xl:text-[1.1vw]">
+                <div className="absolute bottom-24 md:bottom-8 lg:bottom-8 right-[10%] md:left-4 lg:left-4 text-sm leading-[1.5] font-bold text-white/83 sm:bottom-12 sm:left-8 sm:text-base xl:bottom-[9.7vh] xl:left-[4.3vw] xl:text-[1.1vw]">
                     {yearBadge}
                 </div>
             )}
@@ -107,8 +109,8 @@ export default function HeroSection({
 
             {/* Large Premier Text */}
             {showYearBadge && (
-                <div className="absolute right-6 bottom-6 sm:right-8 sm:bottom-0 xl:right-[4.3vw]">
-                    <h1 className="text-6xl leading-[1.199] font-medium text-white sm:text-6xl md:text-8xl xl:text-[15.1vw]">
+                <div className="absolute right-6 bottom-6 sm:right-8 sm:bottom-4 xl:right-[4.3vw]">
+                    <h1 className="text-7xl leading-[1.199] font-medium text-white sm:text-8xl md:text-8xl xl:text-[15.1vw]">
                         <span className="text-[#029BE6]">
                             {brandHighlightLetter}
                         </span>
@@ -117,8 +119,8 @@ export default function HeroSection({
                 </div>
             )}
             {!showYearBadge && (
-                <div className="absolute right-6 bottom-6 sm:right-8 sm:bottom-0 xl:right-[4.3vw]">
-                    <h1 className="pointer-events-none text-6xl leading-[1.199] font-medium text-white sm:text-6xl md:text-8xl xl:text-[15.1vw]">
+                <div className="absolute right-6 bottom-6 sm:right-8 sm:bottom-4 xl:right-[4.3vw]">
+                    <h1 className="pointer-events-none text-7xl leading-[1.199] font-medium text-white sm:text-7xl md:text-8xl xl:text-[15.1vw]">
                         {brandText.slice(0)}{' '}
                         <span className="text-[#029BE6]">
                             {brandHighlightLetter}
