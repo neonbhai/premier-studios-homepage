@@ -2,6 +2,7 @@ import ProjectsHeader from '../components/ProjectsHeader';
 import ProjectCard from '../components/ProjectCard';
 import ProjectFilter from '../components/ProjectFilter';
 import NavBar from '../components/NavBar';
+import ScrollAnimatedSection from '../components/scroll-animated-section';
 
 // Dummy project data
 const projects = [
@@ -76,14 +77,20 @@ export default function Projects() {
                 <div className="mx-auto px-[1rem] md:px-[2rem] lg:px-[5rem]">
                     <div className="grid grid-cols-1 gap-[2.5rem] md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
                         {projects.map((project) => (
-                            <ProjectCard
+                            <ScrollAnimatedSection
                                 key={project.id}
-                                title={project.title}
-                                description={project.description}
-                                year={project.year}
-                                imageSrc={project.imageSrc}
-                                imageAlt={project.imageAlt}
-                            />
+                                delay={0}
+                                duration={0.5}
+                                ease="power2.out"
+                            >
+                                <ProjectCard
+                                    title={project.title}
+                                    description={project.description}
+                                    year={project.year}
+                                    imageSrc={project.imageSrc}
+                                    imageAlt={project.imageAlt}
+                                />
+                            </ScrollAnimatedSection>
                         ))}
                     </div>
                 </div>
