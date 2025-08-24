@@ -21,9 +21,9 @@ export default function AboutUs() {
             />
 
             {/* About Section */}
-            {/* <ScrollAnimatedSection> */}
+            <ScrollAnimatedSection>
                 <AboutSection />
-            {/* </ScrollAnimatedSection> */}
+            </ScrollAnimatedSection>
 
             {/* Offer Section */}
             <ScrollAnimatedSection>

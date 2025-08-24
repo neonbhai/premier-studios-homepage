@@ -2,7 +2,7 @@
 
 import Tags from './commons/Tags';
 import HeaderSide from './commons/HeaderSide';
-import ServiceCard from './cards/ServiceCard';
+import FAQCard from './cards/FAQCard';
 import { servicesData } from '../data/servicesData';
 
 export default function ServicesSection() {
@@ -48,7 +48,7 @@ export default function ServicesSection() {
                 <div className="flex flex-col gap-6 md:gap-8">
                     {servicesData.map((service, index) => (
                         <div key={service.id} className="flex flex-col">
-                            <ServiceCard
+                            <FAQCard
                                 title={service.title}
                                 description={service.description}
                             />

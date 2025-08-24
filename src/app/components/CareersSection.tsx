@@ -2,6 +2,7 @@
 
 import HeaderSide from './commons/HeaderSide';
 import Tags from './commons/Tags';
+import ExternalArrowIcon from './commons/ExternalArrowIcon';
 
 export default function CareersSection() {
     const jobListings = [
@@ -77,16 +78,7 @@ export default function CareersSection() {
                                             Apply
                                         </span>
                                         <div className="rounded-md scale-80 md:scale-100 lg:scale-100 border border-white p-2.5">
-                                            <svg
-                                                width="11"
-                                                height="11"
-                                                viewBox="0 0 11 11"
-                                                fill="none"
-                                                stroke="white"
-                                                strokeWidth="2"
-                                            >
-                                                <path d="M1 10L10 1M10 1H1M10 1V10" />
-                                            </svg>
+                                            <ExternalArrowIcon />
                                         </div>
                                     </div>
                                 </div>
@@ -101,20 +93,6 @@ export default function CareersSection() {
                 </div>
             </div>
 
-            <style jsx>{`
-                @keyframes scroll {
-                    0% {
-                        transform: translateX(0);
-                    }
-                    100% {
-                        transform: translateX(-100%);
-                    }
-                }
-
-                .animate-scroll {
-                    animation: scroll 15s linear infinite;
-                }
-            `}</style>
         </section>
     );
 }

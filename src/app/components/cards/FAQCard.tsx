@@ -1,12 +1,12 @@
-interface ServiceCardProps {
+interface FAQCardProps {
     title: string;
     description: string;
 }
 
-export default function ServiceCard({
+export default function FAQCard({
     title,
     description,
-}: ServiceCardProps) {
+}: FAQCardProps) {
     return (
         <div className="group w-full overflow-hidden rounded-[20px] transition-all duration-500 ease-in-out group-hover:bg-white lg:rounded-[30px]">
             {/* Header - Always Visible */}
