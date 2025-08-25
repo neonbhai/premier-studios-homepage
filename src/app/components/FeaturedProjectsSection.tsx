@@ -3,6 +3,7 @@
 import { useState, useRef } from 'react';
 import Slider from 'react-slick';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import FeaturedProjectCard from './cards/FeaturedProjectCard';
 import CarouselNavigation from './commons/CarouselNavigation';
 import CenteredHeader from './commons/CenteredHeader';
@@ -75,8 +76,6 @@ export default function FeaturedProjectsSection() {
                     <CarouselNavigation
                         onPrevious={goToPrev}
                         onNext={goToNext}
-                        viewAllHref="/projects"
-                        viewAllText="View all"
                     />
 
                     {/* Sliding Carousel Container */}
@@ -118,6 +117,17 @@ export default function FeaturedProjectsSection() {
                             ))}
                         </Slider>
                     </div>
+                </div>
+
+                {/* View All Button */}
+                <div className="mt-12 md:mt-16 lg:mt-20">
+                    <Link href="/projects">
+                        <div className="flex justify-center">
+                            <button className="min-w-[200px] rounded-full border border-gray-300 bg-white px-8 py-3 text-sm font-medium text-black transition-colors hover:border-gray-400 hover:bg-gray-100 md:min-w-[271px] md:px-12 md:py-4 md:text-base lg:text-lg">
+                                View all
+                            </button>
+                        </div>
+                    </Link>
                 </div>
             </div>
         </section>

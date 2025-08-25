@@ -3,6 +3,7 @@
 import Tags from './commons/Tags';
 import HeaderSide from './commons/HeaderSide';
 import FAQCard from './cards/FAQCard';
+import TextLinkWithArrow from './commons/TextLinkWithArrow';
 import { servicesData } from '../data/servicesData';
 
 export default function ServicesSection() {
@@ -23,23 +24,11 @@ export default function ServicesSection() {
                     </div>
 
                     {/* Right Side - Collaborate Link */}
-                    <div className="flex items-center justify-end gap-3 lg:mb-4">
-                        <span className="xs:text-xs text-[0.61rem] leading-[1.2] font-medium tracking-wide text-white uppercase sm:text-sm md:text-base lg:text-lg">
-                            Collaborate with us
-                        </span>
-                        <svg
-                            className="h-4 w-4 text-white md:h-5 md:w-5"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M9 5l7 7-7 7"
-                            />
-                        </svg>
+                    <div className="flex items-center justify-center lg:mb-4">
+                        <TextLinkWithArrow
+                            href="/contact-us"
+                            text="Collaborate with us"
+                        />
                     </div>
                 </div>
 

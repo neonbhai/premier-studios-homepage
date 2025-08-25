@@ -19,9 +19,6 @@ interface ContactFormSectionProps {
 export default function ContactFormSection({
     tagText = 'Contact us',
     description = "Whether you're looking for a custom solution, need support, or just want to explore possibilities — we'd love to hear from you.",
-    email = 'hello@premier.com',
-    phone = '+44 20 7946 0958',
-    socialLinks = ['Discord', 'Instagram', 'Facebook'],
 }: ContactFormSectionProps) {
     const [selectedInterests, setSelectedInterests] = useState<string[]>([
         'Minecraft Services',

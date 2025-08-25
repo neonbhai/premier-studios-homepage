@@ -2,27 +2,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import ArrowButton from '../commons/ArrowButton';
 
-interface TestimonialCardProps {
-    index: number;
-    currentPosition: number;
-    totalWidth: number;
-}
-
-export default function TestimonialCard({
-    index,
-    currentPosition,
-    totalWidth,
-}: TestimonialCardProps) {
-    const calculateImageHeight = () => {
-        const cardWidth = totalWidth;
-        const cardCenter = index * cardWidth;
-
-        const distance = Math.abs(currentPosition - cardCenter);
-
-        const normalizedDistance = Math.min(distance / cardWidth, 1);
-
-        return `${100 - normalizedDistance * 50}%`;
-    };
+export default function TestimonialCard() {
 
     return (
         <div className="w-full flex-shrink-0">

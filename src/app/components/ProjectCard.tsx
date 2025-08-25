@@ -41,7 +41,7 @@ export default function ProjectCard({
 
                     {/* Description and Year Row */}
                     <div className="flex items-start justify-between gap-4 lg:gap-[159px]">
-                        <p className="max-w-[280px] flex-1 text-[0.875rem] leading-[1.21] font-light text-black sm:max-w-[320px] sm:text-[0.9375rem] md:max-w-[350px] md:text-[1rem] lg:max-w-[372px] lg:text-[1rem]">
+                        <p className="line-clamp-2 max-w-[280px] flex-1 text-[0.875rem] leading-[1.21] font-light text-black sm:max-w-[320px] sm:text-[0.9375rem] md:max-w-[350px] md:text-[1rem] lg:max-w-[372px] lg:text-[1rem]">
                             {description}
                         </p>
                         <span className="flex-shrink-0 text-[0.875rem] leading-[1.21] font-light whitespace-nowrap text-black sm:text-[0.9375rem] md:text-[1rem] lg:text-[1rem]">

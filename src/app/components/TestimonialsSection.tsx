@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useEffect, useCallback } from 'react';
+import { useState, useRef } from 'react';
 import Slider from 'react-slick';
 import { motion } from 'framer-motion';
 import HeaderCenter from './commons/HeaderCenter';
@@ -41,16 +41,6 @@ export default function TestimonialsSection() {
         ],
     };
 
-    const getCardWidth = () => {
-        if (typeof window === 'undefined') return 620;
-
-        const width = window.innerWidth;
-
-        if (width >= 1280) return 620;
-        if (width >= 1024) return 520;
-        if (width >= 768) return 420;
-        return 340;
-    };
 
     const nextSlide = () => {
         sliderRef.current?.slickNext();
@@ -60,9 +50,6 @@ export default function TestimonialsSection() {
         sliderRef.current?.slickPrev();
     };
 
-    const goToSlide = (slideIndex: number) => {
-        sliderRef.current?.slickGoTo(slideIndex);
-    };
 
     return (
         <section className="w-full bg-black py-8 md:py-12 lg:py-16">
@@ -146,11 +133,7 @@ export default function TestimonialsSection() {
                                             }}
                                             className="flex h-full justify-center transition-all duration-300 ease-in-out"
                                         >
-                                            <TestimonialCard
-                                                index={index}
-                                                currentPosition={0}
-                                                totalWidth={getCardWidth()}
-                                            />
+                                            <TestimonialCard />
                                         </motion.div>
                                     </div>
                                 </div>

@@ -23,8 +23,6 @@ interface HeroSectionProps {
 
 export default function HeroSection({
     backgroundImage = '/assets/hero-background.png',
-    logoSrc = '/assets/logo.png',
-    logoAlt = 'Premier Studio Logo',
     yearBadge = '2017 - 2025',
     heading = "We're experts in wide-range of services!",
     highlightText = 'experts',
@@ -32,8 +30,6 @@ export default function HeroSection({
     buttonText = 'Join Now',
     brandText = 'Premier',
     brandHighlightLetter = 'P',
-    navLinks,
-    contactButtonText = 'Contact us',
     showYearBadge = true,
     showContentSection = true,
     showNavBar = true,
