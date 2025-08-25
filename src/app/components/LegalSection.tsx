@@ -13,8 +13,14 @@ export default function LegalSection({
 
     return (
         <section className="space-y-6">
-            {displayTitle && <h2 className="text-[#029BE6] font-sans text-lg font-medium leading-6 md:text-2xl lg:text-3xl">{displayTitle}</h2>}
-            <div className="font-sans space-y-4 text-sm leading-relaxed text-white/80 md:text-base lg:text-lg">{children}</div>
+            {displayTitle && (
+                <h2 className="font-sans text-lg leading-6 font-medium text-[#029BE6] md:text-2xl lg:text-3xl">
+                    {displayTitle}
+                </h2>
+            )}
+            <div className="space-y-4 font-sans text-sm leading-relaxed text-white/80 md:text-base lg:text-lg">
+                {children}
+            </div>
         </section>
     );
 }

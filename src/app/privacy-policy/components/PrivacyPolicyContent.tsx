@@ -5,7 +5,7 @@ import LegalList from '@/app/components/LegalList';
 
 export const PrivacyPolicyContent: React.FC = () => {
     return (
-        <main className="relative mx-auto  px-4 py-16 md:px-20 md:py-24 lg:py-36">
+        <main className="relative mx-auto px-4 py-16 md:px-20 md:py-24 lg:py-36">
             <div className="space-y-20 md:space-y-28">
                 <TextPageHeader
                     title="Privacy policy"
@@ -33,7 +33,7 @@ export const PrivacyPolicyContent: React.FC = () => {
 
                         <div className="space-y-6">
                             <div>
-                                <h3 className="font-sans mb-2 text-sm font-medium text-white/80 md:text-base lg:text-lg">
+                                <h3 className="mb-2 font-sans text-sm font-medium text-white/80 md:text-base lg:text-lg">
                                     I. Account Details
                                 </h3>
                                 <p>
@@ -43,7 +43,7 @@ export const PrivacyPolicyContent: React.FC = () => {
                                 </p>
                             </div>
                             <div>
-                                <h3 className="font-sans mb-2 text-sm font-medium text-white/80 md:text-base lg:text-lg">
+                                <h3 className="mb-2 font-sans text-sm font-medium text-white/80 md:text-base lg:text-lg">
                                     II. Contact Information
                                 </h3>
                                 <p>
@@ -53,7 +53,7 @@ export const PrivacyPolicyContent: React.FC = () => {
                                 </p>
                             </div>
                             <div>
-                                <h3 className="font-sans mb-2 text-sm font-medium text-white/80 md:text-base lg:text-lg">
+                                <h3 className="mb-2 font-sans text-sm font-medium text-white/80 md:text-base lg:text-lg">
                                     III. Payment Information
                                 </h3>
                                 <p>
@@ -64,7 +64,7 @@ export const PrivacyPolicyContent: React.FC = () => {
                                 </p>
                             </div>
                             <div>
-                                <h3 className="font-sans mb-2 text-sm font-medium text-white/80 md:text-base lg:text-lg">
+                                <h3 className="mb-2 font-sans text-sm font-medium text-white/80 md:text-base lg:text-lg">
                                     IV. Communications & Logs
                                 </h3>
                                 <p>
@@ -75,7 +75,7 @@ export const PrivacyPolicyContent: React.FC = () => {
                                 </p>
                             </div>
                             <div>
-                                <h3 className="font-sans mb-2 text-sm font-medium text-white/80 md:text-base lg:text-lg">
+                                <h3 className="mb-2 font-sans text-sm font-medium text-white/80 md:text-base lg:text-lg">
                                     V. Order & Project Data
                                 </h3>
                                 <p>
@@ -85,7 +85,7 @@ export const PrivacyPolicyContent: React.FC = () => {
                                 </p>
                             </div>
                             <div>
-                                <h3 className="font-sans mb-2 text-sm font-medium text-white/80 md:text-base lg:text-lg">
+                                <h3 className="mb-2 font-sans text-sm font-medium text-white/80 md:text-base lg:text-lg">
                                     VI. Technical Information
                                 </h3>
                                 <p>
@@ -96,7 +96,7 @@ export const PrivacyPolicyContent: React.FC = () => {
                                 </p>
                             </div>
                             <div>
-                                <h3 className="font-sans mb-2 text-sm font-medium text-white/80 md:text-base lg:text-lg">
+                                <h3 className="mb-2 font-sans text-sm font-medium text-white/80 md:text-base lg:text-lg">
                                     VII. Interaction Data (Cookies & Tracking)
                                 </h3>
                                 <p>

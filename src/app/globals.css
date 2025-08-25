@@ -231,7 +231,9 @@ body {
     transition: height 0.4s ease-in-out;
 }
 
-.testimonials-slider .slick-slide:not(.slick-center) .testimonial-image-section {
+.testimonials-slider
+    .slick-slide:not(.slick-center)
+    .testimonial-image-section {
     height: 50%;
     transition: height 0.4s ease-in-out;
 }

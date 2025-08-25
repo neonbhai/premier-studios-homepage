@@ -4,8 +4,8 @@ interface LegalListProps {
 }
 
 export default function LegalList({ items, spaced = false }: LegalListProps) {
-    const listClass = spaced 
-        ? 'ml-4 list-disc space-y-2 marker:text-white/80' 
+    const listClass = spaced
+        ? 'ml-4 list-disc space-y-2 marker:text-white/80'
         : 'ml-4 list-disc space-y-1 marker:text-white/80';
 
     return (

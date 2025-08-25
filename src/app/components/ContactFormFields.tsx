@@ -9,7 +9,9 @@ interface FormData {
 interface ContactFormFieldsProps {
     formData: FormData;
     focusedField: string | null;
-    onInputChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+    onInputChange: (
+        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    ) => void;
     onFocusChange: (field: string | null) => void;
 }
 

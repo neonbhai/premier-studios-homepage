@@ -4,7 +4,9 @@ interface ContactSubmitButtonProps {
     onSubmit: (e: React.FormEvent) => void;
 }
 
-export default function ContactSubmitButton({ onSubmit }: ContactSubmitButtonProps) {
+export default function ContactSubmitButton({
+    onSubmit,
+}: ContactSubmitButtonProps) {
     return (
         <button
             type="submit"

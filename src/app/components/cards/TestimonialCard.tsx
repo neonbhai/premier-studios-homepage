@@ -30,7 +30,7 @@ export default function TestimonialCard({
                 {/* User Info Section */}
                 <div className="testimonial-image-section relative overflow-hidden rounded-[20px] lg:w-[35%] lg:rounded-[30px]">
                     <motion.div
-                        className="relative w-full h-full"
+                        className="relative h-full w-full"
                         style={{
                             transition: 'height 0.4s ease-in-out',
                         }}
@@ -66,7 +66,7 @@ export default function TestimonialCard({
                     </div>
 
                     {/* Quote and Text */}
-                    <div className="flex flex-1 flex-col justify-center mt-0 md:mt-1 lg:mt-10 xl:mt-10">
+                    <div className="mt-0 flex flex-1 flex-col justify-center md:mt-1 lg:mt-10 xl:mt-10">
                         {/* Quote Icons */}
                         <div className="mb-4 flex items-center">
                             <svg

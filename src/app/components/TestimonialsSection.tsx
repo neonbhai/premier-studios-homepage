@@ -30,22 +30,22 @@ export default function TestimonialsSection() {
                 breakpoint: 768,
                 settings: {
                     centerPadding: '15%',
-                }
+                },
             },
             {
                 breakpoint: 480,
                 settings: {
                     centerPadding: '10%',
-                }
-            }
-        ]
+                },
+            },
+        ],
     };
 
     const getCardWidth = () => {
         if (typeof window === 'undefined') return 620;
-        
+
         const width = window.innerWidth;
-        
+
         if (width >= 1280) return 620;
         if (width >= 1024) return 520;
         if (width >= 768) return 420;
@@ -95,7 +95,7 @@ export default function TestimonialsSection() {
                         onClick={prevSlide}
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.95 }}
-                        className="absolute top-1/2 left-4 z-10 hidden h-12 w-12 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-white/50 bg-black text-white transition-colors  md:flex"
+                        className="absolute top-1/2 left-4 z-10 hidden h-12 w-12 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-white/50 bg-black text-white transition-colors md:flex"
                     >
                         <svg
                             width="20"
@@ -113,7 +113,7 @@ export default function TestimonialsSection() {
                         onClick={nextSlide}
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.95 }}
-                        className="absolute top-1/2 right-4 z-10 hidden h-12 w-12 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-white/30 bg-black text-white transition-colors  md:flex"
+                        className="absolute top-1/2 right-4 z-10 hidden h-12 w-12 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-white/30 bg-black text-white transition-colors md:flex"
                     >
                         <svg
                             width="20"
@@ -129,14 +129,21 @@ export default function TestimonialsSection() {
 
                     {/* Carousel Container */}
                     <div className="testimonials-slider overflow-hidden">
-                        <Slider ref={sliderRef} {...sliderSettings} className="overflow-hidden">
+                        <Slider
+                            ref={sliderRef}
+                            {...sliderSettings}
+                            className="overflow-hidden"
+                        >
                             {testimonialsData.map((testimonial, index) => (
                                 <div key={testimonial.id} className="px-2">
                                     <div className="testimonial-card-wrapper h-96 md:h-[400px] lg:h-[450px] xl:h-[500px]">
                                         <motion.div
                                             initial={{ opacity: 0, y: 20 }}
                                             animate={{ opacity: 1, y: 0 }}
-                                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                                            transition={{
+                                                duration: 0.5,
+                                                delay: index * 0.1,
+                                            }}
                                             className="flex h-full justify-center transition-all duration-300 ease-in-out"
                                         >
                                             <TestimonialCard
@@ -214,8 +221,15 @@ export default function TestimonialsSection() {
                             className="absolute top-0 left-0 h-1.5 w-12 rounded-full bg-black transition-all duration-300 ease-out md:h-[6px] md:w-[51px]"
                             style={{
                                 transform: `translateX(${
-                                    (currentSlide / Math.max(testimonialsData.length - 1, 1)) * 
-                                    (typeof window !== 'undefined' && window.innerWidth >= 768 ? 83 : 80)
+                                    (currentSlide /
+                                        Math.max(
+                                            testimonialsData.length - 1,
+                                            1
+                                        )) *
+                                    (typeof window !== 'undefined' &&
+                                    window.innerWidth >= 768
+                                        ? 83
+                                        : 80)
                                 }px)`,
                             }}
                         />

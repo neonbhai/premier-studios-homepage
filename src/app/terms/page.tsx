@@ -11,7 +11,7 @@ export default function TermsOfService() {
         <div className="min-h-screen">
             <NavBar />
 
-            <main className="relative z-10 pb-20 pt-20 md:pb-40 md:pt-32">
+            <main className="relative z-10 pt-20 pb-20 md:pt-32 md:pb-40">
                 <div className="mx-auto px-4 md:px-8 lg:px-20">
                     <TextPageHeader
                         title="Terms of Service"
@@ -409,4 +409,3 @@ export default function TermsOfService() {
         </div>
     );
 }
-

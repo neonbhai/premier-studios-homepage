@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export const FooterBottom: React.FC = () => {
     return (
-        <div className="mt-8 flex flex-col  lg:flex-row items-end justify-between lg:gap-12 w-full pb-3">
+        <div className="mt-8 flex w-full flex-col items-end justify-between pb-3 lg:flex-row lg:gap-12">
             <div className="text-right text-xs text-white/40 md:text-base">
                 © 2025 Premier Studios. All Rights Reserved.
             </div>

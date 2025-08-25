@@ -72,7 +72,7 @@ export default function FeaturedProjectsSection() {
                             variant="dark"
                             className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl"
                         />
-                        <p className="text-sm leading-[1.4] px-4 font-normal text-white/70 md:text-base lg:text-lg">
+                        <p className="px-4 text-sm leading-[1.4] font-normal text-white/70 md:text-base lg:text-lg">
                             It was popularised in the 1960s with the release of
                             Letraset sheets containing Lorem Ipsum passages, and
                             more recently with desktop publishing software like
@@ -138,14 +138,14 @@ export default function FeaturedProjectsSection() {
                                         className={`relative flex w-full flex-col rounded-xl transition-all duration-300 ${
                                             selectedImg &&
                                             selectedImg.id === project.id
-                                                ? 'scale-100  h-[350px] md:h-[450px] lg:h-[550px]'
-                                                : 'scale-90 mt-[60%] sm:mt-[35%] md:mt-[35%] lg:mt-[24.5%] h-[250px] md:h-[350px] lg:h-[450px] '
+                                                ? 'h-[350px] scale-100 md:h-[450px] lg:h-[550px]'
+                                                : 'mt-[60%] h-[250px] scale-90 sm:mt-[35%] md:mt-[35%] md:h-[350px] lg:mt-[24.5%] lg:h-[450px]'
                                         }`}
                                         initial={{ scale: 0.9 }}
                                         animate={
                                             selectedImg &&
                                             selectedImg.id === project.id
-                                                ? { scale: 1.1  }
+                                                ? { scale: 1.1 }
                                                 : { scale: 0.9 }
                                         }
                                         transition={{ duration: 0.3 }}

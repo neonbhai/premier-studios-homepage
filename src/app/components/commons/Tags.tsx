@@ -29,7 +29,7 @@ export default function Tags({
     const MarqueeContent = () => (
         <>
             <span
-                className={`${currentVariant.text} text-[0.7rem] md:text-[0.8rem] lg:text-[1rem] font-normal tracking-wider whitespace-nowrap capitalize`}
+                className={`${currentVariant.text} text-[0.7rem] font-normal tracking-wider whitespace-nowrap capitalize md:text-[0.8rem] lg:text-[1rem]`}
             >
                 {text}
             </span>
@@ -47,7 +47,7 @@ export default function Tags({
             style={{ maxWidth }}
         >
             <div
-                className="animate-marquee w-[1022px] flex items-center gap-[0.5625rem]"
+                className="animate-marquee flex w-[1022px] items-center gap-[0.5625rem]"
                 // style={{ width: "10%" }}
             >
                 {Array.from({ length: 20 }, (_, i) => (

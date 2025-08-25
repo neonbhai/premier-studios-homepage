@@ -6,12 +6,11 @@ import FAQCard from './cards/FAQCard';
 import { servicesData } from '../data/servicesData';
 
 export default function ServicesSection() {
-
     return (
         <section className="w-full bg-black py-8 md:py-12 lg:py-16">
             <div className="w-full px-4 md:px-8 lg:px-16">
                 {/* Header Section */}
-                <div className="mb-12 flex gap-8 md:mb-16 items-end lg:mb-20 justify-between lg:gap-12">
+                <div className="mb-12 flex items-end justify-between gap-8 md:mb-16 lg:mb-20 lg:gap-12">
                     {/* Left Side - Title and Scroller */}
                     <div className="flex flex-col gap-6 md:gap-8">
                         {/* Our Services Scroller */}
@@ -24,8 +23,8 @@ export default function ServicesSection() {
                     </div>
 
                     {/* Right Side - Collaborate Link */}
-                    <div className="flex items-center gap-3 lg:mb-4 justify-end">
-                        <span className=" text-[0.61rem] xs:text-xs sm:text-sm leading-[1.2] font-medium tracking-wide text-white uppercase md:text-base lg:text-lg">
+                    <div className="flex items-center justify-end gap-3 lg:mb-4">
+                        <span className="xs:text-xs text-[0.61rem] leading-[1.2] font-medium tracking-wide text-white uppercase sm:text-sm md:text-base lg:text-lg">
                             Collaborate with us
                         </span>
                         <svg
