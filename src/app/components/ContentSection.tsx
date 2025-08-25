@@ -13,7 +13,7 @@ export default function ContentSection({ reverse }: { reverse: boolean }) {
                     {/* Left Image - Desktop Position */}
                     <div className="relative">
                         <div
-                            className="a bsolute overflow-hidden rounded-[20px]"
+                            className="overflow-hidden rounded-[20px]"
                             style={{
                                 left: '80px',
                                 top: '62px',
