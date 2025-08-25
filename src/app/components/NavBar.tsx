@@ -94,11 +94,16 @@ function MobileNav({ isOpen, onClose }: MobileNavProps) {
     );
 }
 
-export default function NavBar({ transparent = false, overlay = false }: NavBarProps) {
+export default function NavBar({
+    transparent = false,
+    overlay = false,
+}: NavBarProps) {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return (
-        <header className={`${overlay ? 'relative z-10' : 'bg-transparent'} flex items-center justify-between px-8 pt-8 sm:px-9 sm:pt-9 xl:px-[4.3vw] xl:pt-[6vh] ${!overlay ? 'pb-4 sm:pb-6 xl:pb-[3vh]' : ''}`}>
+        <header
+            className={`${overlay ? 'relative z-10' : 'bg-transparent'} flex items-center justify-between px-8 pt-8 sm:px-9 sm:pt-9 xl:px-[4.3vw] xl:pt-[4vh] ${!overlay ? 'pb-4 sm:pb-6 xl:pb-[3vh]' : ''}`}
+        >
             <NavLogo />
             <DesktopNav transparent={transparent} />
             <AnimatedHamburger
