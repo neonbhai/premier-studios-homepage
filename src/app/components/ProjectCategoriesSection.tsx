@@ -13,7 +13,7 @@ export default function ProjectCategoriesSection() {
     ];
 
     return (
-        <section className="w-full bg-black py-8 md:py-12 lg:py-16">
+        <section className="w-full py-8 md:py-12 lg:py-16">
             <div className="mx-auto w-full max-w-7xl px-4 md:px-8 lg:px-16">
                 <div className="flex justify-center">
                     <div className="flex items-center gap-5">

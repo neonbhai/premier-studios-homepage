@@ -14,7 +14,7 @@ export default function FooterSection() {
     };
 
     return (
-        <footer className="w-full bg-black py-8 md:py-12 lg:py-16">
+        <footer className="w-full py-8 md:py-12 lg:py-16">
             <div className="mx-auto w-full max-w-[90rem] px-4 md:px-8 lg:px-16">
                 {/* Desktop Layout */}
                 <div className="hidden lg:block">

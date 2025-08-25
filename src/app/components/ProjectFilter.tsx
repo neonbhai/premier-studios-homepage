@@ -31,7 +31,7 @@ export default function ProjectFilter({
     };
 
     return (
-        <section className="w-full bg-black py-[2rem]">
+        <section className="w-full py-[2rem]">
             <div className="mx-auto px-[1rem] md:px-[2rem] lg:px-[5rem]">
                 <div className="flex items-center gap-[0.3125rem] overflow-x-auto">
                     {filters.map((filter) => (

@@ -8,7 +8,7 @@ import { servicesData } from '../data/servicesData';
 
 export default function ServicesSection() {
     return (
-        <section className="w-full bg-black py-8 md:py-12 lg:py-16">
+        <section className="w-full py-8 md:py-12 lg:py-16">
             <div className="w-full px-4 md:px-8 lg:px-16">
                 {/* Header Section */}
                 <div className="mb-12 flex items-end justify-between gap-8 md:mb-16 lg:mb-20 lg:gap-12">

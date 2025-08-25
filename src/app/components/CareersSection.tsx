@@ -34,7 +34,7 @@ export default function CareersSection() {
     ];
 
     return (
-        <section className="w-full bg-black py-8 md:py-12 lg:py-16">
+        <section className="w-full py-8 md:py-12 lg:py-16">
             <div className="w-full px-4 md:px-8 lg:px-16">
                 {/* Scrolling Marquee */}
                 <div className="flex w-full justify-start">

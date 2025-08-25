@@ -58,7 +58,7 @@ export default function FeaturedProjectsSection() {
     };
 
     return (
-        <section className="w-full bg-black py-8 md:py-12 lg:py-16">
+        <section className="w-full py-8 md:py-12 lg:py-16">
             <div className="mx-auto w-full max-w-[2680px]">
                 <CenteredHeader
                     tagText="What we do"

@@ -16,7 +16,7 @@ export default function OfferSection({
     services = offerServicesData,
 }: OfferSectionProps) {
     return (
-        <section className="w-full bg-black py-[3.125rem]">
+        <section className="w-full py-[3.125rem]">
             <div className="mx-auto px-[1rem] md:px-[2rem] lg:px-[5rem]">
                 <div className="flex flex-col gap-[1.875rem]">
                     {/* Header Section */}

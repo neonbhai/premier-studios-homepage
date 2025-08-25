@@ -30,7 +30,7 @@ export default function AboutSection({
     ],
 }: AboutSectionProps) {
     return (
-        <section className="w-full bg-black py-[3.125rem]">
+        <section className="w-full py-[3.125rem]">
             <div className="mx-auto px-[1rem] md:px-[2rem] lg:px-[4.25rem]">
                 <div className="flex flex-col items-center gap-[3rem] md:gap-[6.25rem]">
                     {/* Top Content Section */}

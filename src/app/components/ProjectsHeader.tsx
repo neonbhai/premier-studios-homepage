@@ -12,7 +12,7 @@ export default function ProjectsHeader({
     description = 'A curated selection of projects that reflect our commitment to simplicity and purposeful design.',
 }: ProjectsHeaderProps) {
     return (
-        <section className="w-full bg-black py-[3.125rem]">
+        <section className="w-full py-[3.125rem]">
             <div className="mx-auto px-[1rem] md:px-[2rem] lg:px-[5rem]">
                 <div className="flex w-full flex-col gap-[1.875rem]">
                     {/* Tags */}

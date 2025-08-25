@@ -3,7 +3,7 @@ import { logos } from '../data/MarqueeData';
 
 export default function MarqueeSection() {
     return (
-        <section className="w-full overflow-hidden bg-black py-8 md:py-12 lg:py-16">
+        <section className="w-full overflow-hidden py-8 md:py-12 lg:py-16">
             <div className="animate-marquee-1 flex items-center">
                 {/* Duplicate the logos array to create seamless loop */}
                 {[
