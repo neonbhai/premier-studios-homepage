@@ -105,12 +105,12 @@ export default function ContentSection({ reverse }: { reverse: boolean }) {
                         </div>
 
                         {/* Image - Mobile */}
-                        <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[20px] md:aspect-[3/2]">
+                        <div className="relative aspect-[3/4] w-full overflow-hidden rounded-[20px] md:aspect-[3/2]">
                             <Image
-                                src="/assets/content-image.png"
+                                src="/assets/mobile-why-us.png"
                                 alt="Content image"
                                 fill
-                                className="object-cover"
+                                className="object-contain"
                             />
                             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/46"></div>
                         </div>
