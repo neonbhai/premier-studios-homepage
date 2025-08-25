@@ -17,7 +17,7 @@ export default function InterestSelector({
                 I{"'"}m interested in...
             </h3>
 
-            <div className="flex w-full flex-col gap-[1rem] lg:flex-row lg:flex-wrap">
+            <div className="flex flex-row flex-wrap gap-[1rem]">
                 {interests.map((interest) => (
                     <button
                         key={interest}

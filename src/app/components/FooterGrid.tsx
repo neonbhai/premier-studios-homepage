@@ -29,6 +29,15 @@ export const FooterGrid: React.FC = () => {
                         text="Contact Us"
                         href={CONTACT_US_LINK}
                         flipped={true}
+                        size="sm"
+                        className="md:hidden"
+                    />
+                    <ButtonWithCutoff
+                        text="Contact Us"
+                        href={CONTACT_US_LINK}
+                        flipped={true}
+                        size="lg"
+                        className="hidden md:block"
                     />
                 </div>
             </FooterGridCell>
