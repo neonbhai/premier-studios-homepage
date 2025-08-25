@@ -1,13 +1,13 @@
 'use client';
 
 import { useState, useRef } from 'react';
-import Tags from './commons/Tags';
-import HeaderCenter from './commons/HeaderCenter';
 import Slider from 'react-slick';
 import { motion } from 'framer-motion';
-import Link from 'next/link';
 import FeaturedProjectCard from './cards/FeaturedProjectCard';
+import CarouselNavigation from './commons/CarouselNavigation';
+import CenteredHeader from './commons/CenteredHeader';
 import { projectsData, Project } from '../data/projectsData';
+
 export default function FeaturedProjectsSection() {
     const [selectedImg, setSelectedImg] = useState<Project>(projectsData[0]);
     const sliderRef = useRef<Slider>(null);
@@ -59,68 +59,25 @@ export default function FeaturedProjectsSection() {
     return (
         <section className="w-full bg-black py-8 md:py-12 lg:py-16">
             <div className="mx-auto w-full max-w-[2680px]">
-                {/* Header Section */}
-                <div className="mb-12 flex flex-col items-center md:mb-16 lg:mb-20">
-                    {/* What We Do Scroller */}
-                    <Tags text="What we do" variant="dark" />
-
-                    {/* Title and Description */}
-                    <div className="flex max-w-2xl flex-col items-center gap-6 text-center md:gap-8">
-                        <HeaderCenter
-                            whiteText="Our Featured"
-                            blueText="Projects"
-                            variant="dark"
-                            className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl"
-                        />
-                        <p className="px-4 text-sm leading-[1.4] font-normal text-white/70 md:text-base lg:text-lg">
-                            It was popularised in the 1960s with the release of
-                            Letraset sheets containing Lorem Ipsum passages, and
-                            more recently with desktop publishing software like
-                            Aldus PageMaker including versions of Lorem Ipsum.
-                        </p>
-                    </div>
-                </div>
+                <CenteredHeader
+                    tagText="What we do"
+                    tagVariant="dark"
+                    whiteText="Our Featured"
+                    blueText="Projects"
+                    headerVariant="dark"
+                    description="It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+                    headerClassName="text-2xl md:text-3xl lg:text-4xl xl:text-5xl"
+                    containerClassName="mb-12 flex flex-col items-center md:mb-16 lg:mb-20"
+                />
 
                 {/* Carousel Container */}
-                <div className="relative mb-12 md:mb-16 lg:mb-20">
-                    {/* Navigation Arrows */}
-                    <button
-                        onClick={goToPrev}
-                        className="absolute top-1/2 left-4 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-gray-600 bg-gray-800 shadow-lg transition-all hover:scale-105 hover:bg-gray-700 md:h-14 md:w-14 lg:left-8"
-                    >
-                        <svg
-                            className="h-5 w-5 text-white md:h-6 md:w-6"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M15 19l-7-7 7-7"
-                            />
-                        </svg>
-                    </button>
-
-                    <button
-                        onClick={goToNext}
-                        className="absolute top-1/2 right-4 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-gray-600 bg-gray-800 shadow-lg transition-all hover:scale-105 hover:bg-gray-700 md:h-14 md:w-14 lg:right-8"
-                    >
-                        <svg
-                            className="h-5 w-5 text-white md:h-6 md:w-6"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M9 5l7 7-7 7"
-                            />
-                        </svg>
-                    </button>
+                <div className="relative">
+                    <CarouselNavigation
+                        onPrevious={goToPrev}
+                        onNext={goToNext}
+                        viewAllHref="/projects"
+                        viewAllText="View all"
+                    />
 
                     {/* Sliding Carousel Container */}
                     <div className="h-[600px] w-full overflow-hidden md:h-[600px] lg:h-[700px]">
@@ -160,55 +117,8 @@ export default function FeaturedProjectsSection() {
                                 </div>
                             ))}
                         </Slider>
-                        {/* <div
-              className="flex transition-transform duration-700 ease-in-out h-full"
-              style={{ 
-                transform: `translateX(-${currentSlide * 85}%)`,
-                width: `calc(${projects.length} * 85%)` 
-              }}
-            >
-              {projects.map((project, index) => {
-                const isCenter = index === currentSlide;
-                const isAdjacent = Math.abs(index - currentSlide) === 1;
-                const isVisible = isCenter || isAdjacent || Math.abs(index - currentSlide) <= 2;
-                
-                if (!isVisible) return <div key={project.id} className="w-full" />;
-                
-                return (
-                  <div 
-                    key={project.id}
-                    className={`flex-shrink-0 h-full px-2 transition-all duration-700 ease-in-out ${
-                      isCenter 
-                        ? 'w-[85%]' // Center card takes 85% to account for the full sliding space
-                        : 'w-[85%]'  // All cards have same width, but non-center ones are scaled down
-                    }`}
-                    onClick={() => {
-                      if (!isCenter) {
-                        console.log(`Clicked on project ${index + 1}`);
-                        setCurrentSlide(index);
-                      }
-                    }}
-                  >
-                    <ProjectCard 
-                      position={isCenter ? 'center' : 'side'}
-                      project={project}
-                      className={`cursor-pointer ${!isCenter ? 'hover:scale-105' : ''}`}
-                    />
-                  </div>
-                );
-              })}
-            </div> */}
                     </div>
                 </div>
-
-                {/* View All Button */}
-                <Link href="/projects">
-                    <div className="flex justify-center">
-                        <button className="min-w-[200px] rounded-full border border-gray-300 bg-white px-8 py-3 text-sm font-medium text-black transition-colors hover:border-gray-400 hover:bg-gray-100 md:min-w-[271px] md:px-12 md:py-4 md:text-base lg:text-lg">
-                            View all
-                        </button>
-                    </div>
-                </Link>
             </div>
         </section>
     );
