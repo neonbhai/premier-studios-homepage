@@ -9,7 +9,7 @@ export default function ContactUs() {
             <NavBar transparent />
 
             {/* Contact Form Section */}
-            <ScrollAnimatedSection>
+            <ScrollAnimatedSection delay={0}>
                 <ContactFormSection />
             </ScrollAnimatedSection>
         </div>
