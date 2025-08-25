@@ -6,7 +6,7 @@ export default function ContactUs() {
     return (
         <div className="bg-[#050505]">
             {/* NavBar - No animation (first section) */}
-            <NavBar project />
+            <NavBar transparent />
 
             {/* Contact Form Section */}
             <ScrollAnimatedSection>

@@ -66,7 +66,7 @@ export default function Projects() {
     return (
         <div className="bg-[#050505]">
             {/* Projects Header */}
-            <NavBar project />
+            <NavBar transparent />
             <ProjectsHeader />
 
             {/* Project Filter */}
