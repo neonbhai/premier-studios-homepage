@@ -12,6 +12,7 @@ export default function CarouselNavigation({
             {/* Navigation Arrows */}
             <button
                 onClick={onPrevious}
+                aria-label="Previous item"
                 className="absolute top-1/2 left-4 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-gray-600 bg-gray-800 shadow-lg transition-all hover:scale-105 hover:bg-gray-700 md:h-14 md:w-14 lg:left-8"
             >
                 <svg
@@ -31,6 +32,7 @@ export default function CarouselNavigation({
 
             <button
                 onClick={onNext}
+                aria-label="Next item"
                 className="absolute top-1/2 right-4 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-gray-600 bg-gray-800 shadow-lg transition-all hover:scale-105 hover:bg-gray-700 md:h-14 md:w-14 lg:right-8"
             >
                 <svg

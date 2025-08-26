@@ -82,6 +82,7 @@ export default function TestimonialsSection() {
                         onClick={prevSlide}
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.95 }}
+                        aria-label="Previous testimonial"
                         className="absolute top-1/2 left-4 z-10 hidden h-12 w-12 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-white/50 bg-black text-white transition-colors md:flex"
                     >
                         <svg
@@ -100,6 +101,7 @@ export default function TestimonialsSection() {
                         onClick={nextSlide}
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.95 }}
+                        aria-label="Next testimonial"
                         className="absolute top-1/2 right-4 z-10 hidden h-12 w-12 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-white/30 bg-black text-white transition-colors md:flex"
                     >
                         <svg
@@ -147,6 +149,7 @@ export default function TestimonialsSection() {
                             onClick={prevSlide}
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.95 }}
+                            aria-label="Previous testimonial"
                             className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20"
                         >
                             <svg
@@ -164,6 +167,7 @@ export default function TestimonialsSection() {
                             onClick={nextSlide}
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.95 }}
+                            aria-label="Next testimonial"
                             className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20"
                         >
                             <svg
