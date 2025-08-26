@@ -34,7 +34,7 @@ export default function FeaturedProjectsSection() {
         variableWidth: true,
         slidesToShow: 3,
         slidesToScroll: 1,
-        speed: 2000,
+        speed: 1000,
         focusOnSelect: true,
         dotsClass: 'custom-dots',
         customPaging: (i: number) => (
@@ -91,13 +91,13 @@ export default function FeaturedProjectsSection() {
                                     // className="relative w-[450px] transition-all duration-300 outline-none sm:w-[600px] md:w-[730px] lg:-ml-12 lg:w-[830px] xl:w-[80px] scroll-smooth"
                                 >
                                     <motion.div
-                                        className={`relative flex w-full flex-col rounded-xl transition-all duration-2000 ${
+                                        className={`relative flex w-full flex-col rounded-xl transition-all duration-1000 ${
                                             selectedImg &&
                                             selectedImg.id === project.id
                                                 ? 'h-[450px] scale-110 md:h-[550px] lg:h-[650px]'
-                                                : 'mt-[70%] h-[250px] scale- sm:mt-[42%] md:mt-[35%] md:h-[350px] lg:mt-[26.3%] lg:h-[450px]'
+                                                : 'scale- mt-[70%] h-[250px] sm:mt-[42%] md:mt-[35%] md:h-[350px] lg:mt-[26.3%] lg:h-[450px]'
                                         }`}
-                                        initial={{ scale: 0.9 }}  
+                                        initial={{ scale: 0.9 }}
                                     >
                                         <div className="relative h-full w-full">
                                             <FeaturedProjectCard
