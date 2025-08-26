@@ -19,19 +19,25 @@ export default function CenteredHeader({
     blueText,
     headerVariant = 'dark',
     description,
-    headerClassName = 'text-2xl md:text-3xl lg:text-4xl xl:text-5xl',
-    containerClassName = 'mb-12 flex flex-col items-center md:mb-16 lg:mb-20',
+    headerClassName,
+    containerClassName,
 }: CenteredHeaderProps) {
     return (
-        <div className={containerClassName}>
-            <Tags text={tagText} variant={tagVariant} />
+        <div
+            className={`mb-12 flex flex-col items-center md:mb-16 lg:mb-20 ${containerClassName || ''}`}
+        >
+            <Tags
+                text={tagText}
+                variant={tagVariant}
+                className="mb-4 lg:mb-8"
+            />
 
             <div className="flex max-w-2xl flex-col items-center gap-6 text-center md:gap-8">
                 <HeaderCenter
                     whiteText={whiteText}
                     blueText={blueText}
                     variant={headerVariant}
-                    className={headerClassName}
+                    className={`text-2xl md:text-3xl lg:text-4xl xl:text-5xl ${headerClassName || ''}`}
                 />
                 {description && (
                     <p className="px-4 text-sm leading-[1.4] font-normal text-white/70 md:text-base lg:text-lg">

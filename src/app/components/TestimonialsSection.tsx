@@ -42,7 +42,6 @@ export default function TestimonialsSection() {
         ],
     };
 
-
     const nextSlide = () => {
         sliderRef.current?.slickNext();
     };
@@ -51,7 +50,6 @@ export default function TestimonialsSection() {
         sliderRef.current?.slickPrev();
     };
 
-
     return (
         <section className="w-full py-8 md:py-12 lg:py-16">
             <div className="mx-auto w-full max-w-[2680px] px-4 md:px-8 lg:px-16">
@@ -59,7 +57,11 @@ export default function TestimonialsSection() {
                 <div className="mx-auto mb-12 flex w-full max-w-7xl flex-col items-center md:mb-16 lg:mb-20">
                     {/* Testimonials Scroller */}
 
-                    <Tags text="testimonials" variant="dark" />
+                    <Tags
+                        text="testimonials"
+                        variant="dark"
+                        className="mb-4 lg:mb-8"
+                    />
 
                     {/* Title and Description */}
                     <div className="flex max-w-2xl flex-col items-center gap-6 text-center md:gap-8">

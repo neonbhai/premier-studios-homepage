@@ -34,7 +34,7 @@ export default function AboutSection({
             <div className="mx-auto px-[1rem] md:px-[2rem] lg:px-[4.25rem]">
                 <div className="flex flex-col items-center gap-[3rem] md:gap-[6.25rem]">
                     {/* Top Content Section */}
-                    <div className="flex w-full max-w-[43.13125rem] flex-col items-center gap-[1.5rem] md:gap-[2.1875rem]">
+                    <div className="flex w-full max-w-[43.13125rem] flex-col items-center gap-[1.5rem] md:gap-[2.18rem]">
                         {/* Infinite Scroller */}
                         <Tags text={tagText} variant="dark" />
 

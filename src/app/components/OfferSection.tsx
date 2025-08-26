@@ -20,10 +20,14 @@ export default function OfferSection({
             <div className="mx-auto px-[1rem] md:px-[2rem] lg:px-[5rem]">
                 <div className="flex flex-col gap-[1.875rem]">
                     {/* Header Section */}
-                    <div className="flex flex-col gap-[1.875rem]">
+                    <div>
                         {/* Infinite Scroller */}
                         <div className="flex w-full justify-center md:justify-start lg:justify-start">
-                            <Tags text={tagText} variant="dark" />
+                            <Tags
+                                text={tagText}
+                                variant="dark"
+                                className="mb-4 lg:mb-8"
+                            />
                         </div>
 
                         {/* Title and CTA */}
