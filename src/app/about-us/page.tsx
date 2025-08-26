@@ -2,7 +2,6 @@ import HeroSection from '../components/HeroSection';
 import AboutSection from '../components/AboutSection';
 import OfferSection from '../components/OfferSection';
 import HistorySection from '../components/HistorySection';
-import ContentSection from '../components/ContentSection';
 import TestimonialsSection from '../components/TestimonialsSection';
 import CareersSection from '../components/CareersSection';
 import ScrollAnimatedSection from '../components/scroll-animated-section';
@@ -34,11 +33,6 @@ export default function AboutUs() {
             {/* History Section */}
             <ScrollAnimatedSection>
                 <HistorySection />
-            </ScrollAnimatedSection>
-
-            {/* Content Section */}
-            <ScrollAnimatedSection>
-                <ContentSection reverse />
             </ScrollAnimatedSection>
 
             {/* Testimonials */}

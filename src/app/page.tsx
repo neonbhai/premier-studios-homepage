@@ -2,7 +2,6 @@ import HeroSection from './components/HeroSection';
 import AboutSection from './components/AboutSection';
 import MarqueeSection from './components/MarqueeSection';
 import ContentSection from './components/ContentSection';
-import HistorySection from './components/HistorySection';
 import FeaturedProjectsSection from './components/FeaturedProjectsSection';
 import MinecraftServicesSection from './components/MinecraftServicesSection';
 import ServicesSection from './components/ServicesSection';
@@ -23,12 +22,7 @@ export default function Home() {
 
             {/* Content Section */}
             <ScrollAnimatedSection>
-                <ContentSection reverse={false} />
-            </ScrollAnimatedSection>
-
-            {/* History Section */}
-            <ScrollAnimatedSection>
-                <HistorySection />
+                <ContentSection />
             </ScrollAnimatedSection>
 
             {/* Featured Projects Section */}

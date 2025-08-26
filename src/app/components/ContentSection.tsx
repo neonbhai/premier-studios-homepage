@@ -2,7 +2,11 @@ import Image from 'next/image';
 import ArrowButton from './commons/ArrowButton';
 import Tags from './commons/Tags';
 
-export default function ContentSection({ reverse }: { reverse: boolean }) {
+export default function ContentSection({
+    reverse = false,
+}: {
+    reverse?: boolean;
+}) {
     return (
         <section className="container mx-auto py-8 md:py-12 lg:py-16">
             <div className="relative w-full px-[1rem]">
@@ -100,7 +104,7 @@ export default function ContentSection({ reverse }: { reverse: boolean }) {
                 <div className="lg:hidden">
                     <div className="flex flex-col gap-8 md:gap-12">
                         {/* Why Us Scroller - Mobile */}
-                        <div className="flex w-full justify-center md:justify-start lg:justify-start">
+                        <div className="flex w-full justify-center lg:justify-start">
                             <Tags text="Why Us" variant="dark" />
                         </div>
 
