@@ -102,7 +102,7 @@ export default function ContentSection({
 
                 {/* Mobile & Tablet Layout */}
                 <div className="lg:hidden">
-                    <div className="flex flex-col gap-8 md:gap-12">
+                    <div className="flex flex-col gap-4 md:gap-12">
                         {/* Why Us Scroller - Mobile */}
                         <div className="flex w-full justify-center lg:justify-start">
                             <Tags text="Why Us" variant="dark" />
