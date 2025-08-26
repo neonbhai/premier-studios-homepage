@@ -33,7 +33,7 @@ const historyEvents: HistoryEvent[] = [
 
 export default function HistorySection() {
     return (
-        <section className="w-full bg-[#050505] py-8 md:py-12 lg:py-16">
+        <section className="w-full py-8 md:py-12 lg:py-16">
             <div className="mx-auto w-full max-w-[2680px] px-4 sm:px-6 lg:px-8">
                 <CenteredHeader
                     tagText="Our history"
@@ -57,16 +57,16 @@ export default function HistorySection() {
                         {historyEvents.map((event, index) => (
                             <div
                                 key={index}
-                                className="relative pb-20 last:pb-0 md:pb-32 lg:pb-40"
+                                className="relative flex items-center py-10"
                             >
-                                {/* Timeline Dot */}
-                                <div className="absolute top-1/6 left-1/2 z-20 flex h-[34px] w-[34px] -translate-x-1/2 transform items-center justify-center rounded-full border border-white bg-[#050505]">
+                                {/* Timeline Dot - Centered */}
+                                <div className="absolute top-1/2 left-1/2 z-10 flex h-[34px] w-[34px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white bg-[#050505]">
                                     <div className="h-[18px] w-[18px] rounded-full bg-[#029BE6]"></div>
                                 </div>
 
                                 {/* Content Card - Alternating on all screen sizes */}
                                 <div
-                                    className={`relative m-2 pt-0 ${
+                                    className={`relative m-3 w-full ${
                                         event.position === 'left'
                                             ? 'flex justify-end pr-[50%] pl-0'
                                             : 'flex justify-start pr-0 pl-[50%]'
