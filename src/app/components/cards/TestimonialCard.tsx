@@ -12,7 +12,7 @@ export default function TestimonialCard() {
                     <motion.div
                         className="relative h-full w-full"
                         style={{
-                            transition: 'height 0.4s ease-in-out',
+                            transition: 'height 1s ease-in-out',
                         }}
                     >
                         <Image

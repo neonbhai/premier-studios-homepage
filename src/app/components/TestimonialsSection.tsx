@@ -24,6 +24,7 @@ export default function TestimonialsSection() {
         autoplaySpeed: 5000,
         pauseOnHover: true,
         arrows: false,
+        // cssEase: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
         beforeChange: (current: number, next: number) => setCurrentSlide(next),
         responsive: [
             {
@@ -134,6 +135,7 @@ export default function TestimonialsSection() {
                                             className="flex h-full justify-center transition-all duration-300 ease-in-out"
                                         >
                                             <TestimonialCard />
+                                            {/* <div className=' h-40  w-40 bg-red-100'/> */}
                                         </motion.div>
                                     </div>
                                 </div>
