@@ -26,9 +26,9 @@ export default function TestimonialCard() {
 
                         {/* User Info */}
                         <div className="absolute bottom-0 left-0 p-4 lg:p-6">
-                            <h4 className="text-lg leading-[1.4] font-medium text-white lg:text-xl xl:text-2xl">
+                            <div className="text-lg leading-[1.4] font-medium text-white lg:text-xl xl:text-2xl">
                                 Alex Carter
-                            </h4>
+                            </div>
                             <p className="mt-1 text-sm leading-[1.5] font-normal text-white/90 lg:text-base xl:text-lg">
                                 Marketing Director at NovaTech
                             </p>
@@ -40,9 +40,9 @@ export default function TestimonialCard() {
                 <div className="flex flex-col justify-between rounded-[20px] bg-white p-4 lg:w-[65%] lg:rounded-[30px] lg:p-6 xl:p-8">
                     {/* Location */}
                     <div className="mb-4 lg:mb-6">
-                        <h5 className="text-base font-medium text-black lg:text-lg xl:text-xl">
+                        <div className="text-base font-medium text-black lg:text-lg xl:text-xl">
                             TX | USA
-                        </h5>
+                        </div>
                     </div>
 
                     {/* Quote and Text */}
