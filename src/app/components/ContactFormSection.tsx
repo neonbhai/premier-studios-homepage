@@ -11,9 +11,6 @@ import ContactSubmitButton from './ContactSubmitButton';
 interface ContactFormSectionProps {
     tagText?: string;
     description?: string;
-    email?: string;
-    phone?: string;
-    socialLinks?: string[];
 }
 
 export default function ContactFormSection({
@@ -76,11 +73,6 @@ export default function ContactFormSection({
                                 <div className="flex w-full justify-center md:justify-start lg:justify-start">
                                     <Tags text={tagText} variant="dark" />
                                 </div>
-
-                                {/* Title */}
-                                {/* <h2 className="text-white text-[2rem] md:text-[3rem] font-medium leading-[1.21] w-full">
-                  {title}
-                </h2> */}
 
                                 <HeaderSide
                                     text="Let's Create Something "
