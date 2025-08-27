@@ -12,13 +12,13 @@ export default function Home() {
     return (
         <div className="bg-[#050505]">
             {/* Hero Section - No animation (first section) */}
-            <HeroSection showNavBar={true} />
+            <HeroSection showNavBar={true} quaterHeight />
 
             {/* About Section */}
-            <ScrollAnimatedSection>
+            {/* <ScrollAnimatedSection> */}
                 <AboutSection />
                 <MarqueeSection />
-            </ScrollAnimatedSection>
+            {/* </ScrollAnimatedSection> */}
 
             {/* Content Section */}
             <ScrollAnimatedSection>

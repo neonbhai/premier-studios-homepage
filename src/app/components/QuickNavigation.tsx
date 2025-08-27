@@ -4,10 +4,10 @@ import React from 'react';
 import Link from 'next/link';
 
 const navigationLinks = [
-    { label: 'Home', href: '#home' },
-    { label: 'Our Studio', href: '#about' },
-    { label: 'Our Work', href: '#work' },
-    { label: 'Reviews', href: '#reviews' },
+    { label: 'Home', href: '/' },
+    { label: 'About us', href: '/about-us' },
+    { label: 'Our Work', href: '/projects' },
+    { label: 'Contact us', href: '/contact-us' },
 ];
 
 export const QuickNavigation: React.FC = () => {

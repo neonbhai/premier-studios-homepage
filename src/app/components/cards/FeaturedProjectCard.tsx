@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import ArrowButton from '../commons/ArrowButton';
 
 type Project = {
     id: number;
@@ -52,18 +53,24 @@ export default function FeaturedProjectCard({
                 </p>
 
                 <div className="relative mt-3 flex items-center sm:mt-4 md:mt-5">
-                    <button>
-                        <Image
-                            src="/assets/arrow-icon.svg"
-                            alt="Arrow icon"
-                            width={100}
-                            height={42}
-                            className="transition-transform group-hover:scale-105 sm:h-[50px] sm:w-[118px] md:h-[57px] md:w-[135px] lg:h-[62.5px] lg:w-[148.5px]"
-                        />
-                        <span className="absolute top-[12px] left-[18px] text-[10px] font-medium text-white sm:top-[15px] sm:left-[22px] sm:text-[14px] md:top-[17px] md:left-[25px] md:text-[15px] lg:top-[19px] lg:left-[27px] lg:text-base">
-                            View project
-                        </span>
-                    </button>
+                    <div className=' sm:blcok hidden'>
+                    <ArrowButton
+                                                   text="View Project"
+                                                   variant="dark"
+                                                   size="medium"
+                                                   fill="#000000"
+                                                   className2="text-white -ml-5"
+                                               />
+                    </div>
+                    <div className=' block sm:hidden'>
+                    <ArrowButton
+                                                   text="View Project"
+                                                   variant="dark"
+                                                   size="very-small"
+                                                   fill="#000000"
+                                                   className2="text-white -ml-5"
+                                               />
+                    </div>
                 </div>
             </div>
         </div>

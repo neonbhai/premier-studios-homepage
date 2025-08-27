@@ -103,11 +103,6 @@ export default function ContentSection({
                 {/* Mobile & Tablet Layout */}
                 <div className="lg:hidden">
                     <div className="flex flex-col gap-4 md:gap-12">
-                        {/* Why Us Scroller - Mobile */}
-                        <div className="flex w-full justify-center lg:justify-start">
-                            <Tags text="Why Us" variant="dark" />
-                        </div>
-
                         {/* Image - Mobile */}
                         <div className="relative aspect-[3/4] w-full overflow-hidden rounded-[20px] md:aspect-[3/2]">
                             <Image
@@ -119,8 +114,13 @@ export default function ContentSection({
                             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/46"></div>
                         </div>
 
+
                         {/* Content - Mobile */}
                         <div className="flex flex-col gap-6 md:gap-8">
+                        {/* Why Us Scroller - Mobile */}
+                        <div className="flex w-full justify-center lg:justify-start">
+                            <Tags text="Why Us" variant="dark" />
+                        </div>
                             <h2 className="text-center text-xl leading-[1.21] font-medium text-white md:text-left md:text-2xl lg:text-[2rem]">
                                 What is Lorem Ipsum?
                             </h2>

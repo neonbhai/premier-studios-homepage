@@ -2,7 +2,7 @@ interface ArrowButtonProps {
     text?: string;
     onClick?: () => void;
     className?: string;
-    size?: 'small' | 'medium' | 'large';
+    size?: 'very-small'| 'small' | 'medium' | 'large';
     variant?: 'light' | 'dark';
     className2?: string;
     fill?: string;
@@ -18,6 +18,11 @@ export default function ArrowButton({
     fill = 'white',
 }: ArrowButtonProps) {
     const sizeClasses = {
+        "very-small": {
+            container: 'w-[95px] h-[40px]',
+            text: 'text-[0.6rem]',
+            textPosition: 'left-[36px] top-[13px]',
+        },
         small: {
             container: 'w-[119px] h-[50px]',
             text: 'text-xs',
@@ -39,19 +44,19 @@ export default function ArrowButton({
 
     return (
         <button
-            className={`group relative w-fit transition-all duration-300 ${className}`}
+            className={` cursor-pointer group relative w-fit transition-all duration-300 ${className}`}
             onClick={onClick}
         >
             <div className={`${currentSize.container} relative`}>
                 {/* SVG with dynamic fill and transparent hover */}
                 <svg
                     className="absolute inset-0 h-full w-full transition-all duration-300"
-                    viewBox="0 0 149 63"
+                    viewBox="0 0 150 64"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                 >
                     <path
-                        d="M0 0V53.6801C0 58.6674 4.043 62.7104 9.0303 62.7104H138.966C144.508 62.7104 149 58.2182 149 52.6768V20.569L128.431 0H0Z"
+                        d="M1 0.5V54C1 58.9706 5.02943 63 10 63H139.5C145.023 63 149.5 58.5228 149.5 53V21L129 0.5H1Z"
                         fill={fill}
                         stroke={fill}
                         strokeWidth="2"

@@ -19,6 +19,7 @@ interface HeroSectionProps {
     showContentSection?: boolean;
     showNavBar?: boolean;
     halfheight?: boolean;
+    quaterHeight?: boolean;
 }
 
 export default function HeroSection({
@@ -34,10 +35,11 @@ export default function HeroSection({
     showContentSection = true,
     showNavBar = true,
     halfheight,
+    quaterHeight,
 }: HeroSectionProps) {
     return (
         <div
-            className={`relative ${halfheight ? 'md:h-screen lg:h-screen' : 'h-screen'} min-h-[500px] w-full overflow-hidden`}
+            className={`relative ${halfheight ? 'md:h-screen lg:h-screen' : ' h-[80vh] md:h-screen lg:h-screen'} min-h-[500px] w-full overflow-hidden`}
         >
             {/* Background Image */}
             <HeroBackground backgroundImage={backgroundImage} />
@@ -47,7 +49,7 @@ export default function HeroSection({
 
             {/* Year Badge */}
             {showYearBadge && (
-                <div className="absolute right-[5%] bottom-24 sm:bottom-28 md:right-8 md:bottom-30 md:left-auto lg:bottom-[9.7vh] lg:left-8 xl:bottom-[9.7vh] xl:left-[4.3vw]">
+                <div className="absolute right-[8%] bottom-24 sm:bottom-28 md:right-[6%] md:bottom-30 md:left-auto lg:bottom-[9.7vh] lg:left-8 xl:bottom-[9.7vh] xl:left-[4.3vw]">
                     <div className="text-sm leading-[1.5] font-bold text-white/83 sm:text-base xl:text-[1.1vw]">
                         {yearBadge}
                     </div>
