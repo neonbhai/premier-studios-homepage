@@ -79,7 +79,7 @@ export default function FeaturedProjectsSection() {
                     />
 
                     {/* Sliding Carousel Container */}
-                    <div className="h-[600px] w-full overflow-hidden md:h-[600px] lg:h-[700px]">
+                    <div className="h-[450px] w-full overflow-hidden md:h-[600px] lg:h-[700px]">
                         <Slider
                             ref={sliderRef}
                             {...settings}
