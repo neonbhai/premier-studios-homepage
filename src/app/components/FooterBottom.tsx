@@ -16,12 +16,12 @@ export const FooterBottom: React.FC = () => {
                 >
                     Terms & Conditions
                 </Link>
-                <Link
+                {/* <Link
                     href="#"
                     className="text-xs text-white transition-colors hover:text-white/80 md:text-base"
                 >
                     Legal License
-                </Link>
+                </Link> */}
                 <Link
                     href="/privacy-policy"
                     className="text-xs text-white transition-colors hover:text-white/80 md:text-base"
