@@ -1,5 +1,5 @@
-import Image from 'next/image';
-import ArrowButton from './commons/ArrowButton';
+import HeroContentSection from './HeroContentSection';
+import HeroBackground from './HeroBackground';
 import NavBar from './NavBar';
 
 interface HeroSectionProps {
@@ -40,61 +40,28 @@ export default function HeroSection({
             className={`relative ${halfheight ? 'md:h-screen lg:h-screen' : 'h-screen'} min-h-[500px] w-full overflow-hidden`}
         >
             {/* Background Image */}
-            <div className="hero-image-container absolute inset-0 m-[17px]">
-                <Image
-                    src={backgroundImage}
-                    alt="Hero background"
-                    fill
-                    className="object-cover object-center grayscale"
-                />
-                {/* Dark overlay */}
-                <div className="absolute inset-0 bg-black/45 md:bg-black/30 lg:bg-black/30"></div>
-            </div>
+            <HeroBackground backgroundImage={backgroundImage} />
 
             {/* Header */}
             {showNavBar && <NavBar overlay />}
 
             {/* Year Badge */}
             {showYearBadge && (
-                <div className="absolute right-[10%] bottom-24 text-sm leading-[1.5] font-bold text-white/83 sm:bottom-12 sm:left-8 sm:text-base md:bottom-8 md:left-6 lg:bottom-8 lg:left-8 xl:bottom-[9.7vh] xl:left-[4.3vw] xl:text-[1.1vw]">
-                    {yearBadge}
+                <div className="absolute right-[5%] bottom-24 sm:bottom-28 md:right-8 md:bottom-30 md:left-auto lg:bottom-[9.7vh] lg:left-8 xl:bottom-[9.7vh] xl:left-[4.3vw]">
+                    <div className="text-sm leading-[1.5] font-bold text-white/83 sm:text-base xl:text-[1.1vw]">
+                        {yearBadge}
+                    </div>
                 </div>
             )}
 
             {/* Content Section */}
             {showContentSection && (
-                <div className="absolute top-[30vh] left-7 flex w-[calc(90%-4rem)] flex-col gap-6 sm:top-[32vh] sm:left-8 sm:w-[calc(70%-4rem)] sm:gap-8 md:w-[calc(40%-4rem)] xl:top-[32.4vh] xl:left-[4.3vw] xl:w-[29.5vw] xl:gap-[3.9vh]">
-                    <div className="flex flex-col gap-4 sm:gap-5 xl:gap-[2.6vh]">
-                        {/* Heading */}
-                        <h2 className="font-bricolage max-w-[90%] text-xl leading-[1.2] font-medium text-[#F7F7F7] sm:text-2xl xl:max-w-[27.1vw] xl:text-[2.3vw]">
-                            {heading.split(highlightText).map((part, index) => (
-                                <span key={index}>
-                                    {part}
-                                    {index <
-                                        heading.split(highlightText).length -
-                                            1 && (
-                                        <span className="text-[#029BE6]">
-                                            {highlightText}
-                                        </span>
-                                    )}
-                                </span>
-                            ))}
-                        </h2>
-
-                        {/* Description */}
-                        <p className="text-sm leading-[1.5] font-medium text-white/83 sm:text-base xl:text-[1.1vw]">
-                            {description}
-                        </p>
-                    </div>
-
-                    {/* Join Now Button */}
-                    <ArrowButton
-                        text={buttonText}
-                        size="medium"
-                        variant="light"
-                        className2=" "
-                    />
-                </div>
+                <HeroContentSection
+                    heading={heading}
+                    highlightText={highlightText}
+                    description={description}
+                    buttonText={buttonText}
+                />
             )}
 
             {/* Large Premier Text */}
@@ -110,7 +77,7 @@ export default function HeroSection({
             )}
             {!showYearBadge && (
                 <div className="absolute right-6 bottom-6 sm:right-8 sm:bottom-4 xl:right-[4.3vw]">
-                    <h1 className="pointer-events-none text-7xl leading-[1.199] font-medium text-white sm:text-7xl md:text-8xl lg:text-[15.1vw]">
+                    <h1 className="text-7xl leading-[1.199] font-medium text-white sm:text-7xl md:text-8xl lg:text-[15.1vw]">
                         {brandText.slice(0)}{' '}
                         <span className="text-[#029BE6]">
                             {brandHighlightLetter}
