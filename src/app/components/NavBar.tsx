@@ -58,14 +58,14 @@ function DesktopNav({ transparent }: DesktopNavProps) {
                     <Link
                         key={index}
                         href={link?.href}
-                        className="text-[1.1vw] leading-[1.21] font-normal whitespace-nowrap capitalize transition-opacity hover:opacity-80"
+                        className="leading-[1.21] font-normal whitespace-nowrap capitalize transition-opacity hover:opacity-80 lg:text-[15px] xl:text-[1.1vw]"
                     >
                         {link.label}
                     </Link>
                 ))}
             </div>
             <Link href={'/contact-us'}>
-                <button className="h-[7.1vh] w-[11.2vw] cursor-pointer rounded-[48px] bg-[#007AFF] px-[1.1vw] py-[0.8vh] text-[1.1vw] leading-[1.21] font-normal whitespace-nowrap text-white transition-colors hover:bg-[#0056CC]">
+                <button className="h-[7.1vh] w-[11.2vw] cursor-pointer rounded-[48px] bg-[#007AFF] px-[1.1vw] py-[0.8vh] leading-[1.21] font-normal whitespace-nowrap text-white transition-colors hover:bg-[#0056CC] lg:text-[15px] xl:text-[1.1vw]">
                     Contact us
                 </button>
             </Link>
