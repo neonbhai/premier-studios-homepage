@@ -52,7 +52,7 @@ export default function TestimonialsSection() {
 
     return (
         <section className="w-full py-8 md:py-12 lg:py-16">
-            <div className="mx-auto w-full max-w-[2680px] px-4 md:px-8 lg:px-16">
+            <div className="mx-auto w-full max-w-[2680px] px-4 md:px-8 lg:h-[700px] lg:px-16 xl:h-[800px]">
                 {/* Header Section */}
                 <div className="mx-auto mb-12 flex w-full max-w-7xl flex-col items-center md:mb-16 lg:mb-20">
                     {/* Testimonials Scroller */}
@@ -206,10 +206,10 @@ export default function TestimonialsSection() {
                 </div>
 
                 {/* Progress Bar */}
-                <div className="flex w-full justify-center">
-                    <div className="relative h-1.5 w-32 rounded-full bg-black/40 md:h-[6px] md:w-[134px]">
+                {/* <div className="flex w-full justify-center">
+                    <div className="relative h-1.5 w-32 rounded-full bg-white/10 md:h-[6px] md:w-[134px]">
                         <div
-                            className="absolute top-0 left-0 h-1.5 w-12 rounded-full bg-black transition-all duration-300 ease-out md:h-[6px] md:w-[51px]"
+                            className="absolute top-0 left-0 h-1.5 w-12 rounded-full bg-white transition-all duration-300 ease-out md:h-[6px] md:w-[51px]"
                             style={{
                                 transform: `translateX(${
                                     (currentSlide /
@@ -225,7 +225,7 @@ export default function TestimonialsSection() {
                             }}
                         />
                     </div>
-                </div>
+                </div> */}
             </div>
         </section>
     );
