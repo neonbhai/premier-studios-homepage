@@ -39,7 +39,7 @@ export default function HeroSection({
 }: HeroSectionProps) {
     return (
         <div
-            className={`relative ${halfheight ? 'md:h-screen lg:h-screen' : ' h-[80vh] md:h-screen lg:h-screen'} min-h-[500px] w-full overflow-hidden`}
+            className={`relative ${halfheight ? 'md:h-screen lg:h-screen' : 'h-[80vh] md:h-screen lg:h-screen'} min-h-[500px] w-full overflow-hidden`}
         >
             {/* Background Image */}
             <HeroBackground backgroundImage={backgroundImage} />

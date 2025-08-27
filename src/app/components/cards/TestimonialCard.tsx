@@ -66,26 +66,26 @@ export default function TestimonialCard() {
                     </div>
 
                     {/* View Live Project Button */}
-                    <div className=' w-full hidden sm:block'>
-                    <ArrowButton
-                        text="View Now"
-                        size="medium"
-                        variant="dark"
-                        fill="black"
-                        className2="  "
-                        className=""
-                    />
-                        </div>
-                    <div className='  w-full block sm:hidden'>
-                    <ArrowButton
-                        text="View Now"
-                        size="very-small"
-                        variant="dark"
-                        fill="black"
-                        className2=" -ml-3 "
-                        className=""
-                    />
-                        </div>
+                    <div className="hidden w-full sm:block">
+                        <ArrowButton
+                            text="View Now"
+                            size="medium"
+                            variant="dark"
+                            fill="black"
+                            className2="  "
+                            className=""
+                        />
+                    </div>
+                    <div className="block w-full sm:hidden">
+                        <ArrowButton
+                            text="View Now"
+                            size="very-small"
+                            variant="dark"
+                            fill="black"
+                            className2=" -ml-3 "
+                            className=""
+                        />
+                    </div>
                 </div>
             </div>
         </div>

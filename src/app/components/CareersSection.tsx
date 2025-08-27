@@ -74,7 +74,10 @@ export default function CareersSection() {
                                         {job.title}
                                     </h3>
 
-                                    <Link href="/contact-us" className="flex items-center gap-5 transition-opacity hover:opacity-80">
+                                    <Link
+                                        href="/contact-us"
+                                        className="flex items-center gap-5 transition-opacity hover:opacity-80"
+                                    >
                                         <span className="text-sm font-medium text-white md:text-base lg:text-base">
                                             Apply
                                         </span>

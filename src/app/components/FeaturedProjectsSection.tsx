@@ -94,7 +94,7 @@ export default function FeaturedProjectsSection() {
                                         className={`relative flex w-full flex-col rounded-xl transition-all duration-1000 ${
                                             selectedImg &&
                                             selectedImg.id === project.id
-                                                ? ' h-[250px] scale-110 md:h-[550px] lg:h-[650px]'
+                                                ? 'h-[250px] scale-110 md:h-[550px] lg:h-[650px]'
                                                 : 'scale- mt-[20%] h-[200px] sm:mt-[14%] md:mt-[35%] md:h-[350px] lg:mt-[26.3%] lg:h-[450px]'
                                         }`}
                                         initial={{ scale: 0.9 }}
@@ -113,7 +113,7 @@ export default function FeaturedProjectsSection() {
                 </div>
 
                 {/* View All Button */}
-                <div className=" -mt-32 sm:-mt-30 md:mt-5 lg:mt-16">
+                <div className="-mt-32 sm:-mt-30 md:mt-5 lg:mt-16">
                     <Link href="/projects">
                         <div className="flex justify-center">
                             <button className="min-w-[200px] rounded-full border border-gray-300 bg-white px-8 py-3 text-sm font-medium text-black transition-colors hover:border-gray-400 hover:bg-gray-100 md:min-w-[271px] md:px-12 md:py-4 md:text-base lg:text-lg">

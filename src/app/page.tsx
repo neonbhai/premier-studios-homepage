@@ -16,8 +16,8 @@ export default function Home() {
 
             {/* About Section */}
             {/* <ScrollAnimatedSection> */}
-                <AboutSection />
-                <MarqueeSection />
+            <AboutSection />
+            <MarqueeSection />
             {/* </ScrollAnimatedSection> */}
 
             {/* Content Section */}

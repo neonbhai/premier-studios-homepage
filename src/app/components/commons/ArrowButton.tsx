@@ -2,7 +2,7 @@ interface ArrowButtonProps {
     text?: string;
     onClick?: () => void;
     className?: string;
-    size?: 'very-small'| 'small' | 'medium' | 'large';
+    size?: 'very-small' | 'small' | 'medium' | 'large';
     variant?: 'light' | 'dark';
     className2?: string;
     fill?: string;
@@ -18,7 +18,7 @@ export default function ArrowButton({
     fill = 'white',
 }: ArrowButtonProps) {
     const sizeClasses = {
-        "very-small": {
+        'very-small': {
             container: 'w-[95px] h-[40px]',
             text: 'text-[0.6rem]',
             textPosition: 'left-[36px] top-[13px]',
@@ -44,7 +44,7 @@ export default function ArrowButton({
 
     return (
         <button
-            className={` cursor-pointer group relative w-fit transition-all duration-300 ${className}`}
+            className={`group relative w-fit cursor-pointer transition-all duration-300 ${className}`}
             onClick={onClick}
         >
             <div className={`${currentSize.container} relative`}>

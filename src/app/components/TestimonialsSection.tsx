@@ -11,7 +11,7 @@ import { testimonialsData } from '../data/testimonialsData';
 export default function TestimonialsSection() {
     const [currentSlide, setCurrentSlide] = useState(0);
     const sliderRef = useRef<Slider>(null);
-    const [customCenterPadding, setCustomCenterPadding] = useState("20%")
+    const [customCenterPadding, setCustomCenterPadding] = useState('20%');
 
     const sliderSettings = {
         dots: false,
@@ -43,14 +43,14 @@ export default function TestimonialsSection() {
         ],
     };
 
-    // useEffect to check if window size is less than 400 
-    useEffect(()=>{
-        if(typeof window !== 'undefined'){
-            if(window.innerWidth < 400 ){
-                setCustomCenterPadding("10%")
+    // useEffect to check if window size is less than 400
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            if (window.innerWidth < 400) {
+                setCustomCenterPadding('10%');
             }
         }
-    },[])
+    }, []);
 
     const nextSlide = () => {
         sliderRef.current?.slickNext();
@@ -61,11 +61,8 @@ export default function TestimonialsSection() {
     };
 
     return (
- 
-
         <section id="testimonials" className="w-full pt-8 md:pt-12 lg:pt-16">
-            <div className=" w-full max-w-[2680px]   lg:h-[700px]  xl:h-[800px]">
- 
+            <div className="w-full max-w-[2680px] lg:h-[700px] xl:h-[800px]">
                 {/* Header Section */}
                 <div className="mx-auto mb-12 flex w-full max-w-7xl flex-col items-center md:mb-16 lg:mb-20">
                     {/* Testimonials Scroller */}

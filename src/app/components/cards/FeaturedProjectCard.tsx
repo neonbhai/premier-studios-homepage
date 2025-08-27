@@ -53,23 +53,23 @@ export default function FeaturedProjectCard({
                 </p>
 
                 <div className="relative mt-3 flex items-center sm:mt-4 md:mt-5">
-                    <div className=' sm:block hidden'>
-                    <ArrowButton
-                                                   text="View Project"
-                                                   variant="dark"
-                                                   size="medium"
-                                                   fill="#000000"
-                                                   className2="text-white -ml-5"
-                                               />
+                    <div className="hidden sm:block">
+                        <ArrowButton
+                            text="View Project"
+                            variant="dark"
+                            size="medium"
+                            fill="#000000"
+                            className2="text-white -ml-5"
+                        />
                     </div>
-                    <div className=' block sm:hidden'>
-                    <ArrowButton
-                                                   text="View Project"
-                                                   variant="dark"
-                                                   size="very-small"
-                                                   fill="#000000"
-                                                   className2="text-white -ml-5"
-                                               />
+                    <div className="block sm:hidden">
+                        <ArrowButton
+                            text="View Project"
+                            variant="dark"
+                            size="very-small"
+                            fill="#000000"
+                            className2="text-white -ml-5"
+                        />
                     </div>
                 </div>
             </div>
