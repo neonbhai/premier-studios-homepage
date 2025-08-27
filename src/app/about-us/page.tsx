@@ -35,14 +35,14 @@ export default function AboutUs() {
                 <HistorySection />
             </ScrollAnimatedSection>
 
-            {/* Testimonials */}
-            <ScrollAnimatedSection>
-                <TestimonialsSection />
-            </ScrollAnimatedSection>
-
             {/* Careers Section */}
             <ScrollAnimatedSection>
                 <CareersSection />
+            </ScrollAnimatedSection>
+
+            {/* Testimonials */}
+            <ScrollAnimatedSection>
+                <TestimonialsSection />
             </ScrollAnimatedSection>
         </div>
     );

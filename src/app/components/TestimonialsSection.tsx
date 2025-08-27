@@ -19,7 +19,7 @@ export default function TestimonialsSection() {
         slidesToShow: 1,
         slidesToScroll: 1,
         centerMode: true,
-        centerPadding: '20%',
+        centerPadding: '10%',
         autoplay: true,
         autoplaySpeed: 5000,
         pauseOnHover: true,
@@ -28,14 +28,37 @@ export default function TestimonialsSection() {
         beforeChange: (current: number, next: number) => setCurrentSlide(next),
         responsive: [
             {
+                breakpoint: 9999,
+                settings: {
+                    centerMode: true,
+                    centerPadding: '20%',
+                },
+            },
+            {
                 breakpoint: 768,
                 settings: {
-                    centerPadding: '15%',
+                    centerMode: false,
+                    centerPadding: '0px',
                 },
             },
             {
                 breakpoint: 480,
                 settings: {
+                    centerMode: true,
+                    centerPadding: '10%',
+                },
+            },
+            {
+                breakpoint: 400,
+                settings: {
+                    centerMode: true,
+                    centerPadding: '10%',
+                },
+            },
+            {
+                breakpoint: 350,
+                settings: {
+                    centerMode: true,
                     centerPadding: '10%',
                 },
             },
@@ -51,8 +74,10 @@ export default function TestimonialsSection() {
     };
 
     return (
-        <section id="testimonials" className="w-full py-8 md:py-12 lg:py-16">
-            <div className="mx-auto w-full max-w-[2680px] px-4 md:px-8 lg:h-[700px] lg:px-16 xl:h-[800px]">
+
+        <section id="testimonials" className="w-full pt-8 md:pt-12 lg:pt-16">
+            <div className=" w-full max-w-[2680px]   lg:h-[700px]  xl:h-[800px]">
+
                 {/* Header Section */}
                 <div className="mx-auto mb-12 flex w-full max-w-7xl flex-col items-center md:mb-16 lg:mb-20">
                     {/* Testimonials Scroller */}
@@ -127,8 +152,8 @@ export default function TestimonialsSection() {
                             className="overflow-hidden"
                         >
                             {testimonialsData.map((testimonial, index) => (
-                                <div key={testimonial.id} className="px-2">
-                                    <div className="testimonial-card-wrapper h-96 md:h-[400px] lg:h-[450px] xl:h-[500px]">
+                                <div key={testimonial.id} className="  px-2">
+                                    <div className="testimonial-card-wrapper w-full h-96 md:h-[400px] lg:h-[450px] xl:h-[500px]">
                                         <motion.div
                                             initial={{ opacity: 0, y: 20 }}
                                             animate={{ opacity: 1, y: 0 }}
@@ -136,10 +161,9 @@ export default function TestimonialsSection() {
                                                 duration: 0.5,
                                                 delay: index * 0.1,
                                             }}
-                                            className="flex h-full justify-center transition-all duration-300 ease-in-out"
+                                            className="flex h-full w-full justify-center transition-all duration-300 ease-in-out"
                                         >
-                                            <TestimonialCard />
-                                            {/* <div className=' h-40  w-40 bg-red-100'/> */}
+                                            <TestimonialCard /> 
                                         </motion.div>
                                     </div>
                                 </div>

@@ -5,6 +5,7 @@ import Link from 'next/link';
 
 const navigationLinks = [
     { label: 'Home', href: '/' },
+ 
     { label: 'Our Studio', href: '/about-us' },
     { label: 'Our Work', href: '/projects' },
     { label: 'Reviews', href: '/#testimonials' },

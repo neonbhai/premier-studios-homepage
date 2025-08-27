@@ -36,9 +36,9 @@ export default function TestimonialCard() {
                 </div>
 
                 {/* Testimonial Content */}
-                <div className="flex flex-col justify-between rounded-[20px] bg-white p-4 lg:w-[65%] lg:rounded-[30px] lg:p-6 xl:p-8">
+                <div className="flex flex-col justify-between rounded-[20px] bg-white p-3 md:p-4 lg:w-[65%] lg:rounded-[30px] lg:p-6 xl:p-8">
                     {/* Location */}
-                    <div className="mb-4 lg:mb-6">
+                    <div className="mb-3 lg:mb-6">
                         <div className="text-base font-medium text-black lg:text-lg xl:text-xl">
                             TX | USA
                         </div>
@@ -60,12 +60,13 @@ export default function TestimonialCard() {
                         {/* Testimonial Text */}
                         <p className="mb-6 text-sm leading-[1.4] font-normal text-black lg:text-base xl:text-lg">
                             {
-                                'Working with Premier Studio was a game-changer for our brand. Their attention to detail, creativity, and professionalism exceeded all expectations. The final product was beyond what we imagined.'
+                                'Working with Premier Studio was a game-changer for our brand. Their attention to detail, creativity, and professionalism exceeded all expectations.'
                             }
                         </p>
                     </div>
 
                     {/* View Live Project Button */}
+                    <div className=' w-full hidden sm:block'>
                     <ArrowButton
                         text="View Now"
                         size="medium"
@@ -74,6 +75,17 @@ export default function TestimonialCard() {
                         className2="  "
                         className=""
                     />
+                        </div>
+                    <div className='  w-full block sm:hidden'>
+                    <ArrowButton
+                        text="View Now"
+                        size="very-small"
+                        variant="dark"
+                        fill="black"
+                        className2=" -ml-3 "
+                        className=""
+                    />
+                        </div>
                 </div>
             </div>
         </div>
