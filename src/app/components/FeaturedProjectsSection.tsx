@@ -73,10 +73,10 @@ export default function FeaturedProjectsSection() {
 
                 {/* Carousel Container */}
                 <div className="relative">
-                    {/* <CarouselNavigation
+                    <CarouselNavigation
                         onPrevious={goToPrev}
                         onNext={goToNext}
-                    /> */}
+                    />
 
                     {/* Sliding Carousel Container */}
                     <div className="h-[450px] w-full overflow-hidden md:h-[600px] lg:h-[700px]">
