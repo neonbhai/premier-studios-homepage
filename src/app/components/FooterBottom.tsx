@@ -9,7 +9,7 @@ export const FooterBottom: React.FC = () => {
             <div className="pb-2 text-right text-xs text-white/40 md:text-base">
                 © 2025 Premier Studios. All Rights Reserved.
             </div>
-            <div className="flex gap-4 md:gap-8">
+            <div className="flex gap-4 pb-2 md:gap-8">
                 <Link
                     href="/terms"
                     className="text-xs text-white transition-colors hover:text-white/80 md:text-base"
