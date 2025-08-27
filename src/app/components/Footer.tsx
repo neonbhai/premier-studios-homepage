@@ -8,7 +8,7 @@ import { FooterBottom } from './FooterBottom';
 
 export const Footer: React.FC = () => {
     return (
-        <footer className="relative pt-20 text-white md:pt-24">
+        <footer className="relative bg-[#050505] pt-20 text-white md:pt-24">
             {/* Grid Layout */}
             <FooterGrid />
             <div className="relative px-4 pb-0 lg:px-20">

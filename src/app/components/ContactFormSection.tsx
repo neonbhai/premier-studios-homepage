@@ -61,7 +61,7 @@ export default function ContactFormSection({
     };
 
     return (
-        <section className="w-full bg-[#050505] py-[2rem] md:py-[3.125rem]">
+        <section className="w-full py-[2rem] md:py-[3.125rem]">
             <div className="container mx-auto px-[1rem] md:px-[2rem] lg:px-[5rem]">
                 <div className="flex flex-col items-start gap-[2rem] md:gap-[3.125rem] xl:flex-row">
                     {/* Left Content */}
