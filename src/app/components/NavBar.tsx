@@ -25,7 +25,7 @@ interface DesktopNavProps {
     transparent?: boolean;
 }
 
-interface MobileNavProps {
+interface MobileOverlayProps {
     isOpen: boolean;
     onClose: () => void;
 }
@@ -73,7 +73,7 @@ function DesktopNav({ transparent }: DesktopNavProps) {
     );
 }
 
-function MobileNav({ isOpen, onClose }: MobileNavProps) {
+function MobileOverlay({ isOpen, onClose }: MobileOverlayProps) {
     if (!isOpen) return null;
 
     return (
@@ -102,7 +102,7 @@ export default function NavBar({
 
     return (
         <header
-            className={`${overlay ? 'relative z-10' : 'bg-transparent'} flex items-center justify-between px-8 pt-8 sm:px-9 sm:pt-9 xl:px-[4.3vw] xl:pt-[4vh] ${!overlay ? 'pb-4 sm:pb-6 xl:pb-[3vh]' : ''}`}
+            className={`${overlay ? 'relative z-10' : 'bg-transparent'} flex items-center justify-between ${transparent ? 'px-[0.8rem]' : 'px-8'} pt-8 sm:px-9 sm:pt-9 xl:px-[4.3vw] xl:pt-[4vh] ${!overlay ? 'pb-4 sm:pb-6 xl:pb-[3vh]' : ''}`}
         >
             <NavLogo />
             <DesktopNav transparent={transparent} />
@@ -111,7 +111,7 @@ export default function NavBar({
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="lg:hidden"
             />
-            <MobileNav
+            <MobileOverlay
                 isOpen={isMenuOpen}
                 onClose={() => setIsMenuOpen(false)}
             />
