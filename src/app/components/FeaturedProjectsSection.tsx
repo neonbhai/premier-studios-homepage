@@ -73,10 +73,10 @@ export default function FeaturedProjectsSection() {
 
                 {/* Carousel Container */}
                 <div className="relative">
-                    <CarouselNavigation
+                    {/* <CarouselNavigation
                         onPrevious={goToPrev}
                         onNext={goToNext}
-                    />
+                    /> */}
 
                     {/* Sliding Carousel Container */}
                     <div className="h-[450px] w-full overflow-hidden md:h-[600px] lg:h-[700px]">
@@ -114,13 +114,13 @@ export default function FeaturedProjectsSection() {
 
                 {/* View All Button */}
                 <div className="-mt-32 sm:-mt-30 md:mt-5 lg:mt-16">
-                    <Link href="/projects">
-                        <div className="flex justify-center">
+                    <div className="flex justify-center">
+                        <Link href="/projects">
                             <button className="min-w-[200px] rounded-full border border-gray-300 bg-white px-8 py-3 text-sm font-medium text-black transition-colors hover:border-gray-400 hover:bg-gray-100 md:min-w-[271px] md:px-12 md:py-4 md:text-base lg:text-lg">
                                 View all
                             </button>
-                        </div>
-                    </Link>
+                        </Link>
+                    </div>
                 </div>
             </div>
         </section>
