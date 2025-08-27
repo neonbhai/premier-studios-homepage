@@ -51,7 +51,7 @@ export default function TestimonialsSection() {
     };
 
     return (
-        <section className="w-full py-8 md:py-12 lg:py-16">
+        <section id="testimonials" className="w-full py-8 md:py-12 lg:py-16">
             <div className="mx-auto w-full max-w-[2680px] px-4 md:px-8 lg:h-[700px] lg:px-16 xl:h-[800px]">
                 {/* Header Section */}
                 <div className="mx-auto mb-12 flex w-full max-w-7xl flex-col items-center md:mb-16 lg:mb-20">
