@@ -40,15 +40,15 @@ export default function HeroSection({
             className={`relative ${halfheight ? 'md:h-screen lg:h-screen' : 'h-screen'} min-h-[500px] w-full overflow-hidden`}
         >
             {/* Background Image */}
-            <div className="absolute inset-0 m-[17px] rounded-2xl">
+            <div className="hero-image-container absolute inset-0 m-[17px]">
                 <Image
                     src={backgroundImage}
                     alt="Hero background"
                     fill
-                    className="rounded-2xl object-cover object-center grayscale"
+                    className="object-cover object-center grayscale"
                 />
                 {/* Dark overlay */}
-                <div className="absolute inset-0 rounded-2xl bg-black/45 md:bg-black/30 lg:bg-black/30"></div>
+                <div className="absolute inset-0 bg-black/45 md:bg-black/30 lg:bg-black/30"></div>
             </div>
 
             {/* Header */}

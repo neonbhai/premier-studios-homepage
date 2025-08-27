@@ -238,6 +238,12 @@ body {
     transition: height 0.9s ease-in-out;
 }
 
+/* Hero Image Container with Bottom-Left Cut */
+.hero-image-container {
+    -webkit-mask: url('/assets/about-mask.svg') no-repeat center/100% 100%;
+    mask: url('/assets/about-mask.svg') no-repeat center/100% 100%;
+}
+
 /* Legal Pages Styles - Using inline utilities instead of @apply for Tailwind v4 compatibility */
 
 /* Animation for the image section specifically */
