@@ -3,10 +3,9 @@ import { motion } from 'framer-motion';
 import ArrowButton from '../commons/ArrowButton';
 
 export default function TestimonialCard() {
-
     return (
         <div className="w-full flex-shrink-0">
-            <div className="testimonial-card-content flex h-full flex-col gap-3 overflow-hidden rounded-[20px] bg-black lg:flex-row lg:rounded-[30px]">
+            <div className="testimonial-card-content flex h-full flex-col gap-3 overflow-hidden rounded-[20px] lg:flex-row lg:rounded-[30px]">
                 {/* User Info Section */}
                 <div className="testimonial-image-section relative overflow-hidden rounded-[20px] lg:w-[35%] lg:rounded-[30px]">
                     <motion.div
