@@ -98,7 +98,7 @@ export const ButtonWithCutoff: React.FC<ButtonWithCutoffProps> = ({
                 <NormalSVG flipped={flipped} />
                 <HoverSVG flipped={flipped} />
                 <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="button-cutoff-text font-body font-medium text-black transition-colors duration-200 group-hover:text-white">
+                    <span className="button-cutoff-text font-body text-sm font-medium text-black transition-colors duration-200 group-hover:text-white md:text-base">
                         {text}
                     </span>
                 </div>
