@@ -59,7 +59,7 @@ export default function FeaturedProjectCard({
                             variant="dark"
                             size="medium"
                             fill="#000000"
-                            className2="text-white -ml-5"
+                            className2="text-white -ml-4"
                         />
                     </div>
                     <div className="block sm:hidden">
