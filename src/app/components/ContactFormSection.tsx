@@ -70,7 +70,9 @@ export default function ContactFormSection({
                         <div className="flex flex-col gap-[1.5rem] md:gap-[1.875rem]">
                             <div className="flex flex-col gap-[1.5rem] md:gap-[2.1875rem]">
                                 {/* Tags */}
+ 
                                 <div className="flex w-full justify-start  ">
+ 
                                     <Tags text={tagText} variant="dark" />
                                 </div>
 

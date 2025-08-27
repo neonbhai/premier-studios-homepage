@@ -74,8 +74,10 @@ export default function TestimonialsSection() {
     };
 
     return (
-        <section className="w-full pt-8 md:pt-12 lg:pt-16">
+
+        <section id="testimonials" className="w-full pt-8 md:pt-12 lg:pt-16">
             <div className=" w-full max-w-[2680px]   lg:h-[700px]  xl:h-[800px]">
+
                 {/* Header Section */}
                 <div className="mx-auto mb-12 flex w-full max-w-7xl flex-col items-center md:mb-16 lg:mb-20">
                     {/* Testimonials Scroller */}
