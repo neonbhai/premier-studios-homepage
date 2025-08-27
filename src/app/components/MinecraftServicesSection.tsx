@@ -45,7 +45,7 @@ export default function MinecraftServicesSection() {
                         </div>
 
                         {/* Button */}
-                        <div className="">
+                        <div>
                             <ArrowButton
                                 text="View Projects"
                                 variant="dark"
