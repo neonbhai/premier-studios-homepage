@@ -14,7 +14,7 @@ export const AnimatedHamburger: React.FC<AnimatedHamburgerProps> = ({
     return (
         <button
             onClick={onClick}
-            className={`relative z-[101] flex cursor-pointer items-center justify-center text-gray-900 transition-transform duration-300 hover:scale-110 ${className}`}
+            className={`relative z-[101] flex cursor-pointer items-center justify-center text-gray-900 transition-transform duration-300 ${className}`}
             aria-label="Toggle mobile menu"
         >
             <svg
