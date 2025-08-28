@@ -68,7 +68,7 @@ export default function HeroSection({
 
             {/* Large Premier Text */}
             {showYearBadge && (
-                <div className="absolute right-6 bottom-6 sm:right-8 sm:bottom-4 xl:right-[4.3vw]">
+                <div className="z-[2] pointer-events-none absolute right-6 bottom-6 sm:right-8 sm:bottom-4 xl:right-[4.3vw]">
                     <h1 className="text-7xl leading-[1.199] font-medium text-white sm:text-8xl md:text-8xl lg:text-[15.1vw]">
                         <span className="text-[#029BE6]">
                             {brandHighlightLetter}
@@ -78,7 +78,7 @@ export default function HeroSection({
                 </div>
             )}
             {!showYearBadge && (
-                <div className="absolute right-6 bottom-6 sm:right-8 sm:bottom-4 xl:right-[4.3vw]">
+                <div className="z-[2] pointer-events-none absolute right-6 bottom-6 sm:right-8 sm:bottom-4 xl:right-[4.3vw]">
                     <h1 className="text-7xl leading-[1.199] font-medium text-white sm:text-7xl md:text-8xl lg:text-[15.1vw]">
                         {brandText.slice(0)}{' '}
                         <span className="text-[#029BE6]">
