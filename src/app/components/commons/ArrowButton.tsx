@@ -43,7 +43,7 @@ export default function ArrowButton({
     const currentSize = sizeClasses[size];
 
     return (
-        <button
+        <div
             className={`group relative w-fit cursor-pointer transition-all duration-300 ${className}`}
             onClick={onClick}
         >
@@ -64,7 +64,7 @@ export default function ArrowButton({
                     />
                 </svg>
 
-                {/* Button Text */}
+                {/* button Text */}
                 <span
                     className={`absolute ${currentSize.textPosition} ${currentSize.text} z-10 -ml-1 font-medium transition-all duration-300 ${
                         variant === 'light'
@@ -75,6 +75,6 @@ export default function ArrowButton({
                     {text}
                 </span>
             </div>
-        </button>
+        </div>
     );
 }

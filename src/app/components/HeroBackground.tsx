@@ -15,6 +15,7 @@ export default function HeroBackground({
                 fill
                 className="z-0 rounded-3xl object-cover object-center"
                 priority
+                loading="eager"
             />
             {/* If black overlay to the image is needed: */}
             <div className="absolute inset-0 z-[1] bg-black/40 md:bg-black/40 lg:bg-black/40"></div>
