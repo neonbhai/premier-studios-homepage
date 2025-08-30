@@ -22,7 +22,6 @@ export default function ArrowRightIcon({
             xmlns="http://www.w3.org/2000/svg"
             className={className}
             role="img"
-            aria-hidden="true"
         >
             <path
                 d="M1 1L6 6.5L1 12"
