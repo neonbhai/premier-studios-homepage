@@ -1,20 +1,15 @@
 import HeaderSide from './commons/HeaderSide';
 import Tags from './commons/Tags';
-import { offerServicesData, OfferService } from '../data/offerServicesData';
+import { offerServicesData } from '../data/offerServicesData';
 import TextLinkWithArrow from './commons/TextLinkWithArrow';
 import ServiceCard from './ServiceCard';
 
-interface OfferSectionProps {
-    tagText?: string;
-    ctaText?: string;
-    services?: OfferService[];
-}
+const DEFAULT_CONTENT = {
+    tagText: 'Our services',
+    ctaText: 'Collaborate with us',
+} as const;
 
-export default function OfferSection({
-    tagText = 'Our services',
-    ctaText = 'Collaborate with us',
-    services = offerServicesData,
-}: OfferSectionProps) {
+export default function OfferSection() {
     return (
         <section className="w-full py-[3.125rem]">
             <div className="mx-auto px-[1rem] md:px-[2rem] lg:px-[5rem]">
@@ -24,7 +19,7 @@ export default function OfferSection({
                         {/* Infinite Scroller */}
                         <div className="flex w-full justify-center md:justify-start lg:justify-start">
                             <Tags
-                                text={tagText}
+                                text={DEFAULT_CONTENT.tagText}
                                 variant="dark"
                                 className="mb-4 lg:mb-8"
                             />
@@ -36,14 +31,14 @@ export default function OfferSection({
 
                             <TextLinkWithArrow
                                 href="/contact-us"
-                                text={ctaText}
+                                text={DEFAULT_CONTENT.ctaText}
                             />
                         </div>
                     </div>
 
                     {/* Services Cards */}
                     <div className="mt-[1.875rem] flex flex-col items-center gap-[2.75rem] xl:flex-row">
-                        {services.map((service, index) => (
+                        {offerServicesData.map((service, index) => (
                             <ServiceCard key={index} service={service} />
                         ))}
                     </div>

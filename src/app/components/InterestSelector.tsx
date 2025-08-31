@@ -1,5 +1,9 @@
 'use client';
 
+const DEFAULT_CONTENT = {
+    labelText: "I'm interested in...",
+} as const;
+
 interface InterestSelectorProps {
     interests: string[];
     selectedInterests: string[];
@@ -14,7 +18,7 @@ export default function InterestSelector({
     return (
         <div className="flex w-full flex-col gap-[1rem] md:gap-[1.5rem]">
             <h3 className="text-[1rem] leading-[1.21] font-medium text-[#050505] md:text-[1.25rem]">
-                I{"'"}m interested in...
+                {DEFAULT_CONTENT.labelText}
             </h3>
 
             <div className="flex flex-row flex-wrap gap-[1rem]">
