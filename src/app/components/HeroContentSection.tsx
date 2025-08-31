@@ -1,4 +1,4 @@
-import ArrowButton from './commons/ArrowButton';
+import CTAButton from './commons/CTAButton';
 
 interface HeroContentSectionProps {
     heading: string;
@@ -36,7 +36,7 @@ export default function HeroContentSection({
             </div>
 
             <div className="hidden w-full sm:block">
-                <ArrowButton
+                <CTAButton
                     text={buttonText}
                     size="medium"
                     variant="light"
@@ -45,7 +45,7 @@ export default function HeroContentSection({
                 />
             </div>
             <div className="block w-full sm:hidden">
-                <ArrowButton
+                <CTAButton
                     text={buttonText}
                     size="very-small"
                     variant="light"

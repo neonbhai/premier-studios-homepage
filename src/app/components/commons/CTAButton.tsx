@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-interface ArrowButtonProps {
+interface CTAButtonProps {
     text?: string;
     onClick?: () => void;
     className?: string;
@@ -11,7 +11,7 @@ interface ArrowButtonProps {
     href?: string;
 }
 
-export default function ArrowButton({
+export default function CTAButton({
     text = 'Join Now',
     onClick,
     className = '',
@@ -20,7 +20,7 @@ export default function ArrowButton({
     className2 = '',
     fill = 'white',
     href = '/contact',
-}: ArrowButtonProps) {
+}: CTAButtonProps) {
     const sizeClasses = {
         'very-small': {
             container: 'w-[95px] h-[40px]',

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import ArrowButton from '../commons/ArrowButton';
+import CTAButton from '../commons/CTAButton';
 
 export default function TestimonialCard() {
     return (
@@ -67,7 +67,7 @@ export default function TestimonialCard() {
 
                     {/* View Live Project Button */}
                     <div className="hidden w-full sm:block">
-                        <ArrowButton
+                        <CTAButton
                             text="View Now"
                             size="medium"
                             variant="dark"
@@ -77,7 +77,7 @@ export default function TestimonialCard() {
                         />
                     </div>
                     <div className="block w-full sm:hidden">
-                        <ArrowButton
+                        <CTAButton
                             text="View Now"
                             size="very-small"
                             variant="dark"

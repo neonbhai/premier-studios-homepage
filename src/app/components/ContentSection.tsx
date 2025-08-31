@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import ArrowButton from './commons/ArrowButton';
+import CTAButton from './commons/CTAButton';
 import Tags from './commons/Tags';
 
 export default function ContentSection({
@@ -89,7 +89,7 @@ export default function ContentSection({
                                 top: '650.37px',
                             }}
                         >
-                            <ArrowButton
+                            <CTAButton
                                 text="Join Now"
                                 size="medium"
                                 variant="light"
@@ -148,7 +148,7 @@ export default function ContentSection({
                             </div>
 
                             {/* Join Now Button */}
-                            <ArrowButton
+                            <CTAButton
                                 text="Join Now"
                                 size="medium"
                                 variant="light"

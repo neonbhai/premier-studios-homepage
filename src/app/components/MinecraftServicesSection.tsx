@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import ArrowButton from './commons/ArrowButton';
+import CTAButton from './commons/CTAButton';
 import HeaderCenter from './commons/HeaderCenter';
 import { MINECRAFT_SITE_LINK } from '../../CONSTS';
 
@@ -47,7 +47,7 @@ export default function MinecraftServicesSection() {
 
                         {/* Button */}
                         <div>
-                            <ArrowButton
+                            <CTAButton
                                 text="View Projects"
                                 variant="dark"
                                 size="medium"

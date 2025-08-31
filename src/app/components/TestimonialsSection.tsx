@@ -9,6 +9,7 @@ import TestimonialCard from './cards/TestimonialCard';
 import { testimonialsData } from '../data/testimonialsData';
 
 export default function TestimonialsSection() {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [currentSlide, setCurrentSlide] = useState(0);
     const sliderRef = useRef<Slider>(null);
     const [customCenterPadding, setCustomCenterPadding] = useState('20%');

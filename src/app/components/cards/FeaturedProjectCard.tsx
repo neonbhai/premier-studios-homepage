@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import ArrowButton from '../commons/ArrowButton';
+import CTAButton from '../commons/CTAButton';
 
 type Project = {
     id: number;
@@ -54,7 +54,7 @@ export default function FeaturedProjectCard({
 
                 <div className="relative mt-3 flex items-center sm:mt-4 md:mt-5">
                     <div className="hidden sm:block">
-                        <ArrowButton
+                        <CTAButton
                             text="View Project"
                             variant="dark"
                             size="medium"
@@ -64,7 +64,7 @@ export default function FeaturedProjectCard({
                         />
                     </div>
                     <div className="block sm:hidden">
-                        <ArrowButton
+                        <CTAButton
                             text="View Project"
                             variant="dark"
                             size="very-small"
