@@ -18,6 +18,7 @@ export interface Project {
     year: string;
     imageSrc: string;
     imageAlt: string;
+    category: 'creative' | 'technical' | 'writing';
 }
 
 export const PROJECTS_DATA: Project[] = [
@@ -29,6 +30,7 @@ export const PROJECTS_DATA: Project[] = [
         year: '2025',
         imageSrc: '/assets/projects/project.png',
         imageAlt: 'Okari project showcase',
+        category: 'creative',
     },
     {
         id: 2,
@@ -38,6 +40,7 @@ export const PROJECTS_DATA: Project[] = [
         year: '2024',
         imageSrc: '/assets/projects/project-card-bg.png',
         imageAlt: 'Nexus project showcase',
+        category: 'technical',
     },
     {
         id: 3,
@@ -47,6 +50,7 @@ export const PROJECTS_DATA: Project[] = [
         year: '2024',
         imageSrc: '/assets/hero-background.png',
         imageAlt: 'Zenith project showcase',
+        category: 'creative',
     },
     {
         id: 4,
@@ -56,6 +60,7 @@ export const PROJECTS_DATA: Project[] = [
         year: '2023',
         imageSrc: '/assets/projects/project.png',
         imageAlt: 'Vertex project showcase',
+        category: 'technical',
     },
     {
         id: 5,
@@ -65,6 +70,7 @@ export const PROJECTS_DATA: Project[] = [
         year: '2023',
         imageSrc: '/assets/projects/project-card-bg.png',
         imageAlt: 'Lumina project showcase',
+        category: 'creative',
     },
     {
         id: 6,
@@ -74,5 +80,6 @@ export const PROJECTS_DATA: Project[] = [
         year: '2022',
         imageSrc: '/assets/hero-background.png',
         imageAlt: 'Echo project showcase',
+        category: 'writing',
     },
 ];

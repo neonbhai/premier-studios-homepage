@@ -1,3 +1,6 @@
+'use client';
+
+import { useState } from 'react';
 import ProjectsHeader from '../components/ProjectsHeader';
 import ProjectCard from '../components/ProjectCard';
 import ProjectFilter from '../components/ProjectFilter';
@@ -6,6 +9,19 @@ import ScrollAnimatedSection from '../components/scroll-animated-section';
 import { PROJECTS_DATA } from '../../CONSTS';
 
 export default function Projects() {
+    const [activeFilter, setActiveFilter] = useState<string>('all');
+
+    const filteredProjects =
+        activeFilter === 'all'
+            ? PROJECTS_DATA
+            : PROJECTS_DATA.filter(
+                  (project) => project.category === activeFilter
+              );
+
+    const handleFilterChange = (filterId: string) => {
+        setActiveFilter(filterId);
+    };
+
     return (
         <div className="bg-[#050505]">
             {/* Projects Header */}
@@ -13,18 +29,23 @@ export default function Projects() {
             <ProjectsHeader />
 
             {/* Project Filter */}
-            <ProjectFilter />
+            <ProjectFilter
+                // onFilterChange={handleFilterChange}
+                activeFilter={activeFilter}
+            />
 
             {/* Projects Grid */}
             <section className="w-full bg-[#050505] py-[3.125rem]">
                 <div className="mx-auto px-[1rem] md:px-[2rem] lg:px-[5rem]">
                     <div className="grid grid-cols-1 gap-[2.5rem] md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
-                        {PROJECTS_DATA.map((project) => (
+                        {filteredProjects.map((project) => (
                             <ScrollAnimatedSection
                                 key={project.id}
                                 delay={0}
                                 duration={0.5}
                                 ease="power2.out"
+                                triggerStart="top bottom"
+                                triggerEnd="bottom top"
                             >
                                 <ProjectCard
                                     title={project.title}

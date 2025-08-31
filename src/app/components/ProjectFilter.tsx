@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 interface FilterOption {
     id: string;
@@ -9,7 +9,7 @@ interface FilterOption {
 
 interface ProjectFilterProps {
     filters?: FilterOption[];
-    onFilterChange?: (filterId: string) => void;
+    // onFilterChange?: (filterId: string) => void;
     activeFilter?: string;
 }
 
@@ -20,14 +20,18 @@ export default function ProjectFilter({
         { id: 'technical', label: 'Technical Services' },
         { id: 'writing', label: 'Writing Services' },
     ],
-    onFilterChange,
+    // onFilterChange,
     activeFilter = 'all',
 }: ProjectFilterProps) {
     const [selectedFilter, setSelectedFilter] = useState(activeFilter);
 
+    React.useEffect(() => {
+        setSelectedFilter(activeFilter);
+    }, [activeFilter]);
+
     const handleFilterClick = (filterId: string) => {
         setSelectedFilter(filterId);
-        onFilterChange?.(filterId);
+        // onFilterChange?.(filterId); // use when needed.
     };
 
     return (
