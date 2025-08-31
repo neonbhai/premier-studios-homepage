@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import ArrowButton from './commons/ArrowButton';
 import HeaderCenter from './commons/HeaderCenter';
+import { MINECRAFT_SITE_LINK } from '../../CONSTS';
 
 export default function MinecraftServicesSection() {
     return (
@@ -52,6 +53,7 @@ export default function MinecraftServicesSection() {
                                 size="medium"
                                 fill="#000000"
                                 className2="text-white -ml-5"
+                                href={MINECRAFT_SITE_LINK}
                             />
                         </div>
                     </div>

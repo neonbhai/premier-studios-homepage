@@ -41,6 +41,7 @@ export default function HeroContentSection({
                     size="medium"
                     variant="light"
                     className2=" "
+                    href="/contact"
                 />
             </div>
             <div className="block w-full sm:hidden">
@@ -49,6 +50,7 @@ export default function HeroContentSection({
                     size="very-small"
                     variant="light"
                     className2=" -ml-3 text-[0.7rem] -mt-[2px] "
+                    href="/contact"
                 />
             </div>
         </div>

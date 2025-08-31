@@ -60,6 +60,7 @@ export default function FeaturedProjectCard({
                             size="medium"
                             fill="#000000"
                             className2="text-white -ml-4"
+                            href="/projects"
                         />
                     </div>
                     <div className="block sm:hidden">
@@ -69,6 +70,7 @@ export default function FeaturedProjectCard({
                             size="very-small"
                             fill="#000000"
                             className2="text-white -ml-5"
+                            href="/projects"
                         />
                     </div>
                 </div>

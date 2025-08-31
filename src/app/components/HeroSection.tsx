@@ -35,7 +35,6 @@ export default function HeroSection({
     showContentSection = true,
     showNavBar = true,
     halfheight,
-    quaterHeight,
 }: HeroSectionProps) {
     return (
         <div
@@ -49,7 +48,7 @@ export default function HeroSection({
 
             {/* Year Badge */}
             {showYearBadge && (
-                <div className="absolute right-[8%] bottom-24 sm:bottom-28 md:right-[6%] md:bottom-30 md:left-auto lg:bottom-[9.7vh] lg:left-15 xl:bottom-[9.7vh] xl:left-[4.3vw]">
+                <div className="absolute right-[8%] bottom-24 z-[25] sm:bottom-28 md:right-[6%] md:bottom-30 md:left-auto lg:bottom-[9.7vh] lg:left-15 xl:bottom-[9.7vh] xl:left-[4.3vw]">
                     <div className="text-sm leading-[1.5] font-bold text-white/83 sm:text-base xl:text-[1.1vw]">
                         {yearBadge}
                     </div>
@@ -68,7 +67,7 @@ export default function HeroSection({
 
             {/* Large Premier Text */}
             {showYearBadge && (
-                <div className="z-[2] pointer-events-none absolute right-6 bottom-6 sm:right-8 sm:bottom-4 xl:right-[4.3vw]">
+                <div className="pointer-events-none absolute right-6 bottom-6 z-[2] sm:right-8 sm:bottom-4 xl:right-[4.3vw]">
                     <h1 className="text-7xl leading-[1.199] font-medium text-white sm:text-8xl md:text-8xl lg:text-[15.1vw]">
                         <span className="text-[#029BE6]">
                             {brandHighlightLetter}
@@ -78,7 +77,7 @@ export default function HeroSection({
                 </div>
             )}
             {!showYearBadge && (
-                <div className="z-[2] pointer-events-none absolute right-6 bottom-6 sm:right-8 sm:bottom-4 xl:right-[4.3vw]">
+                <div className="pointer-events-none absolute right-6 bottom-6 z-[2] sm:right-8 sm:bottom-4 xl:right-[4.3vw]">
                     <h1 className="text-7xl leading-[1.199] font-medium text-white sm:text-7xl md:text-8xl lg:text-[15.1vw]">
                         {brandText.slice(0)}{' '}
                         <span className="text-[#029BE6]">

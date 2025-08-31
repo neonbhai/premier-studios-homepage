@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 interface ArrowButtonProps {
     text?: string;
     onClick?: () => void;
@@ -6,6 +8,7 @@ interface ArrowButtonProps {
     variant?: 'light' | 'dark';
     className2?: string;
     fill?: string;
+    href?: string;
 }
 
 export default function ArrowButton({
@@ -16,6 +19,7 @@ export default function ArrowButton({
     variant = 'light',
     className2 = '',
     fill = 'white',
+    href = '/contact',
 }: ArrowButtonProps) {
     const sizeClasses = {
         'very-small': {
@@ -42,7 +46,7 @@ export default function ArrowButton({
 
     const currentSize = sizeClasses[size];
 
-    return (
+    const buttonContent = (
         <div
             className={`group relative w-fit cursor-pointer transition-all duration-300 ${className}`}
             onClick={onClick}
@@ -77,4 +81,6 @@ export default function ArrowButton({
             </div>
         </div>
     );
+
+    return <Link href={href}>{buttonContent}</Link>;
 }

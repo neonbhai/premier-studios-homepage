@@ -4,6 +4,7 @@ export const SOCIAL_LINKS = {
     TWITTER: 'https://x.com/PremierStudiosX',
 };
 
+export const MINECRAFT_SITE_LINK = '';
 export const CONTACT_US_LINK = '/contact-us';
 
 export const PHONE_NUMBER = '+44 20 7946 0990';
