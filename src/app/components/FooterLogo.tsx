@@ -10,6 +10,7 @@ export const FooterLogo: React.FC = () => {
                 width={600}
                 height={600}
                 className="h-auto w-48 sm:w-64 md:w-80 lg:w-76"
+                draggable={false}
             />
         </div>
     );

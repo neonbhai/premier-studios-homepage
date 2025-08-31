@@ -3,6 +3,7 @@ import { inter } from '@/lib/fonts';
 import './globals.css';
 // import NavBar from "./components/NavBar";
 import { Footer } from './components/Footer';
+import { ToastProvider } from './components/commons/Toast';
 import '@/lib/gsap-config'; // Initialize GSAP configuration
 
 export const metadata: Metadata = {
@@ -18,8 +19,10 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={`${inter.variable} font-sans antialiased`}>
-                {children}
-                <Footer />
+                <ToastProvider>
+                    {children}
+                    <Footer />
+                </ToastProvider>
             </body>
         </html>
     );

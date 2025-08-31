@@ -3,6 +3,7 @@
 import React from 'react';
 import { ButtonWithCutoff } from './ButtonWithCutoff';
 import { useResponsiveLayout } from '../../hooks/useResponsiveLayout';
+import { useToast } from './commons/Toast';
 
 type ButtonSize = 'sm' | 'md' | 'lg';
 
@@ -21,6 +22,8 @@ export const EmailSubscribe: React.FC<EmailSubscribeProps> = ({
 }) => {
     const { isMobile, isTablet } = useResponsiveLayout();
     const [email, setEmail] = React.useState('');
+    const { showToast } = useToast();
+    const formRef = React.useRef<HTMLFormElement>(null);
 
     // Match the responsive size logic from ButtonWithCutoff
     const getResponsiveSize = (): ButtonSize => {
@@ -55,15 +58,34 @@ export const EmailSubscribe: React.FC<EmailSubscribeProps> = ({
     const size = getResponsiveSize();
     const sizeConfig = getSizeClasses(size);
 
+    const isValidEmail = (email: string) => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    };
+
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        if (onSubmit && email.trim()) {
-            onSubmit(email.trim());
+        const trimmedEmail = email.trim();
+        
+        if (!trimmedEmail) {
+            showToast('Please enter an email address', 'error');
+            return;
+        }
+        
+        if (!isValidEmail(trimmedEmail)) {
+            showToast('Please enter a valid email address', 'error');
+            return;
+        }
+
+        showToast('Successfully subscribed to our newsletter!', 'success');
+        setEmail('');
+        if (onSubmit) {
+            onSubmit(trimmedEmail);
         }
     };
 
     return (
-        <form onSubmit={handleSubmit} className={className}>
+        <form ref={formRef} onSubmit={handleSubmit} className={className}>
             <div className="flex justify-end">
                 <input
                     type="email"
@@ -83,10 +105,9 @@ export const EmailSubscribe: React.FC<EmailSubscribeProps> = ({
                         flipped={true}
                         size={size}
                         onClick={() => {
-                            // Trigger form submission
-                            const form = document.querySelector('form');
-                            if (form) {
-                                form.requestSubmit();
+                            // Trigger form submission using the specific form ref
+                            if (formRef.current) {
+                                formRef.current.requestSubmit();
                             }
                         }}
                     />
