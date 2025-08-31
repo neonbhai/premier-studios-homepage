@@ -66,12 +66,12 @@ export const EmailSubscribe: React.FC<EmailSubscribeProps> = ({
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         const trimmedEmail = email.trim();
-        
+
         if (!trimmedEmail) {
             showToast('Please enter an email address', 'error');
             return;
         }
-        
+
         if (!isValidEmail(trimmedEmail)) {
             showToast('Please enter a valid email address', 'error');
             return;

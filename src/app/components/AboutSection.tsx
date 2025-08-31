@@ -1,12 +1,12 @@
 import HeaderCenter from './commons/HeaderCenter';
 import Tags from './commons/Tags';
 
-
 const DEFAULT_CONTENT = {
     tagText: 'About',
     whiteText: 'Who are Premier',
     blueText: 'Studio?',
-    description: 'It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+    description:
+        'It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
     stats: [
         { value: '400+', description: 'High-Performing Wallets Tracked' },
         { value: 'Real-Time', description: 'Verified Trading Signals' },

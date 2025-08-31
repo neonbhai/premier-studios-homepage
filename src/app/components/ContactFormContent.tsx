@@ -47,29 +47,32 @@ export default function ContactFormContent({
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        
+
         // Validate required fields
         if (!formData.name.trim()) {
             showToast('Please enter your name', 'error');
             return;
         }
-        
+
         if (!formData.email.trim()) {
             showToast('Please enter your email address', 'error');
             return;
         }
-        
+
         if (!isValidEmail(formData.email.trim())) {
             showToast('Please enter a valid email address', 'error');
             return;
         }
-        
+
         if (!formData.message.trim()) {
             showToast('Please enter your message', 'error');
             return;
         }
-        
-        showToast('Thank you for your message! We\'ll get back to you soon.', 'success');
+
+        showToast(
+            "Thank you for your message! We'll get back to you soon.",
+            'success'
+        );
         setFormData({ name: '', email: '', message: '' });
     };
 

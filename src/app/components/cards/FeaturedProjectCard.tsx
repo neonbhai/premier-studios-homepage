@@ -3,7 +3,8 @@ import CTAButton from '../commons/CTAButton';
 
 const DEFAULT_CONTENT = {
     fallbackTitle: 'ELEMENTO',
-    fallbackDescription: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+    fallbackDescription:
+        'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
     viewProjectText: 'View Project',
 } as const;
 
@@ -54,7 +55,8 @@ export default function FeaturedProjectCard({
                     {project?.title || DEFAULT_CONTENT.fallbackTitle}
                 </h3>
                 <p className="max-w-[200px] text-[12px] leading-[1.21] font-normal sm:max-w-[240px] sm:text-[13px] md:max-w-[270px] md:text-[14px] lg:max-w-[294px] lg:text-[14.6px]">
-                    {project?.description || DEFAULT_CONTENT.fallbackDescription}
+                    {project?.description ||
+                        DEFAULT_CONTENT.fallbackDescription}
                 </p>
 
                 <div className="relative mt-3 flex items-center sm:mt-4 md:mt-5">

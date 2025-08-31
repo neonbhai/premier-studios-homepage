@@ -2,7 +2,8 @@ import Image from 'next/image';
 
 const DEFAULT_CONTENT = {
     title: 'Okari',
-    description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+    description:
+        'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
     year: '2025',
     imageSrc: '/assets/project-bg.png',
     imageAlt: 'Project image',

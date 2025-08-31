@@ -3,7 +3,8 @@ import Tags from './commons/Tags';
 const DEFAULT_CONTENT = {
     tagText: 'Our work',
     title: 'Projects.',
-    description: 'A curated selection of projects that reflect our commitment to simplicity and purposeful design.',
+    description:
+        'A curated selection of projects that reflect our commitment to simplicity and purposeful design.',
 } as const;
 
 export default function ProjectsHeader() {

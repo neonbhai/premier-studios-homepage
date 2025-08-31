@@ -7,7 +7,8 @@ const DEFAULT_CONTENT = {
     yearBadge: '2017 - 2025',
     heading: "We're experts in wide-range of services!",
     highlightText: 'experts',
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+    description:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
     buttonText: 'Join Now',
     brandText: 'Premier',
     brandHighlightLetter: 'P',
@@ -47,14 +48,16 @@ export default function HeroSection({
     showNavBar = true,
     halfheight,
 }: HeroSectionProps) {
-    const displayBackgroundImage = backgroundImage || DEFAULT_CONTENT.backgroundImage;
+    const displayBackgroundImage =
+        backgroundImage || DEFAULT_CONTENT.backgroundImage;
     const displayYearBadge = yearBadge || DEFAULT_CONTENT.yearBadge;
     const displayHeading = heading || DEFAULT_CONTENT.heading;
     const displayHighlightText = highlightText || DEFAULT_CONTENT.highlightText;
     const displayDescription = description || DEFAULT_CONTENT.description;
     const displayButtonText = buttonText || DEFAULT_CONTENT.buttonText;
     const displayBrandText = brandText || DEFAULT_CONTENT.brandText;
-    const displayBrandHighlightLetter = brandHighlightLetter || DEFAULT_CONTENT.brandHighlightLetter;
+    const displayBrandHighlightLetter =
+        brandHighlightLetter || DEFAULT_CONTENT.brandHighlightLetter;
 
     return (
         <div
